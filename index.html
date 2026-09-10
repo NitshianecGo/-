@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NovaChat</title>
+<meta name="theme-color" content="#0b0d12">
+<style>
+:root{
+  --bg:#080a0f;--panel:rgba(17,20,29,.82);--panel2:rgba(24,28,39,.88);
+  --line:rgba(255,255,255,.08);--text:#f5f7fb;--muted:#9299aa;
+  --accent:#7c5cff;--accent2:#23c7ff;--bubble:#202633;--mine:#694bea;
+  --shadow:0 25px 80px rgba(0,0,0,.42)
+}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:radial-gradient(circle at 20% 0%,#17132c 0,#080a0f 38%),#080a0f;color:var(--text);overflow:hidden}
+button,input{font:inherit}button{border:0;color:inherit;cursor:pointer}
+.app{height:100dvh;display:grid;grid-template-columns:330px 1fr;max-width:1500px;margin:auto;
+background:rgba(7,9,14,.58);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.sidebar{background:rgba(13,16,23,.86);border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.brand{height:74px;display:flex;align-items:center;gap:12px;padding:0 18px;border-bottom:1px solid var(--line)}
+.logo{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-weight:900;
+background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 8px 30px #6b52ff44}
+.brand b{font-size:19px;letter-spacing:-.5px}.brand span{font-size:11px;color:var(--muted)}
+.search{padding:14px}.searchbox{height:44px;border:1px solid var(--line);background:#11151e;border-radius:14px;display:flex;align-items:center;padding:0 13px;gap:9px}
+.searchbox input{width:100%;background:none;border:0;outline:0;color:var(--text);font-size:14px}
+.tabs{display:flex;padding:0 12px 10px;gap:6px}.tab{flex:1;padding:9px;border-radius:10px;background:transparent;color:var(--muted);font-size:12px}
+.tab.active{background:#ffffff0d;color:#fff}.chats{overflow:auto;padding:2px 8px 12px}
+.chat{display:flex;gap:12px;padding:12px 10px;border-radius:15px;align-items:center;transition:.2s}
+.chat:hover{background:#ffffff07}.chat.active{background:linear-gradient(90deg,#7357ff22,#ffffff08)}
+.avatar{width:46px;height:46px;flex:0 0 46px;border-radius:15px;display:grid;place-items:center;font-weight:800;
+background:linear-gradient(135deg,#3c4154,#171a24);position:relative}
+.avatar.online:after{content:"";position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;border:2px solid #0d1017;border-radius:50%;background:#39e58c}
+.chatmain{min-width:0;flex:1}.row{display:flex;justify-content:space-between;gap:8px}.name{font-weight:700;font-size:14px}.time{font-size:10px;color:var(--muted)}
+.preview{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:12px;margin-top:4px}
+.badge{background:var(--accent);font-size:10px;padding:3px 7px;border-radius:99px}
+.profile{margin-top:auto;border-top:1px solid var(--line);padding:12px;display:flex;gap:10px;align-items:center}
+.profile .avatar{width:40px;height:40px;flex-basis:40px;border-radius:12px}.profile small{color:var(--muted)}
+.main{min-width:0;display:flex;flex-direction:column;position:relative;background:
+radial-gradient(circle at 80% 20%,#251b4a22,transparent 30%),#0a0d13}
+.header{height:74px;display:flex;align-items:center;gap:12px;padding:0 18px;border-bottom:1px solid var(--line);
+background:rgba(12,15,22,.72);backdrop-filter:blur(20px);z-index:4}
+.header .avatar{width:42px;height:42px;flex-basis:42px}.headtext{flex:1}.headtext b{display:block}.headtext span{font-size:11px;color:#55dfa0}
+.iconbtn{width:40px;height:40px;border-radius:12px;background:#ffffff08;display:grid;place-items:center;transition:.2s}
+.iconbtn:hover{background:#ffffff14;transform:translateY(-1px)}.menuBtn{display:none}
+.messages{flex:1;overflow:auto;padding:28px clamp(16px,5vw,70px) 120px;display:flex;flex-direction:column;gap:9px;
+scroll-behavior:smooth}
+.day{align-self:center;font-size:10px;color:var(--muted);background:#ffffff08;border:1px solid var(--line);padding:6px 10px;border-radius:99px;margin:4px 0 12px}
+.msg{max-width:min(650px,78%);display:flex;flex-direction:column;animation:rise .28s ease both}
+.msg.mine{align-self:flex-end;align-items:flex-end}.msg.theirs{align-self:flex-start}
+.bubble{padding:11px 14px;border-radius:18px;background:var(--bubble);border:1px solid #ffffff06;line-height:1.45;font-size:14px;box-shadow:0 8px 22px #00000012}
+.mine .bubble{background:linear-gradient(135deg,#7657ff,#6244e9);border-bottom-right-radius:6px}
+.theirs .bubble{border-bottom-left-radius:6px}.meta{font-size:9px;color:#7e8697;margin:4px 6px 0}
+.composerWrap{position:absolute;bottom:0;left:0;right:0;padding:15px clamp(16px,5vw,70px) 18px;background:linear-gradient(transparent,#0a0d13 32%)}
+.composer{display:flex;gap:9px;align-items:flex-end;background:#151923d9;border:1px solid var(--line);border-radius:19px;padding:8px;backdrop-filter:blur(20px);box-shadow:0 15px 50px #0008}
+.attach{width:40px;height:40px;background:transparent;border-radius:12px;color:var(--muted);font-size:21px}
+textarea{flex:1;resize:none;max-height:120px;min-height:40px;background:transparent;border:0;outline:0;color:#fff;padding:10px 4px;line-height:20px}
+.send{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));font-weight:900;
+box-shadow:0 8px 25px #7357ff55;transition:.2s}.send:hover{transform:scale(1.05)}
+.empty{margin:auto;text-align:center;color:var(--muted)}.empty b{display:block;color:#fff;font-size:18px;margin-bottom:6px}
+.drawer{position:absolute;top:0;right:0;bottom:0;width:340px;background:#10131bdd;backdrop-filter:blur(25px);border-left:1px solid var(--line);
+z-index:8;transform:translateX(105%);transition:.3s cubic-bezier(.2,.8,.2,1);padding:22px}.drawer.open{transform:none}
+.drawer h3{margin:4px 0 20px}.setting{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.switch{width:42px;height:24px;background:#292e3a;border-radius:99px;padding:3px}.switch i{display:block;width:18px;height:18px;background:#fff;border-radius:50%;transition:.2s}.switch.on{background:var(--accent)}.switch.on i{transform:translateX(18px)}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#171b25eF;border:1px solid var(--line);padding:10px 15px;border-radius:12px;font-size:12px;z-index:30;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes rise{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@media(max-width:760px){
+ body{background:#080a0f}.app{display:block;border:0}.sidebar{position:absolute;inset:0 0 0 0;width:min(330px,88vw);z-index:10;transform:translateX(-105%);transition:.3s cubic-bezier(.2,.8,.2,1);box-shadow:25px 0 70px #0009}.sidebar.open{transform:none}
+ .menuBtn{display:grid}.main{height:100dvh}.header{padding:0 12px}.messages{padding:20px 12px 110px}.msg{max-width:86%}.composerWrap{padding:12px}.drawer{width:min(340px,90vw)}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="logo">N</div><div><b>NovaChat</b><span>private conversations</span></div></div>
+    <div class="search"><div class="searchbox">⌕ <input id="search" placeholder="Поиск чатов..."></div></div>
+    <div class="tabs"><button class="tab active" data-tab="all">Все</button><button class="tab" data-tab="fav">Избранное</button></div>
+    <div class="chats" id="chatList"></div>
+    <div class="profile"><div class="avatar">A</div><div><b>Алексей</b><br><small>online</small></div><button class="iconbtn" id="settingsBtn" style="margin-left:auto">⚙</button></div>
+  </aside>
+  <main class="main">
+    <header class="header">
+      <button class="iconbtn menuBtn" id="menuBtn">☰</button>
+      <div class="avatar online" id="headAvatar">D</div>
+      <div class="headtext"><b id="headName">Даниил</b><span id="headStatus">в сети</span></div>
+      <button class="iconbtn">⌕</button><button class="iconbtn" id="drawerBtn">⋯</button>
+    </header>
+    <section class="messages" id="messages"></section>
+    <div class="composerWrap"><div class="composer">
+      <button class="attach" title="Прикрепить">＋</button>
+      <textarea id="input" rows="1" placeholder="Написать сообщение..."></textarea>
+      <button class="send" id="send">➤</button>
+    </div></div>
+    <aside class="drawer" id="drawer">
+      <button class="iconbtn" id="closeDrawer">×</button><h3>Настройки чата</h3>
+      <div class="setting"><span>Уведомления</span><button class="switch on"><i></i></button></div>
+      <div class="setting"><span>Анимации</span><button class="switch on"><i></i></button></div>
+      <div class="setting"><span>Автосохранение</span><button class="switch on"><i></i></button></div>
+      <p style="color:var(--muted);font-size:12px;line-height:1.6;margin-top:22px">Это полностью статический демо-клиент. Сообщения и избранное сохраняются в браузере. Для настоящих аккаунтов и синхронизации нужен backend.</p>
+    </aside>
+  </main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const initial=[
+ {id:1,name:"Даниил",avatar:"D",online:true,fav:true,msgs:[
+  ["their","Привет! Ты видел новый дизайн?", "21:42"],["mine","Да. Хочу сделать что-то ещё красивее 😎","21:43"],["their","Тогда NovaChat как раз подходит.","21:43"],["their","Плавные анимации, нормальная адаптация и без визуального мусора.","21:44"]]},
+ {id:2,name:"Мария",avatar:"M",online:true,fav:false,msgs:[["their","Привет 👋","20:17"],["mine","Привет!","20:19"]]},
+ {id:3,name:"Рабочий чат",avatar:"W",online:false,fav:true,msgs:[["their","Макет готов.","18:02"]]},
+ {id:4,name:"Иван",avatar:"I",online:false,fav:false,msgs:[["their","Созвонимся завтра?","вчера"]]}
+];
+let chats=JSON.parse(localStorage.getItem("novachat")||"null")||initial;
+let current=1, filter="all";
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+function save(){localStorage.setItem("novachat",JSON.stringify(chats))}
+function renderChats(){
+ const q=$("#search").value.toLowerCase();
+ $("#chatList").innerHTML=chats.filter(c=>(filter==="all"||c.fav)&&c.name.toLowerCase().includes(q)).map(c=>{
+  const last=c.msgs.at(-1)?.[1]||"Нет сообщений";
+  return `<div class="chat ${c.id===current?"active":""}" data-id="${c.id}">
+   <div class="avatar ${c.online?"online":""}">${c.avatar}</div><div class="chatmain"><div class="row"><span class="name">${c.name}</span><span class="time">${c.msgs.at(-1)?.[2]||""}</span></div>
+   <div class="row"><span class="preview">${last}</span>${c.msgs.length>3?`<span class="badge">${Math.min(c.msgs.length-3,9)}</span>`:""}</div></div></div>`
+ }).join("");
+ $$(".chat").forEach(x=>x.onclick=()=>{current=+x.dataset.id;renderAll();if(innerWidth<760)$("#sidebar").classList.remove("open")});
+}
+function renderMessages(){
+ const c=chats.find(x=>x.id===current);$("#headName").textContent=c.name;$("#headAvatar").textContent=c.avatar;
+ $("#headStatus").textContent=c.online?"в сети":"был(а) недавно";
+ $("#messages").innerHTML=`<div class="day">Сегодня</div>`+c.msgs.map(m=>`<div class="msg ${m[0]}"><div class="bubble">${escapeHtml(m[1]).replace(/\n/g,"<br>")}</div><div class="meta">${m[2]} ${m[0]==="mine"?"✓✓":""}</div></div>`).join("");
+ $("#messages").scrollTop=$("#messages").scrollHeight;
+}
+function renderAll(){renderChats();renderMessages()}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function send(){
+ const input=$("#input"), text=input.value.trim();if(!text)return;
+ const c=chats.find(x=>x.id===current), now=new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});
+ c.msgs.push(["mine",text,now]);input.value="";input.style.height="40px";save();renderAll();
+ setTimeout(()=>{if(Math.random()>.25){c.msgs.push(["their",["Получил 👍","Красиво выглядит.","Сейчас отвечу.","Окей, договорились."][Math.floor(Math.random()*4)],new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})]);save();renderAll()}},700);
+}
+$("#send").onclick=send;$("#input").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send()}});
+$("#input").addEventListener("input",e=>{e.target.style.height="40px";e.target.style.height=Math.min(e.target.scrollHeight,120)+"px"});
+$("#search").oninput=renderChats;
+$("#menuBtn").onclick=()=>$("#sidebar").classList.toggle("open");
+$("#settingsBtn").onclick=()=>$("#drawer").classList.add("open");
+$("#drawerBtn").onclick=()=>$("#drawer").classList.add("open");
+$("#closeDrawer").onclick=()=>$("#drawer").classList.remove("open");
+$$(".tab").forEach(t=>t.onclick=()=>{$$(".tab").forEach(x=>x.classList.remove("active"));t.classList.add("active");filter=t.dataset.tab;renderChats()});
+$$(".switch").forEach(s=>s.onclick=()=>s.classList.toggle("on"));
+renderAll();
+</script>
+</body>
+</html>
