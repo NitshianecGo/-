@@ -27,6 +27,7 @@
             --yt-red: #ff0033;
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
+            --input-bg: rgba(0, 0, 0, 0.6);
             --font-title: 'Orbitron', sans-serif;
             --font-body: 'Rajdhani', sans-serif;
         }
@@ -50,7 +51,7 @@
             padding-bottom: max(25px, env(safe-area-inset-bottom));
             padding-left: max(12px, env(safe-area-inset-left));
             padding-right: max(12px, env(safe-area-inset-right));
-            transition: background-color 0.4s ease;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         .container {
@@ -78,7 +79,7 @@
             font-size: 1.6rem;
             font-weight: 900;
             letter-spacing: 2px;
-            color: #fff;
+            color: var(--text-main);
             text-shadow: 0 0 10px var(--cyan-neon);
         }
 
@@ -186,9 +187,9 @@
         }
 
         input, textarea, select {
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--input-bg);
             border: 1px solid var(--border-color);
-            color: #fff;
+            color: var(--text-main);
             padding: 10px 12px;
             border-radius: 8px;
             font-size: 16px;
@@ -210,7 +211,7 @@
         .btn-cyber {
             background: linear-gradient(135deg, rgba(0, 243, 255, 0.25), rgba(255, 0, 85, 0.25));
             border: 1px solid var(--cyan-neon);
-            color: #fff;
+            color: var(--text-main);
             font-weight: 700;
             font-size: 0.95rem;
             padding: 12px 18px;
@@ -278,7 +279,7 @@
 
         /* Widgets & Boxes */
         .timer-widget, .comparison-box, .water-widget, .readiness-widget {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.3);
             border: 1px dashed var(--cyan-neon);
             padding: 15px;
             border-radius: 10px;
@@ -328,7 +329,7 @@
             color: var(--cyan-neon);
             text-transform: uppercase;
             font-size: 0.85rem;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .cards-list {
@@ -339,7 +340,7 @@
         }
 
         .cyber-card {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
             border-left: 4px solid var(--cyan-neon);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             border-right: 1px solid rgba(255, 255, 255, 0.05);
@@ -358,7 +359,7 @@
 
         .card-title {
             font-size: 1.1rem;
-            color: #fff;
+            color: var(--text-main);
             font-weight: 700;
         }
 
@@ -383,7 +384,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
             gap: 10px;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--lime-neon);
             padding: 15px;
             border-radius: 10px;
@@ -407,7 +408,7 @@
         }
 
         .slot-card {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 12px;
@@ -480,7 +481,7 @@
             margin-top: 15px;
         }
         .achievement-card {
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 8px;
             padding: 10px;
@@ -511,6 +512,7 @@
         <div class="header-controls">
             <select id="theme-selector" onchange="changeTheme(this.value)" style="min-height: 38px; font-size: 0.8rem;">
                 <option value="cyberpunk">🩵 Cyberpunk</option>
+                <option value="light">☀️ Светлая тема</option>
                 <option value="matrix">💚 Matrix</option>
                 <option value="synthwave">💜 Synthwave</option>
                 <option value="redalert">🔴 Red Alert</option>
@@ -531,12 +533,29 @@
         <button class="tab-btn" onclick="openTab(event, 'nutrition')">🥗 Питание & Вода</button>
         <button class="tab-btn" onclick="openTab(event, 'analytics')">📊 Аналитика</button>
         <button class="tab-btn" onclick="openTab(event, 'gamification')">🏆 Рекорды & XP</button>
+        <button class="tab-btn" onclick="openTab(event, 'settings')">⚙️ Настройки</button>
     </nav>
 
     <!-- ВКЛАДКА 1: ТРЕНИРОВКИ -->
     <section id="workouts" class="tab-content active">
         <h2 style="color: var(--cyan-neon); margin-bottom: 12px; font-family: var(--font-title);">Лог Тренировки</h2>
         
+        <!-- Звуковой/Вибро Таймер (ВЫНЕСЕН НА САМЫЙ ВЕРХ) -->
+        <div class="timer-widget" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+                <label style="display: block; margin-bottom: 4px;">⏱️ Таймер отдыха (со звуком)</label>
+                <div style="font-family: var(--font-title); font-size: 1.8rem; color: var(--cyan-neon);" id="timer-text">00:00</div>
+            </div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <button class="btn-secondary" onclick="addTimerTime(-15)">-15с</button>
+                <button class="btn-secondary" onclick="addTimerTime(15)">+15с</button>
+                <button class="btn-secondary" onclick="startTimer(60)">60с</button>
+                <button class="btn-secondary" onclick="startTimer(90)">90с</button>
+                <button class="btn-secondary" onclick="startTimer(120)">120с</button>
+                <button class="btn-secondary" onclick="stopTimer()" style="border-color: var(--magenta-neon); color: var(--magenta-neon);">Сброс</button>
+            </div>
+        </div>
+
         <!-- Шаблоны -->
         <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border-color); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
             <span style="color: var(--cyan-neon); font-weight: 700; font-size: 0.85rem;">📋 ШАБЛОНЫ:</span>
@@ -558,22 +577,6 @@
                 <div class="form-group"><label>Стресс (1-10)</label><input type="number" id="readiness-stress" min="1" max="10" value="3" oninput="calcReadiness()"></div>
             </div>
             <div id="readiness-advice" style="font-size: 0.85rem; color: var(--text-dim);">🟢 Отличное состояние! Готовы к максимумам.</div>
-        </div>
-
-        <!-- Звуковой/Вибро Таймер -->
-        <div class="timer-widget" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-            <div>
-                <label style="display: block; margin-bottom: 4px;">⏱️ Таймер отдыха (со звуком)</label>
-                <div style="font-family: var(--font-title); font-size: 1.8rem; color: var(--cyan-neon);" id="timer-text">00:00</div>
-            </div>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-                <button class="btn-secondary" onclick="addTimerTime(-15)">-15с</button>
-                <button class="btn-secondary" onclick="addTimerTime(15)">+15с</button>
-                <button class="btn-secondary" onclick="startTimer(60)">60с</button>
-                <button class="btn-secondary" onclick="startTimer(90)">90с</button>
-                <button class="btn-secondary" onclick="startTimer(120)">120с</button>
-                <button class="btn-secondary" onclick="stopTimer()" style="border-color: var(--magenta-neon); color: var(--magenta-neon);">Сброс</button>
-            </div>
         </div>
 
         <form id="workout-form" onsubmit="addWorkout(event)">
@@ -628,14 +631,17 @@
                 </div>
                 <div class="form-group">
                     <label>Группа мышц</label>
-                    <select id="ex-category" required>
-                        <option value="Грудь">Грудь</option>
-                        <option value="Спина">Спина</option>
-                        <option value="Ноги">Ноги</option>
-                        <option value="Плечи">Плечи</option>
-                        <option value="Руки">Руки</option>
-                        <option value="Пресс">Пресс</option>
-                    </select>
+                    <input type="text" id="ex-category" list="muscle-groups-list" placeholder="Выберите или введите свою" required>
+                    <datalist id="muscle-groups-list">
+                        <option value="Грудь">
+                        <option value="Спина">
+                        <option value="Ноги">
+                        <option value="Плечи">
+                        <option value="Руки">
+                        <option value="Пресс">
+                        <option value="Верх трапеций">
+                        <option value="Мышцы кора">
+                    </datalist>
                 </div>
                 <div class="form-group">
                     <label>Ссылка YouTube</label>
@@ -895,12 +901,13 @@
                 <div class="form-group"><label>Упражнение</label><input type="text" id="pr-name" placeholder="Жим лежа" required></div>
                 <div class="form-group"><label>Макс. Вес (кг)</label><input type="number" step="0.5" id="pr-weight" placeholder="110" required></div>
                 <div class="form-group"><label>Повторения</label><input type="number" id="pr-reps" placeholder="1" required></div>
+                <div class="form-group"><label>Дата достижения</label><input type="date" id="pr-date" required></div>
                 <div class="form-group" style="justify-content: flex-end;"><button type="submit" class="btn-cyber" style="font-size:0.85rem;">Зафиксировать</button></div>
             </form>
 
             <div class="cyber-table-container">
                 <table class="cyber-table">
-                    <thead><tr><th>Упражнение</th><th>Рекорд</th><th>Повторы</th><th>Удалить</th></tr></thead>
+                    <thead><tr><th>Упражнение</th><th>Рекорд</th><th>Повторы</th><th>Дата</th><th>Удалить</th></tr></thead>
                     <tbody id="pr-list"></tbody>
                 </table>
             </div>
@@ -909,6 +916,44 @@
         <!-- Достижения -->
         <h3 style="color: var(--yellow-neon); margin-bottom: 10px;">🌟 Кибер-Ачивки</h3>
         <div class="achievements-grid" id="achievements-container"></div>
+    </section>
+
+    <!-- ВКЛАДКА 8: НАСТРОЙКИ -->
+    <section id="settings" class="tab-content">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">⚙️ Настройки Приложения</h2>
+
+        <!-- Выбор темы -->
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: var(--cyan-neon); margin-bottom: 10px; font-size: 1.1rem;">🎨 Оформление и Тема</h3>
+            <div class="form-group" style="max-width: 320px;">
+                <label>Цветовая схема</label>
+                <select id="settings-theme-selector" onchange="changeTheme(this.value)">
+                    <option value="cyberpunk">🩵 Cyberpunk (Тёмная)</option>
+                    <option value="light">☀️ Светлая тема</option>
+                    <option value="matrix">💚 Matrix (Зелёная)</option>
+                    <option value="synthwave">💜 Synthwave (Фиолетовая)</option>
+                    <option value="redalert">🔴 Red Alert (Красная)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Экспорт / Импорт -->
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: var(--cyan-neon); margin-bottom: 10px; font-size: 1.1rem;">💾 Выгрузка и Восстановление Данных</h3>
+            <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 12px;">Полный экспорт всех ваших рекордов (PR), базы упражнений, уровня XP, логов тренировок и замеров в единый .json файл.</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="btn-cyber" onclick="exportData()">💾 Экспорт в JSON</button>
+                <button class="btn-secondary" onclick="document.getElementById('import-file-settings').click()">📂 Импорт из JSON</button>
+                <input type="file" id="import-file-settings" style="display: none;" accept=".json" onchange="importData(event)">
+            </div>
+        </div>
+
+        <!-- Сброс Прогресса -->
+        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--magenta-neon); padding: 15px; border-radius: 10px;">
+            <h3 style="color: var(--magenta-neon); margin-bottom: 10px; font-size: 1.1rem;">⚠️ Сброс Прогресса</h3>
+            <p style="color: var(--text-dim); font-size: 0.85rem; margin-bottom: 12px;">Сброс текущего уровня, накопленного опыта (XP) и заблокированных ачивок.</p>
+            <button class="btn-secondary" style="border-color: var(--magenta-neon); color: var(--magenta-neon);" onclick="resetGamification()">⚠️ Сбросить уровень, XP и ачивки</button>
+        </div>
     </section>
 </div>
 
@@ -977,10 +1022,66 @@ function deleteItem(store, key) {
 let workouts = [], templates = [], exercises = [], bodyMetrics = [], suppCatalog = [], suppLogs = [], nutrition = [], waterLogs = [], prs = [], settings = {};
 
 const themes = {
-    cyberpunk: { '--bg-color': '#070913', '--cyan-neon': '#00f3ff', '--magenta-neon': '#ff0055', '--lime-neon': '#00ff66', '--yellow-neon': '#ffcc00' },
-    matrix: { '--bg-color': '#020d04', '--cyan-neon': '#00ff66', '--magenta-neon': '#00aa44', '--lime-neon': '#33ff88', '--yellow-neon': '#ccff00' },
-    synthwave: { '--bg-color': '#0f051d', '--cyan-neon': '#ff00aa', '--magenta-neon': '#b026ff', '--lime-neon': '#00f3ff', '--yellow-neon': '#ffdd00' },
-    redalert: { '--bg-color': '#120303', '--cyan-neon': '#ff0033', '--magenta-neon': '#ff6600', '--lime-neon': '#ffcc00', '--yellow-neon': '#ffffff' }
+    cyberpunk: { 
+        '--bg-color': '#070913', 
+        '--panel-bg': 'rgba(15, 23, 42, 0.88)', 
+        '--border-color': 'rgba(0, 243, 255, 0.25)', 
+        '--cyan-neon': '#00f3ff', 
+        '--magenta-neon': '#ff0055', 
+        '--lime-neon': '#00ff66', 
+        '--yellow-neon': '#ffcc00', 
+        '--text-main': '#f1f5f9', 
+        '--text-dim': '#94a3b8',
+        '--input-bg': 'rgba(0, 0, 0, 0.6)'
+    },
+    light: { 
+        '--bg-color': '#f8fafc', 
+        '--panel-bg': 'rgba(255, 255, 255, 0.95)', 
+        '--border-color': 'rgba(2, 132, 199, 0.3)', 
+        '--cyan-neon': '#0284c7', 
+        '--magenta-neon': '#e11d48', 
+        '--lime-neon': '#16a34a', 
+        '--yellow-neon': '#d97706', 
+        '--text-main': '#0f172a', 
+        '--text-dim': '#64748b',
+        '--input-bg': 'rgba(241, 245, 249, 0.9)'
+    },
+    matrix: { 
+        '--bg-color': '#020d04', 
+        '--panel-bg': 'rgba(5, 25, 10, 0.88)', 
+        '--border-color': 'rgba(0, 255, 102, 0.25)', 
+        '--cyan-neon': '#00ff66', 
+        '--magenta-neon': '#00aa44', 
+        '--lime-neon': '#33ff88', 
+        '--yellow-neon': '#ccff00', 
+        '--text-main': '#f1f5f9', 
+        '--text-dim': '#94a3b8',
+        '--input-bg': 'rgba(0, 0, 0, 0.6)'
+    },
+    synthwave: { 
+        '--bg-color': '#0f051d', 
+        '--panel-bg': 'rgba(25, 10, 45, 0.88)', 
+        '--border-color': 'rgba(255, 0, 170, 0.25)', 
+        '--cyan-neon': '#ff00aa', 
+        '--magenta-neon': '#b026ff', 
+        '--lime-neon': '#00f3ff', 
+        '--yellow-neon': '#ffdd00', 
+        '--text-main': '#f1f5f9', 
+        '--text-dim': '#94a3b8',
+        '--input-bg': 'rgba(0, 0, 0, 0.6)'
+    },
+    redalert: { 
+        '--bg-color': '#120303', 
+        '--panel-bg': 'rgba(30, 5, 5, 0.88)', 
+        '--border-color': 'rgba(255, 0, 51, 0.25)', 
+        '--cyan-neon': '#ff0033', 
+        '--magenta-neon': '#ff6600', 
+        '--lime-neon': '#ffcc00', 
+        '--yellow-neon': '#ffffff', 
+        '--text-main': '#f1f5f9', 
+        '--text-dim': '#94a3b8',
+        '--input-bg': 'rgba(0, 0, 0, 0.6)'
+    }
 };
 
 const achievementsList = [
@@ -1010,6 +1111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('food-date').value = today;
     document.getElementById('body-date').value = today;
     document.getElementById('supp-log-date').value = today;
+    document.getElementById('pr-date').value = today;
     document.getElementById('current-date-display').innerText = new Date().toLocaleDateString('ru-RU', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
 
     // Datalist
@@ -1017,7 +1119,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     foodDatabase.forEach(f => { const opt = document.createElement('option'); opt.value = f.name; dl.appendChild(opt); });
 
     applyTheme(settings.theme || 'cyberpunk');
-    document.getElementById('theme-selector').value = settings.theme || 'cyberpunk';
+    if(document.getElementById('theme-selector')) document.getElementById('theme-selector').value = settings.theme || 'cyberpunk';
+    if(document.getElementById('settings-theme-selector')) document.getElementById('settings-theme-selector').value = settings.theme || 'cyberpunk';
     
     updateUserLevelUI();
     renderWorkouts();
@@ -1054,6 +1157,10 @@ function changeTheme(themeKey) {
     applyTheme(themeKey);
     settings.theme = themeKey;
     putItem('settings', { key: 'theme', val: themeKey });
+    const sel1 = document.getElementById('theme-selector');
+    const sel2 = document.getElementById('settings-theme-selector');
+    if(sel1) sel1.value = themeKey;
+    if(sel2) sel2.value = themeKey;
 }
 
 function applyTheme(themeKey) {
@@ -1074,6 +1181,16 @@ function updateUserLevelUI() {
     const lvl = Math.floor(xp / 500) + 1;
     document.getElementById('user-level').innerText = lvl;
     document.getElementById('user-xp').innerText = xp;
+}
+
+async function resetGamification() {
+    if (confirm("Вы уверены, что хотите сбросить уровень, накопленный XP и все ачивки?")) {
+        settings.xp = 0;
+        await putItem('settings', { key: 'xp', val: 0 });
+        updateUserLevelUI();
+        checkAchievements();
+        alert("Прогресс сброшен!");
+    }
 }
 
 function checkAchievements() {
@@ -1229,12 +1346,14 @@ async function addPR(e) {
         id: Date.now(),
         name: document.getElementById('pr-name').value.trim(),
         weight: parseFloat(document.getElementById('pr-weight').value),
-        reps: parseInt(document.getElementById('pr-reps').value)
+        reps: parseInt(document.getElementById('pr-reps').value),
+        date: document.getElementById('pr-date').value
     };
     prs.unshift(item);
     await putItem('prs', item);
     await addXP(100);
     document.getElementById('pr-form').reset();
+    document.getElementById('pr-date').value = new Date().toISOString().split('T')[0];
     renderPRs();
 }
 
@@ -1249,10 +1368,12 @@ function renderPRs() {
     tbody.innerHTML = '';
     prs.forEach(p => {
         const tr = document.createElement('tr');
+        const formattedDate = p.date ? new Date(p.date).toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' }) : '—';
         tr.innerHTML = `
-            <td style="font-weight:700; color:#fff;">${escapeHtml(p.name)}</td>
+            <td style="font-weight:700; color:var(--text-main);">${escapeHtml(p.name)}</td>
             <td style="color:var(--yellow-neon); font-weight:700;">${p.weight} кг</td>
             <td>${p.reps}</td>
+            <td style="color:var(--cyan-neon); font-size:0.85rem;">${formattedDate}</td>
             <td><button class="delete-btn" onclick="deletePR(${p.id})">✖</button></td>
         `;
         tbody.appendChild(tr);
@@ -1290,7 +1411,7 @@ function loadTemplate() {
 async function addExercise(e) {
     e.preventDefault();
     const name = document.getElementById('ex-name').value.trim();
-    const category = document.getElementById('ex-category').value;
+    const category = document.getElementById('ex-category').value.trim();
     let url = document.getElementById('ex-url').value.trim() || `https://www.youtube.com/results?search_query=${encodeURIComponent(name + ' техника')}`;
     const ex = { id: Date.now(), name, category, url };
     exercises.unshift(ex);
@@ -1314,8 +1435,8 @@ function renderExercises() {
     exercises.filter(ex => ex.name.toLowerCase().includes(q) && (cat === 'ALL' || ex.category === cat)).forEach(ex => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td><span class="card-badge">${ex.category}</span></td>
-            <td style="font-weight: 700; color: #fff;">${escapeHtml(ex.name)}</td>
+            <td><span class="card-badge">${escapeHtml(ex.category)}</span></td>
+            <td style="font-weight: 700; color: var(--text-main);">${escapeHtml(ex.name)}</td>
             <td><a href="${ex.url}" target="_blank" class="btn-yt">▶ Видео</a></td>
             <td><button class="delete-btn" onclick="deleteExercise(${ex.id})">✖</button></td>
         `;
@@ -1643,8 +1764,21 @@ async function importData(e) {
         try {
             const data = JSON.parse(evt.target.result);
             if(data.workouts) for(let i of data.workouts) await putItem('workouts', i);
+            if(data.templates) for(let i of data.templates) await putItem('templates', i);
+            if(data.exercises) for(let i of data.exercises) await putItem('exercises', i);
             if(data.bodyMetrics) for(let i of data.bodyMetrics) await putItem('bodyMetrics', i);
+            if(data.suppCatalog) for(let i of data.suppCatalog) await putItem('suppCatalog', i);
+            if(data.suppLogs) for(let i of data.suppLogs) await putItem('suppLogs', i);
+            if(data.nutrition) for(let i of data.nutrition) await putItem('nutrition', i);
+            if(data.waterLogs) for(let i of data.waterLogs) await putItem('waterLogs', i);
             if(data.prs) for(let i of data.prs) await putItem('prs', i);
+            if(data.settings) {
+                if(typeof data.settings === 'object' && !Array.isArray(data.settings)) {
+                    for(let key in data.settings) await putItem('settings', { key, val: data.settings[key] });
+                } else if(Array.isArray(data.settings)) {
+                    for(let s of data.settings) await putItem('settings', s);
+                }
+            }
             alert('✅ Данные импортированы!'); location.reload();
         } catch(err) { alert('❌ Ошибка чтения файла'); }
     };
