@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>CYBER-FIT // Ultimate Fitness Hub</title>
-    <!-- Chart.js для графиков -->
+    
+    <!-- PWA iOS Адаптация -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CYBER-FIT">
+    <meta name="theme-color" content="#070913">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    
+    <title>CYBER-FIT // Ultimate Fitness Hub PRO</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --bg-color: #070913;
-            --panel-bg: rgba(15, 23, 42, 0.85);
+            --panel-bg: rgba(15, 23, 42, 0.88);
             --border-color: rgba(0, 243, 255, 0.25);
             --cyan-neon: #00f3ff;
             --magenta-neon: #ff0055;
             --lime-neon: #00ff66;
+            --yellow-neon: #ffcc00;
             --yt-red: #ff0033;
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
@@ -38,7 +46,6 @@
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(255, 0, 85, 0.05) 0%, transparent 40%);
-            /* Адаптация под челку/Dynamic Island на iPhone 15/16 Pro Max */
             padding-top: max(15px, env(safe-area-inset-top));
             padding-bottom: max(25px, env(safe-area-inset-bottom));
             padding-left: max(12px, env(safe-area-inset-left));
@@ -50,7 +57,6 @@
             margin: 0 auto;
         }
 
-        /* Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -59,7 +65,7 @@
             background: var(--panel-bg);
             border: 1px solid var(--border-color);
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border-radius: 12px;
             margin-bottom: 20px;
             flex-wrap: wrap;
@@ -87,7 +93,6 @@
             flex-wrap: wrap;
         }
 
-        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             gap: 8px;
@@ -120,14 +125,13 @@
             box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
         }
 
-        /* Tab Content Panel */
         .tab-content {
             display: none;
             background: var(--panel-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 20px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
@@ -141,10 +145,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Form Controls */
         .grid-form {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 12px;
             margin-bottom: 20px;
         }
@@ -160,14 +163,13 @@
         }
 
         label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--cyan-neon);
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
         }
 
-        /* Предотвращение авто-зума на iOS (font-size >= 16px) */
         input, textarea, select {
             background: rgba(0, 0, 0, 0.6);
             border: 1px solid var(--border-color);
@@ -190,13 +192,12 @@
             min-height: 80px;
         }
 
-        /* Cyber Buttons */
         .btn-cyber {
             background: linear-gradient(135deg, rgba(0, 243, 255, 0.25), rgba(255, 0, 85, 0.25));
             border: 1px solid var(--cyan-neon);
             color: #fff;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             padding: 12px 18px;
             cursor: pointer;
             border-radius: 8px;
@@ -210,9 +211,7 @@
             gap: 8px;
         }
 
-        .btn-cyber:active {
-            transform: scale(0.98);
-        }
+        .btn-cyber:active { transform: scale(0.98); }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
@@ -244,28 +243,51 @@
             font-size: 0.85rem;
         }
 
-        /* Timer Widget */
-        .timer-widget {
+        /* Progress Bars */
+        .progress-bar-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            height: 12px;
+            overflow: hidden;
+            margin-top: 4px;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cyan-neon), var(--lime-neon));
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* Widgets & Boxes */
+        .timer-widget, .comparison-box, .water-widget {
             background: rgba(0, 0, 0, 0.5);
             border: 1px dashed var(--cyan-neon);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
         }
 
-        .timer-display {
-            font-family: var(--font-title);
-            font-size: 1.8rem;
-            color: var(--cyan-neon);
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
         }
 
-        /* Tables & Responsive Scroll */
+        .comp-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .comp-card .diff-positive { color: var(--lime-neon); font-weight: 700; }
+        .comp-card .diff-negative { color: var(--magenta-neon); font-weight: 700; }
+
         .cyber-table-container {
             width: 100%;
             overflow-x: auto;
@@ -278,7 +300,7 @@
         .cyber-table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 500px;
+            min-width: 550px;
         }
 
         .cyber-table th, .cyber-table td {
@@ -294,7 +316,6 @@
             background: rgba(0, 0, 0, 0.4);
         }
 
-        /* Cards */
         .cards-list {
             display: flex;
             flex-direction: column;
@@ -343,7 +364,6 @@
             padding: 4px 8px;
         }
 
-        /* Summary Boxes */
         .summary-box {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -355,24 +375,15 @@
             margin-top: 20px;
         }
 
-        .summary-item {
-            text-align: center;
-        }
-
+        .summary-item { text-align: center; }
         .summary-item .value {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--lime-neon);
             font-family: var(--font-title);
         }
+        .summary-item .label { font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase; }
 
-        .summary-item .label {
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            text-transform: uppercase;
-        }
-
-        /* Time Slot Cards for Supplements */
         .slot-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -415,7 +426,6 @@
         }
         .status-done { background: rgba(0, 255, 102, 0.2); color: var(--lime-neon); border: 1px solid var(--lime-neon); }
         .status-skipped { background: rgba(255, 0, 85, 0.2); color: var(--magenta-neon); border: 1px solid var(--magenta-neon); }
-        .status-pending { background: rgba(255, 255, 255, 0.1); color: var(--text-dim); border: 1px solid var(--border-color); }
 
         .chart-container {
             position: relative;
@@ -424,44 +434,71 @@
             margin-top: 15px;
         }
 
-        .hint {
-            font-size: 0.8rem;
-            color: var(--text-dim);
+        .img-thumb {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--cyan-neon);
+            cursor: pointer;
         }
+
+        /* Modal Lightbox */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal.active { display: flex; }
+        .modal-content { max-width: 90%; max-height: 85vh; border-radius: 10px; border: 1px solid var(--cyan-neon); }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <div class="logo">CYBER<span>FIT</span></div>
+        <div class="logo">CYBER<span>FIT</span> <small style="font-size: 0.6rem; color: var(--lime-neon);">PRO</small></div>
         <div class="header-controls">
             <button class="btn-secondary" onclick="exportData()">💾 Экспорт</button>
             <button class="btn-secondary" onclick="document.getElementById('import-file').click()">📂 Импорт</button>
+            <button class="btn-secondary" onclick="sendTelegramBackup()" style="border-color: var(--cyan-neon); color: var(--cyan-neon);">✈️ Telegram</button>
             <input type="file" id="import-file" style="display: none;" accept=".json" onchange="importData(event)">
             <div id="current-date-display" style="color: var(--cyan-neon); font-weight: 600; font-size: 0.85rem;"></div>
         </div>
     </header>
 
-    <!-- Навигационные вкладки -->
     <nav class="nav-tabs">
         <button class="tab-btn active" onclick="openTab(event, 'workouts')">🏋️ Тренировки</button>
         <button class="tab-btn" onclick="openTab(event, 'exercises')">💪 База Упражнений</button>
-        <button class="tab-btn" onclick="openTab(event, 'body')">📐 Замеры Тела</button>
-        <button class="tab-btn" onclick="openTab(event, 'supplements')">💊 БАДы & Трекер</button>
+        <button class="tab-btn" onclick="openTab(event, 'body')">📐 Замеры & Фото</button>
+        <button class="tab-btn" onclick="openTab(event, 'supplements')">💊 БАДы</button>
+        <button class="tab-btn" onclick="openTab(event, 'nutrition')">🥗 Питание & Вода</button>
         <button class="tab-btn" onclick="openTab(event, 'analytics')">📊 Анализ & 1ПМ</button>
-        <button class="tab-btn" onclick="openTab(event, 'nutrition')">🥗 Питание</button>
     </nav>
 
     <!-- ВКЛАДКА 1: ТРЕНИРОВКИ -->
     <section id="workouts" class="tab-content active">
         <h2 style="color: var(--cyan-neon); margin-bottom: 12px; font-family: var(--font-title);">Лог Тренировки</h2>
         
-        <!-- Таймер отдыха -->
-        <div class="timer-widget">
+        <!-- Шаблоны -->
+        <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border-color); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <span style="color: var(--cyan-neon); font-weight: 700; font-size: 0.85rem;">📋 ШАБЛОНЫ:</span>
+            <select id="workout-template-select" style="flex: 1; min-width: 160px;" onchange="loadTemplate()">
+                <option value="">-- Выбрать шаблон --</option>
+            </select>
+            <button class="btn-secondary" onclick="saveAsTemplate()">Сохранить ввод как шаблон</button>
+        </div>
+
+        <!-- Таймер -->
+        <div class="timer-widget" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
             <div>
                 <label style="display: block; margin-bottom: 4px;">⏱️ Таймер отдыха</label>
-                <div class="timer-display" id="timer-text">00:00</div>
+                <div style="font-family: var(--font-title); font-size: 1.8rem; color: var(--cyan-neon);" id="timer-text">00:00</div>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                 <button class="btn-secondary" onclick="startTimer(60)">60с</button>
@@ -478,18 +515,26 @@
                     <input type="date" id="workout-date" required>
                 </div>
                 <div class="form-group" style="grid-column: span 2;">
-                    <label>Длительность тренировки</label>
+                    <label>Длительность</label>
                     <div style="display: flex; gap: 8px;">
                         <input type="number" id="workout-hours" min="0" placeholder="0 ч" style="flex: 1;">
                         <input type="number" id="workout-mins" min="0" max="59" placeholder="45 мин" style="flex: 1;" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Оценка нагрузки (1-10)</label>
+                    <label>Интенсивность (1-10)</label>
                     <input type="number" id="workout-intensity" min="1" max="10" placeholder="8" required>
                 </div>
+                <div class="form-group">
+                    <label>RPE (Запас 1-10)</label>
+                    <input type="number" id="workout-rpe" min="1" max="10" placeholder="9">
+                </div>
+                <div class="form-group">
+                    <label>Общий Тоннаж (кг)</label>
+                    <input type="number" id="workout-tonnage" placeholder="e.g. 4500">
+                </div>
                 <div class="form-group full-width">
-                    <label>Что делал в зале</label>
+                    <label>Упражнения и подходы</label>
                     <textarea id="workout-details" placeholder="Жим лежа: 80кг 4х8&#10;Присед: 100кг 3х10..." required></textarea>
                 </div>
                 <div class="form-group full-width">
@@ -507,11 +552,10 @@
     <!-- ВКЛАДКА 2: БАЗА УПРАЖНЕНИЙ -->
     <section id="exercises" class="tab-content">
         <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">База Упражнений</h2>
-        
         <form id="exercise-form" onsubmit="addExercise(event)">
             <div class="grid-form">
                 <div class="form-group">
-                    <label>Название упражнения</label>
+                    <label>Название</label>
                     <input type="text" id="ex-name" placeholder="Жим Гантелей Сидя" required>
                 </div>
                 <div class="form-group">
@@ -534,7 +578,7 @@
         </form>
 
         <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
-            <input type="text" id="ex-search" placeholder="🔍 Поиск..." oninput="renderExercises()" style="flex: 1; min-width: 150px;">
+            <input type="text" id="ex-search" placeholder="🔍 Поиск..." oninput="renderExercises()" style="flex: 1;">
             <select id="ex-filter" onchange="renderExercises()" style="width: 160px;">
                 <option value="ALL">Все группы</option>
                 <option value="Грудь">Грудь</option>
@@ -549,26 +593,29 @@
         <div class="cyber-table-container">
             <table class="cyber-table">
                 <thead>
-                    <tr>
-                        <th>Группа</th>
-                        <th>Упражнение</th>
-                        <th>Видео</th>
-                        <th>Удалить</th>
-                    </tr>
+                    <tr><th>Группа</th><th>Упражнение</th><th>Видео</th><th>Удалить</th></tr>
                 </thead>
                 <tbody id="exercises-list"></tbody>
             </table>
         </div>
     </section>
 
-    <!-- ВКЛАДКА 3: ЗАМЕРЫ ТЕЛА -->
+    <!-- ВКЛАДКА 3: ЗАМЕРЫ И ФОТО -->
     <section id="body" class="tab-content">
-        <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">Замеры Тела</h2>
-        
+        <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">📐 Замеры Тела & Фото Прогресса</h2>
+
+        <!-- Виджет Было / Стало -->
+        <div class="comparison-box">
+            <h3 style="color: var(--lime-neon); font-size: 1rem;">📊 Динамика «Было ➔ Стало»</h3>
+            <div class="comparison-grid" id="comparison-display">
+                <div style="color: var(--text-dim); font-size: 0.85rem; grid-column: 1/-1;">Добавьте минимум 2 замера для расчета прогресса</div>
+            </div>
+        </div>
+
         <form id="body-form" onsubmit="addBodyEntry(event)">
             <div class="grid-form">
                 <div class="form-group">
-                    <label>Дата замера</label>
+                    <label>Дата</label>
                     <input type="date" id="body-date" required>
                 </div>
                 <div class="form-group">
@@ -591,6 +638,10 @@
                     <label>Грудь (см)</label>
                     <input type="number" step="0.5" id="body-chest" placeholder="105">
                 </div>
+                <div class="form-group full-width">
+                    <label>Фото прогресса</label>
+                    <input type="file" id="body-photo" accept="image/*">
+                </div>
             </div>
             <button type="submit" class="btn-cyber">Сохранить замеры</button>
         </form>
@@ -603,28 +654,19 @@
         <div class="cyber-table-container">
             <table class="cyber-table">
                 <thead>
-                    <tr>
-                        <th>Дата</th>
-                        <th>Вес</th>
-                        <th>Талия</th>
-                        <th>Бедро</th>
-                        <th>Бицепс</th>
-                        <th>Грудь</th>
-                        <th>Удалить</th>
-                    </tr>
+                    <tr><th>Дата</th><th>Фото</th><th>Вес</th><th>Талия</th><th>Бедро</th><th>Бицепс</th><th>Грудь</th><th>Удалить</th></tr>
                 </thead>
                 <tbody id="body-list"></tbody>
             </table>
         </div>
     </section>
 
-    <!-- ВКЛАДКА 4: БАДЫ & ТРЕКЕР -->
+    <!-- ВКЛАДКА 4: БАДЫ -->
     <section id="supplements" class="tab-content">
         <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">💊 Добавки и БАДы</h2>
 
-        <!-- Раздел 1: Создание/Управление каталогом -->
         <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-            <h3 style="color: var(--cyan-neon); font-size: 1rem; margin-bottom: 10px;">1. Список моих добавок (Каталог)</h3>
+            <h3 style="color: var(--cyan-neon); font-size: 1rem; margin-bottom: 10px;">1. Каталог Добавок</h3>
             <form id="supp-catalog-form" onsubmit="addSuppToCatalog(event)" class="grid-form" style="margin-bottom: 10px;">
                 <div class="form-group">
                     <label>Название</label>
@@ -635,23 +677,21 @@
                     <input type="text" id="supp-cat-dosage" placeholder="2 капсулы / 5г" required>
                 </div>
                 <div class="form-group" style="justify-content: flex-end;">
-                    <button type="submit" class="btn-cyber" style="font-size: 0.85rem;">+ Добавить в список</button>
+                    <button type="submit" class="btn-cyber" style="font-size: 0.85rem;">+ В каталог</button>
                 </div>
             </form>
             <div id="supp-catalog-pills" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
         </div>
 
-        <!-- Раздел 2: Планирование на день -->
         <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px;">
-            <h3 style="color: var(--cyan-neon); font-size: 1rem; margin-bottom: 10px;">2. Расписание приема по дням</h3>
-            
+            <h3 style="color: var(--cyan-neon); font-size: 1rem; margin-bottom: 10px;">2. Назначение на день</h3>
             <div class="grid-form">
                 <div class="form-group">
-                    <label>Дата приема</label>
+                    <label>Дата</label>
                     <input type="date" id="supp-log-date" onchange="renderSuppLogs()" required>
                 </div>
                 <div class="form-group">
-                    <label>Выбрать добавку</label>
+                    <label>Добавка</label>
                     <select id="supp-log-select" required></select>
                 </div>
                 <div class="form-group">
@@ -664,94 +704,80 @@
                     </select>
                 </div>
                 <div class="form-group" style="justify-content: flex-end;">
-                    <button type="button" class="btn-cyber" onclick="addSuppToLog()">Назначить на день</button>
+                    <button type="button" class="btn-cyber" onclick="addSuppToLog()">Назначить</button>
                 </div>
             </div>
 
-            <!-- Слоты приема -->
             <div class="slot-grid">
-                <div class="slot-card">
-                    <div class="slot-header">🌅 УТРО</div>
-                    <div id="slot-Утро"></div>
-                </div>
-                <div class="slot-card">
-                    <div class="slot-header">☀️ ДЕНЬ</div>
-                    <div id="slot-День"></div>
-                </div>
-                <div class="slot-card">
-                    <div class="slot-header">🌆 ВЕЧЕР</div>
-                    <div id="slot-Вечер"></div>
-                </div>
-                <div class="slot-card">
-                    <div class="slot-header">🌙 НА НОЧЬ</div>
-                    <div id="slot-На ночь"></div>
-                </div>
+                <div class="slot-card"><div class="slot-header">🌅 УТРО</div><div id="slot-Утро"></div></div>
+                <div class="slot-card"><div class="slot-header">☀️ ДЕНЬ</div><div id="slot-День"></div></div>
+                <div class="slot-card"><div class="slot-header">🌆 ВЕЧЕР</div><div id="slot-Вечер"></div></div>
+                <div class="slot-card"><div class="slot-header">🌙 НА НОЧЬ</div><div id="slot-На ночь"></div></div>
             </div>
 
-            <!-- Итог за день -->
             <div class="summary-box">
-                <div class="summary-item">
-                    <div class="value" id="supp-total-count">0</div>
-                    <div class="label">Запланировано</div>
-                </div>
-                <div class="summary-item">
-                    <div class="value" id="supp-done-count" style="color: var(--lime-neon);">0</div>
-                    <div class="label">Выпито</div>
-                </div>
-                <div class="summary-item">
-                    <div class="value" id="supp-skipped-count" style="color: var(--magenta-neon);">0</div>
-                    <div class="label">Пропущено</div>
-                </div>
+                <div class="summary-item"><div class="value" id="supp-total-count">0</div><div class="label">План</div></div>
+                <div class="summary-item"><div class="value" id="supp-done-count" style="color: var(--lime-neon);">0</div><div class="label">Выпито</div></div>
+                <div class="summary-item"><div class="value" id="supp-skipped-count" style="color: var(--magenta-neon);">0</div><div class="label">Пропущено</div></div>
             </div>
         </div>
     </section>
 
-    <!-- ВКЛАДКА 5: АНАЛИТИКА + КАЛЬКУЛЯТОР 1ПМ -->
-    <section id="analytics" class="tab-content">
-        <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">Аналитика & 1ПМ</h2>
-        
-        <div class="summary-box" style="border-color: var(--cyan-neon);">
-            <div class="summary-item">
-                <div class="value" id="total-workouts-count">0</div>
-                <div class="label">Всего тренировок</div>
-            </div>
-            <div class="summary-item">
-                <div class="value" id="avg-duration">0 мин</div>
-                <div class="label">Средняя длительность</div>
-            </div>
-            <div class="summary-item">
-                <div class="value" id="status-progress" style="color: var(--lime-neon);">АКТИВЕН</div>
-                <div class="label">Статус</div>
-            </div>
-        </div>
-
-        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-top: 20px;">
-            <h3 style="color: var(--cyan-neon); margin-bottom: 10px; font-family: var(--font-title); font-size: 1.1rem;">🧮 Калькулятор 1ПМ (Одноповторный максимум)</h3>
-            <div class="grid-form">
-                <div class="form-group">
-                    <label>Рабочий вес (кг)</label>
-                    <input type="number" id="calc-weight" placeholder="100" oninput="calculate1RM()">
-                </div>
-                <div class="form-group">
-                    <label>Повторения</label>
-                    <input type="number" id="calc-reps" placeholder="8" oninput="calculate1RM()">
-                </div>
-                <div class="form-group">
-                    <label>Расчетный 1ПМ (Эпли)</label>
-                    <div id="calc-result" style="font-size: 1.4rem; font-weight: 700; color: var(--lime-neon); padding: 6px 0;">0 кг</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <canvas id="progressChart"></canvas>
-        </div>
-    </section>
-
-    <!-- ВКЛАДКА 6: ПИТАНИЕ -->
+    <!-- ВКЛАДКА 5: ПИТАНИЕ И ВОДА -->
     <section id="nutrition" class="tab-content">
-        <h2 style="color: var(--lime-neon); margin-bottom: 15px; font-family: var(--font-title);">🥗 Контроль Питания & КБЖУ</h2>
-        
+        <h2 style="color: var(--lime-neon); margin-bottom: 15px; font-family: var(--font-title);">🥗 Контроль Питания & Гидратация</h2>
+
+        <!-- TDEE & BMR Калькулятор -->
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="color: var(--cyan-neon); font-size: 1rem;">🧮 Калькулятор TDEE / BMR (Миффлина-Сан Жеора)</h3>
+                <button class="btn-secondary" onclick="toggleTdeePanel()">Настроить цели</button>
+            </div>
+            
+            <div id="tdee-panel" style="display: none; margin-top: 15px;">
+                <div class="grid-form">
+                    <div class="form-group"><label>Пол</label><select id="tdee-gender"><option value="m">Мужской</option><option value="f">Женский</option></select></div>
+                    <div class="form-group"><label>Возраст</label><input type="number" id="tdee-age" placeholder="25"></div>
+                    <div class="form-group"><label>Рост (см)</label><input type="number" id="tdee-height" placeholder="178"></div>
+                    <div class="form-group"><label>Вес (кг)</label><input type="number" id="tdee-weight" placeholder="80"></div>
+                    <div class="form-group">
+                        <label>Активность</label>
+                        <select id="tdee-activity">
+                            <option value="1.2">Сидячий образ (1.2)</option>
+                            <option value="1.375">Умеренный (1.375)</option>
+                            <option value="1.55">Средний (1.55)</option>
+                            <option value="1.725">Высокий (1.725)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Цель</label>
+                        <select id="tdee-goal">
+                            <option value="cut">Сушка (-15%)</option>
+                            <option value="maint">Поддержание</option>
+                            <option value="bulk">Массонабор (+15%)</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-cyber" onclick="calculateAndSaveTdee()">Рассчитать и применить цели</button>
+            </div>
+        </div>
+
+        <!-- Трекер воды -->
+        <div class="water-widget">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-weight: 700; color: var(--cyan-neon);">💧 ТРЕКЕР ВОДЫ ЗА ДЕНЬ</span>
+                <span id="water-display" style="font-size: 1.1rem; font-weight: 700; color: var(--cyan-neon);">0 / 2500 мл</span>
+            </div>
+            <div class="progress-bar-container"><div class="progress-bar-fill" id="water-progress"></div></div>
+            <div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+                <button class="btn-secondary" onclick="addWater(250)">+250 мл</button>
+                <button class="btn-secondary" onclick="addWater(500)">+500 мл</button>
+                <button class="btn-secondary" onclick="addWater(1000)">+1000 мл</button>
+                <button class="btn-secondary" onclick="resetWater()" style="border-color: var(--magenta-neon); color: var(--magenta-neon);">Сброс</button>
+            </div>
+        </div>
+
+        <!-- Форма добавления еды -->
         <form id="food-form" onsubmit="addFoodEntry(event)">
             <div class="grid-form">
                 <div class="form-group">
@@ -759,43 +785,48 @@
                     <input type="date" id="food-date" onchange="renderNutrition()" required>
                 </div>
                 <div class="form-group" style="grid-column: span 2;">
-                    <label>Продукт (Свободный ввод или из базы)</label>
-                    <input type="text" id="food-name" list="food-db" placeholder="например: курица, овсянка, греча..." oninput="handleFoodInput()" required>
+                    <label>Продукт</label>
+                    <input type="text" id="food-name" list="food-db" placeholder="курица, овсянка..." oninput="handleFoodInput()" required>
                     <datalist id="food-db"></datalist>
-                    <div class="hint" id="food-match-hint">Введите название — система подберет КБЖУ</div>
+                    <div class="hint" id="food-match-hint" style="font-size:0.75rem; color:var(--text-dim);">Система подберет КБЖУ</div>
                 </div>
                 <div class="form-group">
-                    <label>Вес (Граммы)</label>
-                    <input type="number" id="food-grams" placeholder="150" oninput="calculateLiveNutrients()" required>
+                    <label>Граммы</label>
+                    <input type="number" id="food-grams" placeholder="150" required>
                 </div>
             </div>
 
             <div class="grid-form" style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;">
-                <div class="form-group"><label>Ккал / 100г</label><input type="number" id="f-cal" placeholder="0" oninput="calculateLiveNutrients()"></div>
-                <div class="form-group"><label>Белки / 100г</label><input type="number" id="f-prot" step="0.1" placeholder="0" oninput="calculateLiveNutrients()"></div>
-                <div class="form-group"><label>Жиры / 100г</label><input type="number" id="f-fat" step="0.1" placeholder="0" oninput="calculateLiveNutrients()"></div>
-                <div class="form-group"><label>Углеводы / 100г</label><input type="number" id="f-carbs" step="0.1" placeholder="0" oninput="calculateLiveNutrients()"></div>
+                <div class="form-group"><label>Ккал / 100г</label><input type="number" id="f-cal" placeholder="0"></div>
+                <div class="form-group"><label>Белки / 100г</label><input type="number" id="f-prot" step="0.1" placeholder="0"></div>
+                <div class="form-group"><label>Жиры / 100г</label><input type="number" id="f-fat" step="0.1" placeholder="0"></div>
+                <div class="form-group"><label>Углеводы / 100г</label><input type="number" id="f-carbs" step="0.1" placeholder="0"></div>
             </div>
 
             <button type="submit" class="btn-cyber" style="border-color: var(--lime-neon); color: var(--lime-neon); margin-top: 10px;">+ Добавить в дневник</button>
         </form>
 
+        <!-- Прогресс бары КБЖУ -->
         <div class="summary-box">
             <div class="summary-item">
                 <div class="value" id="day-cal">0</div>
-                <div class="label">Ккал за день</div>
+                <div class="label">Ккал (<span id="target-cal-text">2200</span>)</div>
+                <div class="progress-bar-container"><div class="progress-bar-fill" id="cal-bar"></div></div>
             </div>
             <div class="summary-item">
                 <div class="value" id="day-prot">0г</div>
-                <div class="label">Белки</div>
+                <div class="label">Белки (<span id="target-prot-text">160г</span>)</div>
+                <div class="progress-bar-container"><div class="progress-bar-fill" id="prot-bar"></div></div>
             </div>
             <div class="summary-item">
                 <div class="value" id="day-fat">0г</div>
-                <div class="label">Жиры</div>
+                <div class="label">Жиры (<span id="target-fat-text">70г</span>)</div>
+                <div class="progress-bar-container"><div class="progress-bar-fill" id="fat-bar"></div></div>
             </div>
             <div class="summary-item">
                 <div class="value" id="day-carbs">0г</div>
-                <div class="label">Углеводы</div>
+                <div class="label">Углеводы (<span id="target-carbs-text">250г</span>)</div>
+                <div class="progress-bar-container"><div class="progress-bar-fill" id="carbs-bar"></div></div>
             </div>
         </div>
 
@@ -803,106 +834,174 @@
         <div class="cyber-table-container">
             <table class="cyber-table">
                 <thead>
-                    <tr>
-                        <th>Продукт</th>
-                        <th>Вес</th>
-                        <th>Ккал</th>
-                        <th>Б / Ж / У</th>
-                        <th>Удалить</th>
-                    </tr>
+                    <tr><th>Продукт</th><th>Вес</th><th>Ккал</th><th>Б / Ж / У</th><th>Удалить</th></tr>
                 </thead>
                 <tbody id="food-list"></tbody>
             </table>
         </div>
     </section>
+
+    <!-- ВКЛАДКА 6: АНАЛИТИКА -->
+    <section id="analytics" class="tab-content">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">Аналитика & 1ПМ</h2>
+        
+        <div class="summary-box" style="border-color: var(--cyan-neon);">
+            <div class="summary-item"><div class="value" id="total-workouts-count">0</div><div class="label">Всего тренировок</div></div>
+            <div class="summary-item"><div class="value" id="avg-duration">0 мин</div><div class="label">Средняя длительность</div></div>
+            <div class="summary-item"><div class="value" id="total-volume-display">0 кг</div><div class="label">Суммарный Тоннаж</div></div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-top: 20px;">
+            <h3 style="color: var(--cyan-neon); margin-bottom: 10px; font-size: 1.1rem;">🧮 Калькулятор 1ПМ</h3>
+            <div class="grid-form">
+                <div class="form-group"><label>Рабочий вес (кг)</label><input type="number" id="calc-weight" placeholder="100" oninput="calculate1RM()"></div>
+                <div class="form-group"><label>Повторения</label><input type="number" id="calc-reps" placeholder="8" oninput="calculate1RM()"></div>
+                <div class="form-group">
+                    <label>Расчетный 1ПМ</label>
+                    <div id="calc-result" style="font-size: 1.4rem; font-weight: 700; color: var(--lime-neon); padding: 6px 0;">0 кг</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container"><canvas id="progressChart"></canvas></div>
+    </section>
+</div>
+
+<!-- Модальное окно просмотра фото -->
+<div class="modal" id="img-modal" onclick="closeImgModal()">
+    <img id="modal-img-src" class="modal-content" src="">
 </div>
 
 <script>
-// --- УМНАЯ БАЗА ПРОДУКТОВ С СИНОНИМАМИ И КБЖУ НА 100Г ---
+// --- ИНИЦИАЛИЗАЦИЯ ИБ INDEXEDDB ---
+const dbName = 'CyberFitDB';
+const dbVersion = 1;
+let db = null;
+
+function initDB() {
+    return new Promise((resolve, reject) => {
+        const req = indexedDB.open(dbName, dbVersion);
+        req.onupgradeneeded = (e) => {
+            const d = e.target.result;
+            ['workouts', 'templates', 'exercises', 'bodyMetrics', 'suppCatalog', 'suppLogs', 'nutrition', 'waterLogs', 'settings'].forEach(s => {
+                if(!d.objectStoreNames.contains(s)) d.createObjectStore(s, { keyPath: s === 'settings' ? 'key' : (s === 'waterLogs' ? 'date' : 'id') });
+            });
+        };
+        req.onsuccess = (e) => { db = e.target.result; resolve(db); };
+        req.onerror = (e) => reject(e);
+    });
+}
+
+function getAll(store) {
+    return new Promise((resolve) => {
+        const tx = db.transaction(store, 'readonly');
+        const req = tx.objectStore(store).getAll();
+        req.onsuccess = () => resolve(req.result || []);
+        req.onerror = () => resolve([]);
+    });
+}
+
+function putItem(store, item) {
+    return new Promise((resolve) => {
+        const tx = db.transaction(store, 'readwrite');
+        const req = tx.objectStore(store).put(item);
+        req.onsuccess = () => resolve();
+    });
+}
+
+function deleteItem(store, key) {
+    return new Promise((resolve) => {
+        const tx = db.transaction(store, 'readwrite');
+        const req = tx.objectStore(store).delete(key);
+        req.onsuccess = () => resolve();
+    });
+}
+
+// --- ДАННЫЕ В ПАМЯТИ ---
+let workouts = [], templates = [], exercises = [], bodyMetrics = [], suppCatalog = [], suppLogs = [], nutrition = [], waterLogs = [], settings = {};
+
 const foodDatabase = [
-    { keywords: ["курица", "куриное", "грудинка", "курочка", "филе куриное", "куриное филе"], name: "Куриное филе", cal: 165, prot: 31, fat: 3.6, carbs: 0 },
-    { keywords: ["рис", "рисовая"], name: "Рис вареный", cal: 130, prot: 2.7, fat: 0.3, carbs: 28 },
-    { keywords: ["гречка", "греча", "гречневая"], name: "Гречка вареная", cal: 110, prot: 4.2, fat: 1.1, carbs: 21 },
-    { keywords: ["яйцо", "яйца", "яичница"], name: "Яйцо куриное", cal: 155, prot: 13, fat: 11, carbs: 1 },
+    { keywords: ["курица", "грудинка", "курочка"], name: "Куриное филе", cal: 165, prot: 31, fat: 3.6, carbs: 0 },
+    { keywords: ["рис"], name: "Рис вареный", cal: 130, prot: 2.7, fat: 0.3, carbs: 28 },
+    { keywords: ["гречка", "греча"], name: "Гречка вареная", cal: 110, prot: 4.2, fat: 1.1, carbs: 21 },
+    { keywords: ["яйцо", "яйца"], name: "Яйцо куриное", cal: 155, prot: 13, fat: 11, carbs: 1 },
     { keywords: ["творог"], name: "Творог 5%", cal: 121, prot: 17, fat: 5, carbs: 1.8 },
-    { keywords: ["овсянка", "геркулес", "овсяная"], name: "Овсянка", cal: 389, prot: 16.9, fat: 6.9, carbs: 66 },
-    { keywords: ["банан", "бананы"], name: "Банан", cal: 89, prot: 1.1, fat: 0.3, carbs: 23 },
-    { keywords: ["говядина", "стейк"], name: "Говядина", cal: 250, prot: 26, fat: 15, carbs: 0 },
-    { keywords: ["протеин", "прот"], name: "Протеин сывороточный", cal: 380, prot: 75, fat: 6, carbs: 8 },
-    { keywords: ["миндаль", "орехи"], name: "Миндаль", cal: 579, prot: 21, fat: 50, carbs: 22 },
-    { keywords: ["лосось", "семга", "рыба"], name: "Лосось / Семга", cal: 206, prot: 20, fat: 13, carbs: 0 },
-    { keywords: ["макароны", "паста"], name: "Макароны вареные", cal: 158, prot: 5.8, fat: 0.9, carbs: 31 },
-    { keywords: ["авокадо"], name: "Авокадо", cal: 160, prot: 2, fat: 15, carbs: 9 },
-    { keywords: ["хлеб"], name: "Хлеб цельнозерновой", cal: 247, prot: 13, fat: 3.4, carbs: 41 }
+    { keywords: ["овсянка", "геркулес"], name: "Овсянка", cal: 389, prot: 16.9, fat: 6.9, carbs: 66 },
+    { keywords: ["банан"], name: "Банан", cal: 89, prot: 1.1, fat: 0.3, carbs: 23 }
 ];
 
-// --- ПРЕДУСТАНОВЛЕННАЯ БАЗА УПРАЖНЕНИЙ ---
-const defaultExercises = [
-    { id: 1, name: "Жим штанги лежа", category: "Грудь", url: "https://www.youtube.com/results?search_query=жим+штанги+лежа+техника" },
-    { id: 2, name: "Жим гантелей на наклонной", category: "Грудь", url: "https://www.youtube.com/results?search_query=жим+гантелей+на+наклонной+скамье" },
-    { id: 3, name: "Подтягивания", category: "Спина", url: "https://www.youtube.com/results?search_query=подтягивания+техника" },
-    { id: 4, name: "Тяга штанги в наклоне", category: "Спина", url: "https://www.youtube.com/results?search_query=тяга+штанги+в+наклоне" },
-    { id: 5, name: "Приседания со штангой", category: "Ноги", url: "https://www.youtube.com/results?search_query=приседания+со+штангой" },
-    { id: 6, name: "Армейский жим", category: "Плечи", url: "https://www.youtube.com/results?search_query=армейский+жим" }
-];
+let chartInstance = null, weightChartInstance = null, timerInterval = null, timeLeft = 0;
 
-// --- ХРАНИЛИЩЕ ДАННЫХ ---
-let workouts = JSON.parse(localStorage.getItem('cf_workouts')) || [];
-let suppCatalog = JSON.parse(localStorage.getItem('cf_supp_catalog')) || [
-    { id: 1, name: "Омега-3", dosage: "2 капсулы" },
-    { id: 2, name: "Креатин", dosage: "5г" }
-];
-let suppLogs = JSON.parse(localStorage.getItem('cf_supp_logs')) || [];
-let nutrition = JSON.parse(localStorage.getItem('cf_nutrition')) || [];
-let exercises = JSON.parse(localStorage.getItem('cf_exercises')) || defaultExercises;
-let bodyMetrics = JSON.parse(localStorage.getItem('cf_body')) || [];
+document.addEventListener('DOMContentLoaded', async () => {
+    await initDB();
+    await migrateFromLocalStorage();
+    await loadAllData();
 
-let chartInstance = null;
-let weightChartInstance = null;
-let timerInterval = null;
-let timeLeft = 0;
-
-document.addEventListener('DOMContentLoaded', () => {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('workout-date').value = today;
     document.getElementById('food-date').value = today;
     document.getElementById('body-date').value = today;
     document.getElementById('supp-log-date').value = today;
     document.getElementById('current-date-display').innerText = new Date().toLocaleDateString('ru-RU', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
-    
-    // Подготовка выпадающего списка продуктов
-    const datalist = document.getElementById('food-db');
-    foodDatabase.forEach(item => {
-        let option = document.createElement('option');
-        option.value = item.name;
-        datalist.appendChild(option);
-    });
+
+    // Datalist
+    const dl = document.getElementById('food-db');
+    foodDatabase.forEach(f => { const opt = document.createElement('option'); opt.value = f.name; dl.appendChild(opt); });
 
     renderWorkouts();
+    renderTemplatesSelect();
     renderExercises();
+    renderBody();
     renderSuppCatalog();
     renderSuppLogs();
     renderNutrition();
-    renderBody();
     initCharts();
 });
+
+async function loadAllData() {
+    workouts = await getAll('workouts');
+    templates = await getAll('templates');
+    exercises = await getAll('exercises');
+    bodyMetrics = await getAll('bodyMetrics');
+    suppCatalog = await getAll('suppCatalog');
+    suppLogs = await getAll('suppLogs');
+    nutrition = await getAll('nutrition');
+    waterLogs = await getAll('waterLogs');
+    const setArr = await getAll('settings');
+    setArr.forEach(s => settings[s.key] = s.val);
+
+    if(!settings.targets) {
+        settings.targets = { cal: 2200, prot: 160, fat: 70, carbs: 250 };
+    }
+}
+
+async function migrateFromLocalStorage() {
+    if(localStorage.getItem('cf_workouts')) {
+        const oldW = JSON.parse(localStorage.getItem('cf_workouts')) || [];
+        for(let item of oldW) await putItem('workouts', item);
+        localStorage.removeItem('cf_workouts');
+    }
+    if(localStorage.getItem('cf_body')) {
+        const oldB = JSON.parse(localStorage.getItem('cf_body')) || [];
+        for(let item of oldB) await putItem('bodyMetrics', item);
+        localStorage.removeItem('cf_body');
+    }
+}
 
 // --- НАВИГАЦИЯ ---
 function openTab(e, tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    
     document.getElementById(tabId).classList.add('active');
     e.currentTarget.classList.add('active');
-
     if(tabId === 'analytics') updateAnalytics();
     if(tabId === 'body') updateWeightChart();
 }
 
-// --- БЭКАП (ЭКСПОРТ / ИМПОРТ) ---
-function exportData() {
-    const data = { workouts, suppCatalog, suppLogs, nutrition, exercises, bodyMetrics };
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+// --- БЭКАП И ТЕЛЕГРАМ ---
+async function exportData() {
+    const backup = { workouts, templates, exercises, bodyMetrics, suppCatalog, suppLogs, nutrition, waterLogs, settings };
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -910,106 +1009,85 @@ function exportData() {
     a.click();
 }
 
-function importData(e) {
+async function importData(e) {
     const file = e.target.files[0];
     if(!file) return;
     const reader = new FileReader();
-    reader.onload = function(evt) {
+    reader.onload = async function(evt) {
         try {
             const data = JSON.parse(evt.target.result);
-            if(data.workouts) workouts = data.workouts;
-            if(data.suppCatalog) suppCatalog = data.suppCatalog;
-            if(data.suppLogs) suppLogs = data.suppLogs;
-            if(data.nutrition) nutrition = data.nutrition;
-            if(data.exercises) exercises = data.exercises;
-            if(data.bodyMetrics) bodyMetrics = data.bodyMetrics;
-
-            localStorage.setItem('cf_workouts', JSON.stringify(workouts));
-            localStorage.setItem('cf_supp_catalog', JSON.stringify(suppCatalog));
-            localStorage.setItem('cf_supp_logs', JSON.stringify(suppLogs));
-            localStorage.setItem('cf_nutrition', JSON.stringify(nutrition));
-            localStorage.setItem('cf_exercises', JSON.stringify(exercises));
-            localStorage.setItem('cf_body', JSON.stringify(bodyMetrics));
-
-            alert('✅ Данные успешно импортированы!');
+            if(data.workouts) for(let i of data.workouts) await putItem('workouts', i);
+            if(data.bodyMetrics) for(let i of data.bodyMetrics) await putItem('bodyMetrics', i);
+            if(data.nutrition) for(let i of data.nutrition) await putItem('nutrition', i);
+            alert('✅ Данные импортированы!');
             location.reload();
-        } catch(err) {
-            alert('❌ Ошибка файла импорта');
-        }
+        } catch(err) { alert('❌ Ошибка чтения файла'); }
     };
     reader.readAsText(file);
 }
 
-// --- ТАЙМЕР ОТДЫХА ---
-function startTimer(seconds) {
+async function sendTelegramBackup() {
+    const token = prompt("Введите Bot Token Telegram:");
+    const chatId = prompt("Введите Ваш Chat ID Telegram:");
+    if(!token || !chatId) return;
+
+    const backup = { workouts, templates, exercises, bodyMetrics, suppCatalog, suppLogs, nutrition, settings };
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+    
+    const formData = new FormData();
+    formData.append('chat_id', chatId);
+    formData.append('document', blob, `cyberfit_backup_${new Date().toISOString().split('T')[0]}.json`);
+
+    try {
+        const res = await fetch(`https://api.telegram.org/bot${token}/sendDocument`, { method: 'POST', body: formData });
+        if(res.ok) alert('✈️ Резервная копия отправлена в Telegram!');
+        else alert('❌ Ошибка отправки в Telegram');
+    } catch(e) { alert('❌ Ошибка соединения'); }
+}
+
+// --- ТАЙМЕР ---
+function startTimer(s) {
     stopTimer();
-    timeLeft = seconds;
+    timeLeft = s;
     updateTimerDisplay();
     timerInterval = setInterval(() => {
         timeLeft--;
         updateTimerDisplay();
-        if(timeLeft <= 0) {
-            stopTimer();
-            playAlarm();
-        }
+        if(timeLeft <= 0) stopTimer();
     }, 1000);
 }
-
-function stopTimer() {
-    clearInterval(timerInterval);
-    timeLeft = 0;
-    updateTimerDisplay();
-}
-
+function stopTimer() { clearInterval(timerInterval); timeLeft = 0; updateTimerDisplay(); }
 function updateTimerDisplay() {
     const min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
     const sec = String(timeLeft % 60).padStart(2, '0');
     document.getElementById('timer-text').innerText = `${min}:${sec}`;
 }
 
-function playAlarm() {
-    try {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = audioCtx.createOscillator();
-        const gain = audioCtx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(880, audioCtx.currentTime);
-        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.6);
-    } catch(e){}
-}
-
-// --- ТРЕНИРОВКИ (ЧАСЫ И МИНУТЫ) ---
-function addWorkout(e) {
+// --- ТРЕНИРОВКИ И ШАБЛОНЫ ---
+async function addWorkout(e) {
     e.preventDefault();
     const hrs = parseInt(document.getElementById('workout-hours').value) || 0;
     const mins = parseInt(document.getElementById('workout-mins').value) || 0;
-    const totalMinutes = (hrs * 60) + mins;
-
-    const workout = {
+    const item = {
         id: Date.now(),
         date: document.getElementById('workout-date').value,
-        hrs: hrs,
-        mins: mins,
-        duration: totalMinutes,
+        hrs, mins,
+        duration: (hrs * 60) + mins,
         intensity: parseInt(document.getElementById('workout-intensity').value),
+        rpe: parseInt(document.getElementById('workout-rpe').value) || null,
+        tonnage: parseInt(document.getElementById('workout-tonnage').value) || 0,
         details: document.getElementById('workout-details').value,
         comments: document.getElementById('workout-comments').value
     };
-
-    workouts.unshift(workout);
-    localStorage.setItem('cf_workouts', JSON.stringify(workouts));
+    workouts.unshift(item);
+    await putItem('workouts', item);
     document.getElementById('workout-form').reset();
-    document.getElementById('workout-date').value = new Date().toISOString().split('T')[0];
     renderWorkouts();
 }
 
-function deleteWorkout(id) {
+async function deleteWorkout(id) {
     workouts = workouts.filter(w => w.id !== id);
-    localStorage.setItem('cf_workouts', JSON.stringify(workouts));
+    await deleteItem('workouts', id);
     renderWorkouts();
 }
 
@@ -1022,9 +1100,10 @@ function renderWorkouts() {
         card.className = 'cyber-card';
         card.innerHTML = `
             <div class="card-header">
-                <span>📅 ${w.date} | ⏱️ ${timeStr}</span>
+                <span>📅 ${w.date} | ⏱️ ${timeStr} ${w.tonnage ? `| 🏋️ ${w.tonnage}кг` : ''}</span>
                 <span>
                     <span class="card-badge">Нагрузка: ${w.intensity}/10</span>
+                    ${w.rpe ? `<span class="card-badge" style="color:var(--yellow-neon)">RPE: ${w.rpe}</span>` : ''}
                     <button class="delete-btn" onclick="deleteWorkout(${w.id})">✖</button>
                 </span>
             </div>
@@ -1035,24 +1114,50 @@ function renderWorkouts() {
     });
 }
 
-// --- БАЗА УПРАЖНЕНИЙ ---
-function addExercise(e) {
+async function saveAsTemplate() {
+    const name = prompt("Введите название шаблона (например: День Спины):");
+    if(!name) return;
+    const details = document.getElementById('workout-details').value;
+    const t = { id: Date.now(), name, details };
+    templates.push(t);
+    await putItem('templates', t);
+    renderTemplatesSelect();
+    alert('✅ Шаблон сохранен!');
+}
+
+function renderTemplatesSelect() {
+    const sel = document.getElementById('workout-template-select');
+    sel.innerHTML = '<option value="">-- Выбрать шаблон --</option>';
+    templates.forEach(t => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = t.name;
+        sel.appendChild(opt);
+    });
+}
+
+function loadTemplate() {
+    const id = parseInt(document.getElementById('workout-template-select').value);
+    const t = templates.find(x => x.id === id);
+    if(t) document.getElementById('workout-details').value = t.details;
+}
+
+// --- УПРАЖНЕНИЯ ---
+async function addExercise(e) {
     e.preventDefault();
     const name = document.getElementById('ex-name').value.trim();
     const category = document.getElementById('ex-category').value;
-    let url = document.getElementById('ex-url').value.trim();
-
-    if(!url) url = `https://www.youtube.com/results?search_query=${encodeURIComponent(name + ' техника')}`;
-
-    exercises.unshift({ id: Date.now(), name, category, url });
-    localStorage.setItem('cf_exercises', JSON.stringify(exercises));
+    let url = document.getElementById('ex-url').value.trim() || `https://www.youtube.com/results?search_query=${encodeURIComponent(name + ' техника')}`;
+    const ex = { id: Date.now(), name, category, url };
+    exercises.unshift(ex);
+    await putItem('exercises', ex);
     document.getElementById('exercise-form').reset();
     renderExercises();
 }
 
-function deleteExercise(id) {
+async function deleteExercise(id) {
     exercises = exercises.filter(ex => ex.id !== id);
-    localStorage.setItem('cf_exercises', JSON.stringify(exercises));
+    await deleteItem('exercises', id);
     renderExercises();
 }
 
@@ -1062,9 +1167,7 @@ function renderExercises() {
     const q = document.getElementById('ex-search').value.toLowerCase();
     const cat = document.getElementById('ex-filter').value;
 
-    exercises.filter(ex => {
-        return ex.name.toLowerCase().includes(q) && (cat === 'ALL' || ex.category === cat);
-    }).forEach(ex => {
+    exercises.filter(ex => ex.name.toLowerCase().includes(q) && (cat === 'ALL' || ex.category === cat)).forEach(ex => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td><span class="card-badge">${ex.category}</span></td>
@@ -1076,9 +1179,20 @@ function renderExercises() {
     });
 }
 
-// --- ЗАМЕРЫ ТЕЛА (+ БЕДРО) ---
-function addBodyEntry(e) {
+// --- ЗАМЕРЫ & ФОТО + СРАВНЕНИЕ ---
+async function addBodyEntry(e) {
     e.preventDefault();
+    const photoFile = document.getElementById('body-photo').files[0];
+    let photoBase64 = null;
+
+    if(photoFile) {
+        photoBase64 = await new Promise((res) => {
+            const r = new FileReader();
+            r.onload = (evt) => res(evt.target.result);
+            r.readAsDataURL(photoFile);
+        });
+    }
+
     const entry = {
         id: Date.now(),
         date: document.getElementById('body-date').value,
@@ -1086,20 +1200,20 @@ function addBodyEntry(e) {
         waist: document.getElementById('body-waist').value || '-',
         thigh: document.getElementById('body-thigh').value || '-',
         biceps: document.getElementById('body-biceps').value || '-',
-        chest: document.getElementById('body-chest').value || '-'
+        chest: document.getElementById('body-chest').value || '-',
+        photo: photoBase64
     };
 
     bodyMetrics.unshift(entry);
-    localStorage.setItem('cf_body', JSON.stringify(bodyMetrics));
+    await putItem('bodyMetrics', entry);
     document.getElementById('body-form').reset();
-    document.getElementById('body-date').value = new Date().toISOString().split('T')[0];
     renderBody();
     updateWeightChart();
 }
 
-function deleteBodyEntry(id) {
+async function deleteBodyEntry(id) {
     bodyMetrics = bodyMetrics.filter(b => b.id !== id);
-    localStorage.setItem('cf_body', JSON.stringify(bodyMetrics));
+    await deleteItem('bodyMetrics', id);
     renderBody();
     updateWeightChart();
 }
@@ -1111,6 +1225,7 @@ function renderBody() {
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td style="color: var(--cyan-neon);">${b.date}</td>
+            <td>${b.photo ? `<img src="${b.photo}" class="img-thumb" onclick="openImgModal('${b.photo}')">` : '—'}</td>
             <td style="font-weight: 700;">${b.weight} кг</td>
             <td>${b.waist} см</td>
             <td style="color: var(--lime-neon); font-weight:700;">${b.thigh} см</td>
@@ -1120,198 +1235,208 @@ function renderBody() {
         `;
         tbody.appendChild(tr);
     });
+    renderComparison();
 }
 
-// --- БАДы И ТРЕКЕР ---
-function addSuppToCatalog(e) {
-    e.preventDefault();
-    const name = document.getElementById('supp-cat-name').value.trim();
-    const dosage = document.getElementById('supp-cat-dosage').value.trim();
+function renderComparison() {
+    const container = document.getElementById('comparison-display');
+    if(bodyMetrics.length < 2) {
+        container.innerHTML = `<div style="color: var(--text-dim); font-size: 0.85rem; grid-column: 1/-1;">Добавьте минимум 2 замера для расчета динамики</div>`;
+        return;
+    }
 
-    suppCatalog.push({ id: Date.now(), name, dosage });
-    localStorage.setItem('cf_supp_catalog', JSON.stringify(suppCatalog));
+    const sorted = [...bodyMetrics].sort((a,b) => new Date(a.date) - new Date(b.date));
+    const first = sorted[0];
+    const last = sorted[sorted.length - 1];
+
+    const calcDiff = (val1, val2) => {
+        const n1 = parseFloat(val1), n2 = parseFloat(val2);
+        if(isNaN(n1) || isNaN(n2)) return '-';
+        const diff = (n2 - n1).toFixed(1);
+        const cls = diff <= 0 ? 'diff-positive' : 'diff-negative';
+        return `<span class="${cls}">${diff > 0 ? '+' : ''}${diff}</span>`;
+    };
+
+    container.innerHTML = `
+        <div class="comp-card"><div>Вес</div><div>${first.weight} ➔ ${last.weight}</div><div>${calcDiff(first.weight, last.weight)} кг</div></div>
+        <div class="comp-card"><div>Талия</div><div>${first.waist} ➔ ${last.waist}</div><div>${calcDiff(first.waist, last.waist)} см</div></div>
+        <div class="comp-card"><div>Бедро</div><div>${first.thigh} ➔ ${last.thigh}</div><div>${calcDiff(first.thigh, last.thigh)} см</div></div>
+        <div class="comp-card"><div>Бицепс</div><div>${first.biceps} ➔ ${last.biceps}</div><div>${calcDiff(first.biceps, last.biceps)} см</div></div>
+    `;
+}
+
+function openImgModal(src) { document.getElementById('modal-img-src').src = src; document.getElementById('img-modal').classList.add('active'); }
+function closeImgModal() { document.getElementById('img-modal').classList.remove('active'); }
+
+// --- БАДЫ ---
+async function addSuppToCatalog(e) {
+    e.preventDefault();
+    const item = { id: Date.now(), name: document.getElementById('supp-cat-name').value.trim(), dosage: document.getElementById('supp-cat-dosage').value.trim() };
+    suppCatalog.push(item);
+    await putItem('suppCatalog', item);
     document.getElementById('supp-catalog-form').reset();
     renderSuppCatalog();
 }
 
-function deleteSuppCatalog(id) {
+async function deleteSuppCatalog(id) {
     suppCatalog = suppCatalog.filter(s => s.id !== id);
-    localStorage.setItem('cf_supp_catalog', JSON.stringify(suppCatalog));
+    await deleteItem('suppCatalog', id);
     renderSuppCatalog();
 }
 
 function renderSuppCatalog() {
     const container = document.getElementById('supp-catalog-pills');
     const select = document.getElementById('supp-log-select');
-    container.innerHTML = '';
-    select.innerHTML = '';
-
+    container.innerHTML = ''; select.innerHTML = '';
     suppCatalog.forEach(s => {
-        // Табы-пилюли
         const pill = document.createElement('span');
         pill.className = 'card-badge';
-        pill.style.display = 'inline-flex';
-        pill.style.alignItems = 'center';
-        pill.style.gap = '6px';
         pill.innerHTML = `${escapeHtml(s.name)} (${escapeHtml(s.dosage)}) <span style="cursor:pointer; color:var(--magenta-neon)" onclick="deleteSuppCatalog(${s.id})">✖</span>`;
         container.appendChild(pill);
 
-        // В список
         const opt = document.createElement('option');
-        opt.value = s.id;
-        opt.textContent = `${s.name} (${s.dosage})`;
+        opt.value = s.id; opt.textContent = `${s.name} (${s.dosage})`;
         select.appendChild(opt);
     });
 }
 
-function addSuppToLog() {
+async function addSuppToLog() {
     const date = document.getElementById('supp-log-date').value;
     const suppId = parseInt(document.getElementById('supp-log-select').value);
     const slot = document.getElementById('supp-log-slot').value;
-
     const supp = suppCatalog.find(s => s.id === suppId);
     if(!supp) return;
 
-    suppLogs.push({
-        id: Date.now(),
-        date: date,
-        name: supp.name,
-        dosage: supp.dosage,
-        slot: slot,
-        status: 'pending' // pending | done | skipped
-    });
-
-    localStorage.setItem('cf_supp_logs', JSON.stringify(suppLogs));
+    const log = { id: Date.now(), date, name: supp.name, dosage: supp.dosage, slot, status: 'pending' };
+    suppLogs.push(log);
+    await putItem('suppLogs', log);
     renderSuppLogs();
 }
 
-function toggleSuppStatus(logId, status) {
+async function toggleSuppStatus(logId, status) {
     const log = suppLogs.find(l => l.id === logId);
     if(log) {
         log.status = status;
-        localStorage.setItem('cf_supp_logs', JSON.stringify(suppLogs));
+        await putItem('suppLogs', log);
         renderSuppLogs();
     }
 }
 
-function deleteSuppLog(logId) {
-    suppLogs = suppLogs.filter(l => l.id !== logId);
-    localStorage.setItem('cf_supp_logs', JSON.stringify(suppLogs));
-    renderSuppLogs();
-}
-
 function renderSuppLogs() {
     const selectedDate = document.getElementById('supp-log-date').value;
-    const slots = ['Утро', 'День', 'Вечер', 'На ночь'];
-    
-    slots.forEach(slot => {
-        document.getElementById(`slot-${slot}`).innerHTML = '';
-    });
-
+    ['Утро', 'День', 'Вечер', 'На ночь'].forEach(s => document.getElementById(`slot-${s}`).innerHTML = '');
     const filtered = suppLogs.filter(l => l.date === selectedDate);
     
-    let total = filtered.length;
-    let done = 0;
-    let skipped = 0;
-
+    let done = 0, skipped = 0;
     filtered.forEach(log => {
-        if(log.status === 'done') done++;
-        if(log.status === 'skipped') skipped++;
-
-        const targetSlot = document.getElementById(`slot-${log.slot}`);
-        if(!targetSlot) return;
+        if(log.status === 'done') done++; if(log.status === 'skipped') skipped++;
+        const slotEl = document.getElementById(`slot-${log.slot}`);
+        if(!slotEl) return;
 
         const row = document.createElement('div');
         row.className = 'supp-item-row';
-        
-        let statusBadge = '';
-        if(log.status === 'done') statusBadge = `<button class="supp-status-btn status-done" onclick="toggleSuppStatus(${log.id}, 'pending')">✅ Выпито</button>`;
-        else if(log.status === 'skipped') statusBadge = `<button class="supp-status-btn status-skipped" onclick="toggleSuppStatus(${log.id}, 'pending')">❌ Пропущено</button>`;
-        else statusBadge = `
-            <button class="supp-status-btn status-done" onclick="toggleSuppStatus(${log.id}, 'done')">✅</button>
-            <button class="supp-status-btn status-skipped" onclick="toggleSuppStatus(${log.id}, 'skipped')">❌</button>
-        `;
-
         row.innerHTML = `
-            <div style="font-size:0.85rem;">
-                <strong>${escapeHtml(log.name)}</strong> <span style="color:var(--text-dim)">${escapeHtml(log.dosage)}</span>
-            </div>
-            <div style="display:flex; gap:4px; align-items:center;">
-                ${statusBadge}
-                <button class="delete-btn" onclick="deleteSuppLog(${log.id})" style="font-size:0.8rem;">✖</button>
+            <div style="font-size:0.85rem;"><strong>${escapeHtml(log.name)}</strong> ${escapeHtml(log.dosage)}</div>
+            <div>
+                ${log.status === 'done' ? `<button class="supp-status-btn status-done" onclick="toggleSuppStatus(${log.id},'pending')">✅ Выпито</button>` :
+                  log.status === 'skipped' ? `<button class="supp-status-btn status-skipped" onclick="toggleSuppStatus(${log.id},'pending')">❌ Пропуск</button>` :
+                  `<button class="supp-status-btn status-done" onclick="toggleSuppStatus(${log.id},'done')">✅</button>
+                   <button class="supp-status-btn status-skipped" onclick="toggleSuppStatus(${log.id},'skipped')">❌</button>`}
             </div>
         `;
-        targetSlot.appendChild(row);
+        slotEl.appendChild(row);
     });
 
-    document.getElementById('supp-total-count').innerText = total;
+    document.getElementById('supp-total-count').innerText = filtered.length;
     document.getElementById('supp-done-count').innerText = done;
     document.getElementById('supp-skipped-count').innerText = skipped;
 }
 
-// --- УМНЫЙ ВВОД ПИТАНИЯ И КБЖУ ---
-let currentSelectedFood = null;
+// --- ПИТАНИЕ & TDEE & ВОДА ---
+function toggleTdeePanel() {
+    const p = document.getElementById('tdee-panel');
+    p.style.display = p.style.display === 'none' ? 'block' : 'none';
+}
+
+async function calculateAndSaveTdee() {
+    const gender = document.getElementById('tdee-gender').value;
+    const age = parseFloat(document.getElementById('tdee-age').value) || 25;
+    const h = parseFloat(document.getElementById('tdee-height').value) || 175;
+    const w = parseFloat(document.getElementById('tdee-weight').value) || 75;
+    const act = parseFloat(document.getElementById('tdee-activity').value);
+    const goal = document.getElementById('tdee-goal').value;
+
+    let bmr = (10 * w) + (6.25 * h) - (5 * age) + (gender === 'm' ? 5 : -161);
+    let tdee = bmr * act;
+    if(goal === 'cut') tdee *= 0.85; if(goal === 'bulk') tdee *= 1.15;
+
+    tdee = Math.round(tdee);
+    settings.targets = {
+        cal: tdee,
+        prot: Math.round(w * 2),
+        fat: Math.round(w * 0.9),
+        carbs: Math.round((tdee - (w * 2 * 4) - (w * 0.9 * 9)) / 4)
+    };
+
+    await putItem('settings', { key: 'targets', val: settings.targets });
+    alert(`🎯 Рассчитано! Ваша цель: ${tdee} ккал/день`);
+    toggleTdeePanel();
+    renderNutrition();
+}
+
+async function addWater(ml) {
+    const date = document.getElementById('food-date').value;
+    let wLog = waterLogs.find(w => w.date === date) || { date, ml: 0 };
+    wLog.ml += ml;
+    const idx = waterLogs.findIndex(w => w.date === date);
+    if(idx >= 0) waterLogs[idx] = wLog; else waterLogs.push(wLog);
+    await putItem('waterLogs', wLog);
+    renderNutrition();
+}
+
+async function resetWater() {
+    const date = document.getElementById('food-date').value;
+    let wLog = { date, ml: 0 };
+    await putItem('waterLogs', wLog);
+    const idx = waterLogs.findIndex(w => w.date === date);
+    if(idx >= 0) waterLogs[idx] = wLog;
+    renderNutrition();
+}
 
 function handleFoodInput() {
     const val = document.getElementById('food-name').value.toLowerCase().trim();
-    const hint = document.getElementById('food-match-hint');
-
-    // Ищем соответствие по ключевым словам или названию
     const match = foodDatabase.find(f => f.name.toLowerCase() === val || f.keywords.some(k => val.includes(k)));
-
     if(match) {
-        currentSelectedFood = match;
-        hint.innerText = `🟢 Найдено в базе: ${match.name}`;
-        hint.style.color = 'var(--lime-neon)';
         document.getElementById('f-cal').value = match.cal;
         document.getElementById('f-prot').value = match.prot;
         document.getElementById('f-fat').value = match.fat;
         document.getElementById('f-carbs').value = match.carbs;
-    } else {
-        currentSelectedFood = null;
-        hint.innerText = `⚪ Свой продукт: Укажите КБЖУ на 100г вручную ниже`;
-        hint.style.color = 'var(--text-dim)';
     }
-    calculateLiveNutrients();
 }
 
-function calculateLiveNutrients() {
-    // Вспомогательный рассчет для предпросмотра
-}
-
-function addFoodEntry(e) {
+async function addFoodEntry(e) {
     e.preventDefault();
     const grams = parseFloat(document.getElementById('food-grams').value);
     const factor = grams / 100;
-
     const entry = {
         id: Date.now(),
         date: document.getElementById('food-date').value,
         name: document.getElementById('food-name').value,
-        grams: grams,
+        grams,
         cal: Math.round((parseFloat(document.getElementById('f-cal').value) || 0) * factor),
         prot: Math.round(((parseFloat(document.getElementById('f-prot').value) || 0) * factor) * 10) / 10,
         fat: Math.round(((parseFloat(document.getElementById('f-fat').value) || 0) * factor) * 10) / 10,
         carbs: Math.round(((parseFloat(document.getElementById('f-carbs').value) || 0) * factor) * 10) / 10
     };
-
     nutrition.unshift(entry);
-    localStorage.setItem('cf_nutrition', JSON.stringify(nutrition));
-    
-    document.getElementById('food-name').value = '';
-    document.getElementById('food-grams').value = '';
-    document.getElementById('f-cal').value = '';
-    document.getElementById('f-prot').value = '';
-    document.getElementById('f-fat').value = '';
-    document.getElementById('f-carbs').value = '';
-    document.getElementById('food-match-hint').innerText = 'Введите название — система подберет КБЖУ';
-
+    await putItem('nutrition', entry);
+    document.getElementById('food-form').reset();
     renderNutrition();
 }
 
-function deleteFoodEntry(id) {
+async function deleteFoodEntry(id) {
     nutrition = nutrition.filter(n => n.id !== id);
-    localStorage.setItem('cf_nutrition', JSON.stringify(nutrition));
+    await deleteItem('nutrition', id);
     renderNutrition();
 }
 
@@ -1321,14 +1446,8 @@ function renderNutrition() {
     tbody.innerHTML = '';
 
     let dayCal = 0, dayProt = 0, dayFat = 0, dayCarbs = 0;
-    const filtered = nutrition.filter(n => n.date === selectedDate);
-
-    filtered.forEach(n => {
-        dayCal += n.cal;
-        dayProt += n.prot;
-        dayFat += n.fat;
-        dayCarbs += n.carbs;
-
+    nutrition.filter(n => n.date === selectedDate).forEach(n => {
+        dayCal += n.cal; dayProt += n.prot; dayFat += n.fat; dayCarbs += n.carbs;
         const tr = document.createElement('tr');
         tr.innerHTML = `
             <td>${escapeHtml(n.name)}</td>
@@ -1340,96 +1459,74 @@ function renderNutrition() {
         tbody.appendChild(tr);
     });
 
+    const tgt = settings.targets || { cal: 2200, prot: 160, fat: 70, carbs: 250 };
     document.getElementById('day-cal').innerText = dayCal;
     document.getElementById('day-prot').innerText = dayProt.toFixed(1) + 'г';
     document.getElementById('day-fat').innerText = dayFat.toFixed(1) + 'г';
     document.getElementById('day-carbs').innerText = dayCarbs.toFixed(1) + 'г';
+
+    document.getElementById('target-cal-text').innerText = tgt.cal;
+    document.getElementById('target-prot-text').innerText = tgt.prot + 'г';
+    document.getElementById('target-fat-text').innerText = tgt.fat + 'г';
+    document.getElementById('target-carbs-text').innerText = tgt.carbs + 'г';
+
+    document.getElementById('cal-bar').style.width = Math.min(100, (dayCal / tgt.cal) * 100) + '%';
+    document.getElementById('prot-bar').style.width = Math.min(100, (dayProt / tgt.prot) * 100) + '%';
+    document.getElementById('fat-bar').style.width = Math.min(100, (dayFat / tgt.fat) * 100) + '%';
+    document.getElementById('carbs-bar').style.width = Math.min(100, (dayCarbs / tgt.carbs) * 100) + '%';
+
+    // Water
+    const wLog = waterLogs.find(w => w.date === selectedDate) || { ml: 0 };
+    document.getElementById('water-display').innerText = `${wLog.ml} / 2500 мл`;
+    document.getElementById('water-progress').style.width = Math.min(100, (wLog.ml / 2500) * 100) + '%';
 }
 
-// --- КАЛЬКУЛЯТОР 1ПМ ---
+// --- АНАЛИТИКА ---
 function calculate1RM() {
     const w = parseFloat(document.getElementById('calc-weight').value);
     const r = parseFloat(document.getElementById('calc-reps').value);
-    const resEl = document.getElementById('calc-result');
-
-    if(!w || !r || r <= 0) {
-        resEl.innerText = '0 кг';
-        return;
-    }
-    const rm = Math.round(w * (1 + r / 30));
-    resEl.innerText = `${rm} кг`;
+    document.getElementById('calc-result').innerText = (w && r > 0) ? `${Math.round(w * (1 + r / 30))} кг` : '0 кг';
 }
 
-// --- ГРАФИКИ ---
 function initCharts() {
     const ctx = document.getElementById('progressChart').getContext('2d');
     chartInstance = new Chart(ctx, {
         type: 'line',
-        data: {
-            labels: [],
-            datasets: [
-                { label: 'Длительность (мин)', data: [], borderColor: '#00f3ff', backgroundColor: 'rgba(0, 243, 255, 0.1)', borderWidth: 2, fill: true },
-                { label: 'Интенсивность', data: [], borderColor: '#ff0055', borderWidth: 2 }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: { ticks: { color: '#94a3b8' } },
-                y: { ticks: { color: '#94a3b8' } }
-            }
-        }
+        data: { labels: [], datasets: [{ label: 'Тоннаж (кг)', data: [], borderColor: '#00f3ff', borderWidth: 2, fill: true }] },
+        options: { responsive: true, maintainAspectRatio: false }
     });
 
     const ctxW = document.getElementById('weightChart').getContext('2d');
     weightChartInstance = new Chart(ctxW, {
         type: 'line',
-        data: {
-            labels: [],
-            datasets: [
-                { label: 'Вес (кг)', data: [], borderColor: '#00ff66', backgroundColor: 'rgba(0, 255, 102, 0.1)', borderWidth: 2, fill: true }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: { ticks: { color: '#94a3b8' } },
-                y: { ticks: { color: '#94a3b8' } }
-            }
-        }
+        data: { labels: [], datasets: [{ label: 'Вес (кг)', data: [], borderColor: '#00ff66', borderWidth: 2, fill: true }] },
+        options: { responsive: true, maintainAspectRatio: false }
     });
 }
 
 function updateAnalytics() {
     document.getElementById('total-workouts-count').innerText = workouts.length;
-    if (workouts.length === 0) return;
+    if(workouts.length === 0) return;
+    const totalMin = workouts.reduce((a, c) => a + c.duration, 0);
+    const totalVol = workouts.reduce((a, c) => a + (c.tonnage || 0), 0);
+    document.getElementById('avg-duration').innerText = `${Math.round(totalMin / workouts.length)} мин`;
+    document.getElementById('total-volume-display').innerText = `${totalVol} кг`;
 
-    const totalMin = workouts.reduce((acc, curr) => acc + curr.duration, 0);
-    const avg = Math.round(totalMin / workouts.length);
-    document.getElementById('avg-duration').innerText = `${avg} мин`;
-
-    const sorted = [...workouts].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const sorted = [...workouts].sort((a,b) => new Date(a.date) - new Date(b.date));
     chartInstance.data.labels = sorted.map(w => w.date);
-    chartInstance.data.datasets[0].data = sorted.map(w => w.duration);
-    chartInstance.data.datasets[1].data = sorted.map(w => w.intensity);
+    chartInstance.data.datasets[0].data = sorted.map(w => w.tonnage || 0);
     chartInstance.update();
 }
 
 function updateWeightChart() {
-    if (bodyMetrics.length === 0) return;
-    const sorted = [...bodyMetrics].sort((a, b) => new Date(a.date) - new Date(b.date));
+    if(bodyMetrics.length === 0) return;
+    const sorted = [...bodyMetrics].sort((a,b) => new Date(a.date) - new Date(b.date));
     weightChartInstance.data.labels = sorted.map(b => b.date);
     weightChartInstance.data.datasets[0].data = sorted.map(b => b.weight);
     weightChartInstance.update();
 }
 
-function escapeHtml(text) {
-    if(!text) return '';
-    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-}
+function escapeHtml(t) { return t ? t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : ''; }
 </script>
-
 </body>
 </html>
