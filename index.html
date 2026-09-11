@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-FIT // Ultimate Cyberpunk Fitness Hub</title>
+    <!-- Chart.js для графиков -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #070913;
+            --panel-bg: rgba(15, 23, 42, 0.75);
+            --border-color: rgba(0, 243, 255, 0.25);
+            --cyan-neon: #00f3ff;
+            --magenta-neon: #ff0055;
+            --lime-neon: #00ff66;
+            --yt-red: #ff0033;
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --font-title: 'Orbitron', sans-serif;
+            --font-body: 'Rajdhani', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 0, 85, 0.05) 0%, transparent 40%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--cyan-neon);
+        }
+
+        .logo span {
+            color: var(--magenta-neon);
+            text-shadow: 0 0 10px var(--magenta-neon);
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Tabs Navigation */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            color: var(--text-dim);
+            padding: 10px 16px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--cyan-neon);
+            border-color: var(--cyan-neon);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+        }
+
+        .tab-btn.active {
+            background: rgba(0, 243, 255, 0.1);
+            color: var(--cyan-neon);
+            border-color: var(--cyan-neon);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+        }
+
+        /* Tab Content Panel */
+        .tab-content {
+            display: none;
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Form Controls */
+        .grid-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 0.95rem;
+            color: var(--cyan-neon);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        input, textarea, select {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--cyan-neon);
+            box-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* Cyber Buttons */
+        .btn-cyber {
+            background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(255, 0, 85, 0.2));
+            border: 1px solid var(--cyan-neon);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+
+        .btn-cyber:hover {
+            background: var(--cyan-neon);
+            color: #000;
+            box-shadow: 0 0 20px var(--cyan-neon);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 6px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--cyan-neon);
+            color: var(--cyan-neon);
+        }
+
+        .btn-yt {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 0, 51, 0.15);
+            border: 1px solid var(--yt-red);
+            color: #ff4d4d;
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-yt:hover {
+            background: var(--yt-red);
+            color: #fff;
+            box-shadow: 0 0 12px var(--yt-red);
+        }
+
+        /* Timer Widget Styling */
+        .timer-widget {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px dashed var(--cyan-neon);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .timer-display {
+            font-family: var(--font-title);
+            font-size: 2rem;
+            color: var(--cyan-neon);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .timer-btns {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Card Displays & Tables */
+        .cards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .cyber-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 4px solid var(--cyan-neon);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+
+        .cyber-card.comment-alert {
+            border-left-color: var(--magenta-neon);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .card-badge {
+            background: rgba(0, 243, 255, 0.15);
+            color: var(--cyan-neon);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .delete-btn {
+            background: transparent;
+            border: none;
+            color: var(--magenta-neon);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.2s;
+        }
+
+        .delete-btn:hover {
+            text-shadow: 0 0 8px var(--magenta-neon);
+        }
+
+        /* Table */
+        .cyber-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .cyber-table th, .cyber-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .cyber-table th {
+            color: var(--cyan-neon);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Summary Widgets */
+        .summary-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--lime-neon);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 25px;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-item .value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--lime-neon);
+            font-family: var(--font-title);
+        }
+
+        .summary-item .label {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        /* Chart Containers */
+        .chart-container {
+            position: relative;
+            max-width: 100%;
+            height: 330px;
+            margin-top: 20px;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hint {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media(max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">CYBER<span>FIT</span></div>
+        <div class="header-controls">
+            <button class="btn-secondary" onclick="exportData()">💾 Экспорт данных</button>
+            <button class="btn-secondary" onclick="document.getElementById('import-file').click()">📂 Импорт</button>
+            <input type="file" id="import-file" style="display: none;" accept=".json" onchange="importData(event)">
+            <div id="current-date-display" style="color: var(--cyan-neon); font-weight: 600; font-size: 0.9rem;"></div>
+        </div>
+    </header>
+
+    <!-- Навигационные вкладки -->
+    <nav class="nav-tabs">
+        <button class="tab-btn active" onclick="openTab('workouts')">🏋️ Тренировки</button>
+        <button class="tab-btn" onclick="openTab('exercises')">💪 Упражнения</button>
+        <button class="tab-btn" onclick="openTab('body')">📐 Замеры Тела</button>
+        <button class="tab-btn" onclick="openTab('supplements')">💊 БАДы</button>
+        <button class="tab-btn" onclick="openTab('analytics')">📊 Анализ & 1ПМ</button>
+        <button class="tab-btn" onclick="openTab('nutrition')">🥗 Питание</button>
+    </nav>
+
+    <!-- ВКЛАДКА 1: ТРЕНИРОВКИ + ТАЙМЕР ОТДЫХА -->
+    <section id="workouts" class="tab-content active">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">Лог Тренировки</h2>
+        
+        <!-- Таймер отдыха с аудио -->
+        <div class="timer-widget">
+            <div>
+                <label style="display: block; margin-bottom: 5px;">⏱️ Таймер отдыха между подходами</label>
+                <div class="timer-display" id="timer-text">00:00</div>
+            </div>
+            <div class="timer-btns">
+                <button class="btn-secondary" onclick="startTimer(60)">60 сек</button>
+                <button class="btn-secondary" onclick="startTimer(90)">90 сек</button>
+                <button class="btn-secondary" onclick="startTimer(120)">120 сек</button>
+                <button class="btn-secondary" onclick="stopTimer()" style="border-color: var(--magenta-neon); color: var(--magenta-neon);">Сброс</button>
+            </div>
+        </div>
+
+        <form id="workout-form" onsubmit="addWorkout(event)">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Дата тренировки</label>
+                    <input type="date" id="workout-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Длительность (мин)</label>
+                    <input type="number" id="workout-duration" placeholder="Например: 75" required>
+                </div>
+                <div class="form-group">
+                    <label>Оценка нагрузки (1-10)</label>
+                    <input type="number" id="workout-intensity" min="1" max="10" placeholder="8" required>
+                </div>
+                <div class="form-group full-width">
+                    <label>Что делал в зале (В свободной форме)</label>
+                    <textarea id="workout-details" placeholder="Жим лежа: 80кг 4х8&#10;Присед: 100кг 3х10..." required></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <label>Комментарии / Самочувствие</label>
+                    <textarea id="workout-comments" placeholder="Немного болело правое плечо при жиме, в остальном отличный памп..."></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn-cyber">Записать тренировку</button>
+        </form>
+
+        <h3 style="margin-top: 30px; color: var(--text-main);">История тренировок</h3>
+        <div id="workout-list" class="cards-list"></div>
+    </section>
+
+    <!-- ВКЛАДКА 2: БАЗА УПРАЖНЕНИЙ -->
+    <section id="exercises" class="tab-content">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 20px; font-family: var(--font-title);">База Упражнений & Техника</h2>
+        
+        <form id="exercise-form" onsubmit="addExercise(event)">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Название упражнения</label>
+                    <input type="text" id="ex-name" placeholder="Например: Жим Гантелей Сидя" required>
+                </div>
+                <div class="form-group">
+                    <label>Группа мышц</label>
+                    <select id="ex-category" required>
+                        <option value="Грудь">Грудь</option>
+                        <option value="Спина">Спина</option>
+                        <option value="Ноги">Ноги</option>
+                        <option value="Плечи">Плечи</option>
+                        <option value="Руки">Руки</option>
+                        <option value="Пресс">Пресс</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ссылка на YouTube (необязательно)</label>
+                    <input type="url" id="ex-url" placeholder="https://www.youtube.com/watch?v=...">
+                </div>
+            </div>
+            <button type="submit" class="btn-cyber" style="margin-bottom: 20px;">Добавить упражнение</button>
+        </form>
+
+        <div class="filter-bar">
+            <input type="text" id="ex-search" placeholder="🔍 Поиск упражнения..." oninput="renderExercises()" style="flex: 1;">
+            <select id="ex-filter" onchange="renderExercises()" style="width: 200px;">
+                <option value="ALL">Все группы мышц</option>
+                <option value="Грудь">Грудь</option>
+                <option value="Спина">Спина</option>
+                <option value="Ноги">Ноги</option>
+                <option value="Плечи">Плечи</option>
+                <option value="Руки">Руки</option>
+                <option value="Пресс">Пресс</option>
+            </select>
+        </div>
+
+        <table class="cyber-table">
+            <thead>
+                <tr>
+                    <th>Группа</th>
+                    <th>Упражнение</th>
+                    <th>Видео Техника</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody id="exercises-list"></tbody>
+        </table>
+    </section>
+
+    <!-- ВКЛАДКА 3: ЗАМЕРЫ ТЕЛА + ГРАФИК ВЕСА -->
+    <section id="body" class="tab-content">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 20px; font-family: var(--font-title);">Замеры Твоего Тела</h2>
+        
+        <form id="body-form" onsubmit="addBodyEntry(event)">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Дата замера</label>
+                    <input type="date" id="body-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Вес (кг)</label>
+                    <input type="number" step="0.1" id="body-weight" placeholder="78.5" required>
+                </div>
+                <div class="form-group">
+                    <label>Талия (см)</label>
+                    <input type="number" step="0.5" id="body-waist" placeholder="82">
+                </div>
+                <div class="form-group">
+                    <label>Бицепс (см)</label>
+                    <input type="number" step="0.5" id="body-biceps" placeholder="38">
+                </div>
+                <div class="form-group">
+                    <label>Грудь (см)</label>
+                    <input type="number" step="0.5" id="body-chest" placeholder="105">
+                </div>
+            </div>
+            <button type="submit" class="btn-cyber">Сохранить замеры</button>
+        </form>
+
+        <div class="chart-container" style="margin-top: 30px;">
+            <canvas id="weightChart"></canvas>
+        </div>
+
+        <h3 style="margin-top: 30px; color: var(--text-main);">История замеров</h3>
+        <table class="cyber-table">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Вес</th>
+                    <th>Талия</th>
+                    <th>Бицепс</th>
+                    <th>Грудь</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody id="body-list"></tbody>
+        </table>
+    </section>
+
+    <!-- ВКЛАДКА 4: БАДы -->
+    <section id="supplements" class="tab-content">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 20px; font-family: var(--font-title);">График Добавок и БАДов</h2>
+        <form id="supp-form" onsubmit="addSupplement(event)">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Название добавки</label>
+                    <input type="text" id="supp-name" placeholder="Омега-3 / Креатин / D3" required>
+                </div>
+                <div class="form-group">
+                    <label>Дозировка</label>
+                    <input type="text" id="supp-dosage" placeholder="5г / 2 капсулы / 5000 ME" required>
+                </div>
+                <div class="form-group">
+                    <label>Дата и время приема</label>
+                    <input type="datetime-local" id="supp-datetime" required>
+                </div>
+            </div>
+            <button type="submit" class="btn-cyber">Добавить запись</button>
+        </form>
+
+        <table class="cyber-table">
+            <thead>
+                <tr>
+                    <th>Дата / Время</th>
+                    <th>Добавка</th>
+                    <th>Дозировка</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody id="supplements-list"></tbody>
+        </table>
+    </section>
+
+    <!-- ВКЛАДКА 5: АНАЛИТИКА + КАЛЬКУЛЯТОР 1ПМ -->
+    <section id="analytics" class="tab-content">
+        <h2 style="color: var(--cyan-neon); margin-bottom: 20px; font-family: var(--font-title);">Анализ Тренировок & Калькулятор 1ПМ</h2>
+        
+        <div class="summary-box" style="border-color: var(--cyan-neon); box-shadow: 0 0 15px rgba(0, 243, 255, 0.15);">
+            <div class="summary-item">
+                <div class="value" id="total-workouts-count">0</div>
+                <div class="label">Всего тренировок</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" id="avg-duration">0 мин</div>
+                <div class="label">Средняя длительность</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" id="status-progress" style="color: var(--lime-neon);">ОПТИМАЛЬНО</div>
+                <div class="label">Статус нагрузки</div>
+            </div>
+        </div>
+
+        <!-- Калькулятор 1ПМ -->
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 20px; border-radius: 10px; margin-top: 25px;">
+            <h3 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">🧮 Калькулятор 1ПМ (Максимум на 1 повторение)</h3>
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Рабочий вес (кг)</label>
+                    <input type="number" id="calc-weight" placeholder="100" oninput="calculate1RM()">
+                </div>
+                <div class="form-group">
+                    <label>Количество повторений</label>
+                    <input type="number" id="calc-reps" placeholder="8" oninput="calculate1RM()">
+                </div>
+                <div class="form-group">
+                    <label>Расчетный 1ПМ (Формула Эпли)</label>
+                    <div id="calc-result" style="font-size: 1.5rem; font-weight: 700; color: var(--lime-neon); padding: 8px 0;">0 кг</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="progressChart"></canvas>
+        </div>
+    </section>
+
+    <!-- ВКЛАДКА 6: ПИТАНИЕ & КБЖУ -->
+    <section id="nutrition" class="tab-content">
+        <h2 style="color: var(--lime-neon); margin-bottom: 20px; font-family: var(--font-title);">Контроль Питания & КБЖУ</h2>
+        
+        <form id="food-form" onsubmit="addFoodEntry(event)">
+            <div class="grid-form">
+                <div class="form-group">
+                    <label>Дата</label>
+                    <input type="date" id="food-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Продукт</label>
+                    <input type="text" id="food-name" list="food-db" placeholder="Например: Рис, Куриное филе" oninput="autoCalculateNutrients()" required>
+                    <datalist id="food-db"></datalist>
+                    <div class="hint">Введите название из базы или укажите своё</div>
+                </div>
+                <div class="form-group">
+                    <label>Вес (Граммы)</label>
+                    <input type="number" id="food-grams" placeholder="150" oninput="autoCalculateNutrients()" required>
+                </div>
+            </div>
+
+            <div class="grid-form" style="margin-top: 10px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px;">
+                <div class="form-group"><label>Ккал / 100г</label><input type="number" id="f-cal" placeholder="0"></div>
+                <div class="form-group"><label>Белки / 100г</label><input type="number" id="f-prot" step="0.1" placeholder="0"></div>
+                <div class="form-group"><label>Жиры / 100г</label><input type="number" id="f-fat" step="0.1" placeholder="0"></div>
+                <div class="form-group"><label>Углеводы / 100г</label><input type="number" id="f-carbs" step="0.1" placeholder="0"></div>
+            </div>
+
+            <button type="submit" class="btn-cyber" style="border-color: var(--lime-neon); color: var(--lime-neon);">Добавить приём пищи</button>
+        </form>
+
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="value" id="day-cal">0</div>
+                <div class="label">Ккал за день</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" id="day-prot">0г</div>
+                <div class="label">Белки</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" id="day-fat">0г</div>
+                <div class="label">Жиры</div>
+            </div>
+            <div class="summary-item">
+                <div class="value" id="day-carbs">0г</div>
+                <div class="label">Углеводы</div>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 25px; color: var(--text-main);">Записи за выбранную дату</h3>
+        <table class="cyber-table">
+            <thead>
+                <tr>
+                    <th>Продукт</th>
+                    <th>Вес</th>
+                    <th>Ккал</th>
+                    <th>Б / Ж / У</th>
+                    <th>Удалить</th>
+                </tr>
+            </thead>
+            <tbody id="food-list"></tbody>
+        </table>
+    </section>
+</div>
+
+<script>
+// --- ПРЕДУСТАНОВЛЕННАЯ БАЗА УПРАЖНЕНИЙ ---
+const defaultExercises = [
+    { id: 1, name: "Жим штанги лежа", category: "Грудь", url: "https://www.youtube.com/results?search_query=жим+штанги+лежа+техника" },
+    { id: 2, name: "Жим гантелей на наклонной скамье", category: "Грудь", url: "https://www.youtube.com/results?search_query=жим+гантелей+на+наклонной+скамье+техника" },
+    { id: 3, name: "Отжимания на брусьях", category: "Грудь", url: "https://www.youtube.com/results?search_query=отжимания+на+брусьях+техника" },
+    { id: 4, name: "Сведение рук в кроссовере", category: "Грудь", url: "https://www.youtube.com/results?search_query=сведение+рук+в+кроссовере+техника" },
+    { id: 5, name: "Подтягивания широким хватом", category: "Спина", url: "https://www.youtube.com/results?search_query=подтягивания+техника" },
+    { id: 6, name: "Тяга штанги в наклоне", category: "Спина", url: "https://www.youtube.com/results?search_query=тяга+штанги+в+наклоне+техника" },
+    { id: 7, name: "Тяга верхнего блока", category: "Спина", url: "https://www.youtube.com/results?search_query=тяга+верхнего+блока+техника" },
+    { id: 8, name: "Становая тяга", category: "Спина", url: "https://www.youtube.com/results?search_query=становая+тяга+техника" },
+    { id: 9, name: "Приседания со штангой", category: "Ноги", url: "https://www.youtube.com/results?search_query=приседания+со+штангой+техника" },
+    { id: 10, name: "Жим ногами в тренажере", category: "Ноги", url: "https://www.youtube.com/results?search_query=жим+ногами+техника" },
+    { id: 11, name: "Румынская тяга", category: "Ноги", url: "https://www.youtube.com/results?search_query=румынская+тяга+техника" },
+    { id: 12, name: "Армейский жим стоя", category: "Плечи", url: "https://www.youtube.com/results?search_query=армейский+жим+техника" },
+    { id: 13, name: "Махи гантелями в стороны", category: "Плечи", url: "https://www.youtube.com/results?search_query=махи+гантелями+в+стороны+техника" },
+    { id: 14, name: "Подъем штанги на бицепс", category: "Руки", url: "https://www.youtube.com/results?search_query=подъем+штанги+на+бицепс+техника" },
+    { id: 15, name: "Французский жим", category: "Руки", url: "https://www.youtube.com/results?search_query=французский+жим+техника" },
+    { id: 16, name: "Подъем ног в висе", category: "Пресс", url: "https://www.youtube.com/results?search_query=подъем+ног+в+висе+техника" }
+];
+
+// --- БАЗА ДАННЫХ ПРОДУКТОВ ДЛЯ АВТОРАСЧЕТА ---
+const foodDatabase = {
+    "куриная грудка": { cal: 165, prot: 31, fat: 3.6, carbs: 0 },
+    "куриное филе": { cal: 165, prot: 31, fat: 3.6, carbs: 0 },
+    "рис вареный": { cal: 130, prot: 2.7, fat: 0.3, carbs: 28 },
+    "гречка вареная": { cal: 110, prot: 4.2, fat: 1.1, carbs: 21 },
+    "яйцо": { cal: 155, prot: 13, fat: 11, carbs: 1 },
+    "творог 5%": { cal: 121, prot: 17, fat: 5, carbs: 1.8 },
+    "овсянка": { cal: 389, prot: 16.9, fat: 6.9, carbs: 66 },
+    "банан": { cal: 89, prot: 1.1, fat: 0.3, carbs: 23 },
+    "говядина": { cal: 250, prot: 26, fat: 15, carbs: 0 },
+    "протеин сывороточный": { cal: 380, prot: 75, fat: 6, carbs: 8 },
+    "миндаль": { cal: 579, prot: 21, fat: 50, carbs: 22 }
+};
+
+// --- СОСТОЯНИЕ ДАННЫХ ---
+let workouts = JSON.parse(localStorage.getItem('cf_workouts')) || [];
+let supplements = JSON.parse(localStorage.getItem('cf_supplements')) || [];
+let nutrition = JSON.parse(localStorage.getItem('cf_nutrition')) || [];
+let exercises = JSON.parse(localStorage.getItem('cf_exercises')) || defaultExercises;
+let bodyMetrics = JSON.parse(localStorage.getItem('cf_body')) || [];
+
+let chartInstance = null;
+let weightChartInstance = null;
+let timerInterval = null;
+let timeLeft = 0;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('workout-date').value = today;
+    document.getElementById('food-date').value = today;
+    document.getElementById('body-date').value = today;
+    document.getElementById('current-date-display').innerText = new Date().toLocaleDateString('ru-RU', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase();
+    
+    const datalist = document.getElementById('food-db');
+    Object.keys(foodDatabase).forEach(item => {
+        let option = document.createElement('option');
+        option.value = item.charAt(0).toUpperCase() + item.slice(1);
+        datalist.appendChild(option);
+    });
+
+    renderWorkouts();
+    renderExercises();
+    renderSupplements();
+    renderNutrition();
+    renderBody();
+    initCharts();
+});
+
+// --- ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК ---
+function openTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+
+    if(tabId === 'analytics') {
+        updateAnalytics();
+    }
+    if(tabId === 'body') {
+        updateWeightChart();
+    }
+}
+
+// --- ФУНКЦИЯ 1: ЭКСПОРТ / ИМПОРТ ДАННЫХ ---
+function exportData() {
+    const data = {
+        workouts,
+        supplements,
+        nutrition,
+        exercises,
+        bodyMetrics,
+        exportDate: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `cyber-fit-backup-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function importData(event) {
+    const file = event.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const data = JSON.parse(e.target.result);
+            if(data.workouts) workouts = data.workouts;
+            if(data.supplements) supplements = data.supplements;
+            if(data.nutrition) nutrition = data.nutrition;
+            if(data.exercises) exercises = data.exercises;
+            if(data.bodyMetrics) bodyMetrics = data.bodyMetrics;
+
+            localStorage.setItem('cf_workouts', JSON.stringify(workouts));
+            localStorage.setItem('cf_supplements', JSON.stringify(supplements));
+            localStorage.setItem('cf_nutrition', JSON.stringify(nutrition));
+            localStorage.setItem('cf_exercises', JSON.stringify(exercises));
+            localStorage.setItem('cf_body', JSON.stringify(bodyMetrics));
+
+            alert('✅ Данные успешно импортированы!');
+            location.reload();
+        } catch(err) {
+            alert('❌ Ошибка чтения файла бэкапа!');
+        }
+    };
+    reader.readAsText(file);
+}
+
+// --- ФУНКЦИЯ 2: ТАЙМЕР ОТДЫХА С АУДИО ---
+function startTimer(seconds) {
+    stopTimer();
+    timeLeft = seconds;
+    updateTimerDisplay();
+    
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if(timeLeft <= 0) {
+            stopTimer();
+            playAlarmSound();
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+    timeLeft = 0;
+    updateTimerDisplay();
+}
+
+function updateTimerDisplay() {
+    const min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+    const sec = String(timeLeft % 60).padStart(2, '0');
+    document.getElementById('timer-text').innerText = `${min}:${sec}`;
+}
+
+function playAlarmSound() {
+    try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(880, audioCtx.currentTime); // Нота А5
+        gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.6);
+    } catch(e) {
+        console.log('Audio Context error', e);
+    }
+}
+
+// --- ЛОГИКА: ТРЕНИРОВКИ ---
+function addWorkout(e) {
+    e.preventDefault();
+    const workout = {
+        id: Date.now(),
+        date: document.getElementById('workout-date').value,
+        duration: parseInt(document.getElementById('workout-duration').value),
+        intensity: parseInt(document.getElementById('workout-intensity').value),
+        details: document.getElementById('workout-details').value,
+        comments: document.getElementById('workout-comments').value
+    };
+
+    workouts.unshift(workout);
+    localStorage.setItem('cf_workouts', JSON.stringify(workouts));
+    document.getElementById('workout-form').reset();
+    document.getElementById('workout-date').value = new Date().toISOString().split('T')[0];
+    renderWorkouts();
+}
+
+function deleteWorkout(id) {
+    workouts = workouts.filter(w => w.id !== id);
+    localStorage.setItem('cf_workouts', JSON.stringify(workouts));
+    renderWorkouts();
+}
+
+function renderWorkouts() {
+    const container = document.getElementById('workout-list');
+    container.innerHTML = '';
+    workouts.forEach(w => {
+        const hasComment = w.comments && w.comments.trim() !== '';
+        const card = document.createElement('div');
+        card.className = `cyber-card ${hasComment ? 'comment-alert' : ''}`;
+        card.innerHTML = `
+            <div class="card-header">
+                <span>📅 ${w.date} | ⏱️ ${w.duration} мин</span>
+                <span>
+                    <span class="card-badge">Нагрузка: ${w.intensity}/10</span>
+                    <button class="delete-btn" onclick="deleteWorkout(${w.id})">✖</button>
+                </span>
+            </div>
+            <div class="card-title" style="white-space: pre-line;">${escapeHtml(w.details)}</div>
+            ${hasComment ? `<div style="margin-top: 10px; color: var(--magenta-neon); font-style: italic; font-size: 0.95rem;">💬 ${escapeHtml(w.comments)}</div>` : ''}
+        `;
+        container.appendChild(card);
+    });
+}
+
+// --- ЛОГИКА: БАЗА УПРАЖНЕНИЙ ---
+function addExercise(e) {
+    e.preventDefault();
+    const name = document.getElementById('ex-name').value.trim();
+    const category = document.getElementById('ex-category').value;
+    let url = document.getElementById('ex-url').value.trim();
+
+    if(!url) {
+        url = `https://www.youtube.com/results?search_query=${encodeURIComponent(name + ' техника выполнения')}`;
+    }
+
+    const newEx = { id: Date.now(), name, category, url };
+    exercises.unshift(newEx);
+    localStorage.setItem('cf_exercises', JSON.stringify(exercises));
+    document.getElementById('exercise-form').reset();
+    renderExercises();
+}
+
+function deleteExercise(id) {
+    exercises = exercises.filter(ex => ex.id !== id);
+    localStorage.setItem('cf_exercises', JSON.stringify(exercises));
+    renderExercises();
+}
+
+function renderExercises() {
+    const tbody = document.getElementById('exercises-list');
+    tbody.innerHTML = '';
+    const searchQuery = document.getElementById('ex-search').value.toLowerCase();
+    const categoryFilter = document.getElementById('ex-filter').value;
+
+    const filtered = exercises.filter(ex => {
+        const matchesSearch = ex.name.toLowerCase().includes(searchQuery);
+        const matchesCategory = categoryFilter === 'ALL' || ex.category === categoryFilter;
+        return matchesSearch && matchesCategory;
+    });
+
+    filtered.forEach(ex => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><span class="card-badge">${ex.category}</span></td>
+            <td style="font-weight: 700; color: #fff;">${escapeHtml(ex.name)}</td>
+            <td><a href="${ex.url}" target="_blank" class="btn-yt">▶ YouTube</a></td>
+            <td><button class="delete-btn" onclick="deleteExercise(${ex.id})">✖</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// --- ФУНКЦИЯ 3: ЗАМЕРЫ ТЕЛА + ГРАФИК ВЕСА ---
+function addBodyEntry(e) {
+    e.preventDefault();
+    const entry = {
+        id: Date.now(),
+        date: document.getElementById('body-date').value,
+        weight: parseFloat(document.getElementById('body-weight').value),
+        waist: document.getElementById('body-waist').value || '-',
+        biceps: document.getElementById('body-biceps').value || '-',
+        chest: document.getElementById('body-chest').value || '-'
+    };
+
+    bodyMetrics.unshift(entry);
+    localStorage.setItem('cf_body', JSON.stringify(bodyMetrics));
+    document.getElementById('body-form').reset();
+    document.getElementById('body-date').value = new Date().toISOString().split('T')[0];
+    renderBody();
+    updateWeightChart();
+}
+
+function deleteBodyEntry(id) {
+    bodyMetrics = bodyMetrics.filter(b => b.id !== id);
+    localStorage.setItem('cf_body', JSON.stringify(bodyMetrics));
+    renderBody();
+    updateWeightChart();
+}
+
+function renderBody() {
+    const tbody = document.getElementById('body-list');
+    tbody.innerHTML = '';
+    bodyMetrics.forEach(b => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="color: var(--cyan-neon);">${b.date}</td>
+            <td style="font-weight: 700;">${b.weight} кг</td>
+            <td>${b.waist} см</td>
+            <td>${b.biceps} см</td>
+            <td>${b.chest} см</td>
+            <td><button class="delete-btn" onclick="deleteBodyEntry(${b.id})">✖</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// --- ФУНКЦИЯ 4: КАЛЬКУЛЯТОР 1ПМ ---
+function calculate1RM() {
+    const w = parseFloat(document.getElementById('calc-weight').value);
+    const r = parseFloat(document.getElementById('calc-reps').value);
+    const resEl = document.getElementById('calc-result');
+
+    if(!w || !r || r <= 0) {
+        resEl.innerText = '0 кг';
+        return;
+    }
+
+    // Формула Эпли: 1RM = w * (1 + r / 30)
+    const rm = Math.round(w * (1 + r / 30));
+    resEl.innerText = `${rm} кг`;
+}
+
+// --- ЛОГИКА: БАДы ---
+function addSupplement(e) {
+    e.preventDefault();
+    const supp = {
+        id: Date.now(),
+        name: document.getElementById('supp-name').value,
+        dosage: document.getElementById('supp-dosage').value,
+        datetime: document.getElementById('supp-datetime').value
+    };
+
+    supplements.unshift(supp);
+    localStorage.setItem('cf_supplements', JSON.stringify(supplements));
+    document.getElementById('supp-form').reset();
+    renderSupplements();
+}
+
+function deleteSupplement(id) {
+    supplements = supplements.filter(s => s.id !== id);
+    localStorage.setItem('cf_supplements', JSON.stringify(supplements));
+    renderSupplements();
+}
+
+function renderSupplements() {
+    const tbody = document.getElementById('supplements-list');
+    tbody.innerHTML = '';
+    supplements.forEach(s => {
+        const formattedDate = new Date(s.datetime).toLocaleString('ru-RU', { dateStyle: 'short', timeStyle: 'short' });
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="color: var(--cyan-neon);">${formattedDate}</td>
+            <td style="font-weight: 700;">${escapeHtml(s.name)}</td>
+            <td><span class="card-badge">${escapeHtml(s.dosage)}</span></td>
+            <td><button class="delete-btn" onclick="deleteSupplement(${s.id})">✖</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// --- ЛОГИКА: ПИТАНИЕ & КБЖУ ---
+function autoCalculateNutrients() {
+    const name = document.getElementById('food-name').value.toLowerCase().trim();
+    if(foodDatabase[name]) {
+        const db = foodDatabase[name];
+        document.getElementById('f-cal').value = db.cal;
+        document.getElementById('f-prot').value = db.prot;
+        document.getElementById('f-fat').value = db.fat;
+        document.getElementById('f-carbs').value = db.carbs;
+    }
+}
+
+function addFoodEntry(e) {
+    e.preventDefault();
+    const grams = parseFloat(document.getElementById('food-grams').value);
+    const factor = grams / 100;
+
+    const entry = {
+        id: Date.now(),
+        date: document.getElementById('food-date').value,
+        name: document.getElementById('food-name').value,
+        grams: grams,
+        cal: Math.round((parseFloat(document.getElementById('f-cal').value) || 0) * factor),
+        prot: Math.round(((parseFloat(document.getElementById('f-prot').value) || 0) * factor) * 10) / 10,
+        fat: Math.round(((parseFloat(document.getElementById('f-fat').value) || 0) * factor) * 10) / 10,
+        carbs: Math.round(((parseFloat(document.getElementById('f-carbs').value) || 0) * factor) * 10) / 10
+    };
+
+    nutrition.unshift(entry);
+    localStorage.setItem('cf_nutrition', JSON.stringify(nutrition));
+    
+    document.getElementById('food-name').value = '';
+    document.getElementById('food-grams').value = '';
+    document.getElementById('f-cal').value = '';
+    document.getElementById('f-prot').value = '';
+    document.getElementById('f-fat').value = '';
+    document.getElementById('f-carbs').value = '';
+
+    renderNutrition();
+}
+
+function deleteFoodEntry(id) {
+    nutrition = nutrition.filter(n => n.id !== id);
+    localStorage.setItem('cf_nutrition', JSON.stringify(nutrition));
+    renderNutrition();
+}
+
+function renderNutrition() {
+    const selectedDate = document.getElementById('food-date').value;
+    const tbody = document.getElementById('food-list');
+    tbody.innerHTML = '';
+
+    let dayCal = 0, dayProt = 0, dayFat = 0, dayCarbs = 0;
+    const filtered = nutrition.filter(n => n.date === selectedDate);
+
+    filtered.forEach(n => {
+        dayCal += n.cal;
+        dayProt += n.prot;
+        dayFat += n.fat;
+        dayCarbs += n.carbs;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${escapeHtml(n.name)}</td>
+            <td>${n.grams}г</td>
+            <td style="color: var(--lime-neon); font-weight:700;">${n.cal} ккал</td>
+            <td>${n.prot}г / ${n.fat}г / ${n.carbs}г</td>
+            <td><button class="delete-btn" onclick="deleteFoodEntry(${n.id})">✖</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    document.getElementById('day-cal').innerText = dayCal;
+    document.getElementById('day-prot').innerText = dayProt.toFixed(1) + 'г';
+    document.getElementById('day-fat').innerText = dayFat.toFixed(1) + 'г';
+    document.getElementById('day-carbs').innerText = dayCarbs.toFixed(1) + 'г';
+}
+
+// --- ГРАФИКИ И АНАЛИТИКА ---
+function initCharts() {
+    // График тренировок
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [
+                { label: 'Длительность (мин)', data: [], borderColor: '#00f3ff', backgroundColor: 'rgba(0, 243, 255, 0.1)', borderWidth: 2, fill: true, tension: 0.3 },
+                { label: 'Интенсивность (1-10)', data: [], borderColor: '#ff0055', backgroundColor: 'transparent', borderWidth: 2, tension: 0.3 }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } },
+                y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } }
+            },
+            plugins: { legend: { labels: { color: '#f1f5f9' } } }
+        }
+    });
+
+    // График веса
+    const ctxW = document.getElementById('weightChart').getContext('2d');
+    weightChartInstance = new Chart(ctxW, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [
+                { label: 'Динамика Веса (кг)', data: [], borderColor: '#00ff66', backgroundColor: 'rgba(0, 255, 102, 0.1)', borderWidth: 2, fill: true, tension: 0.3 }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } },
+                y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#94a3b8' } }
+            },
+            plugins: { legend: { labels: { color: '#f1f5f9' } } }
+        }
+    });
+}
+
+function updateAnalytics() {
+    document.getElementById('total-workouts-count').innerText = workouts.length;
+    if (workouts.length === 0) return;
+
+    const totalDuration = workouts.reduce((acc, curr) => acc + curr.duration, 0);
+    const avg = Math.round(totalDuration / workouts.length);
+    document.getElementById('avg-duration').innerText = `${avg} мин`;
+
+    const sortedWorkouts = [...workouts].sort((a, b) => new Date(a.date) - new Date(b.date));
+    chartInstance.data.labels = sortedWorkouts.map(w => w.date);
+    chartInstance.data.datasets[0].data = sortedWorkouts.map(w => w.duration);
+    chartInstance.data.datasets[1].data = sortedWorkouts.map(w => w.intensity);
+    chartInstance.update();
+}
+
+function updateWeightChart() {
+    if (bodyMetrics.length === 0) return;
+    const sortedBody = [...bodyMetrics].sort((a, b) => new Date(a.date) - new Date(b.date));
+    weightChartInstance.data.labels = sortedBody.map(b => b.date);
+    weightChartInstance.data.datasets[0].data = sortedBody.map(b => b.weight);
+    weightChartInstance.update();
+}
+
+function escapeHtml(text) {
+    if(!text) return '';
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+</script>
+
+</body>
+</html>
