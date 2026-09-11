@@ -90,7 +90,7 @@
 
         .header-controls {
             display: flex;
-            gap: 8px;
+            gap: 12px;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -99,10 +99,10 @@
         .level-badge {
             background: linear-gradient(135deg, rgba(0,243,255,0.2), rgba(255,0,85,0.2));
             border: 1px solid var(--cyan-neon);
-            padding: 4px 10px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--yellow-neon);
             display: flex;
             align-items: center;
@@ -233,7 +233,7 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            padding: 8px 12px;
+            padding: 8px 14px;
             font-size: 0.85rem;
             font-weight: 700;
             cursor: pointer;
@@ -243,6 +243,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 6px;
         }
 
         .btn-yt {
@@ -510,18 +511,9 @@
         </div>
 
         <div class="header-controls">
-            <select id="theme-selector" onchange="changeTheme(this.value)" style="min-height: 38px; font-size: 0.8rem;">
-                <option value="cyberpunk">🩵 Cyberpunk</option>
-                <option value="light">☀️ Светлая тема</option>
-                <option value="matrix">💚 Matrix</option>
-                <option value="synthwave">💜 Synthwave</option>
-                <option value="redalert">🔴 Red Alert</option>
-            </select>
-            <button class="btn-secondary" onclick="exportData()">💾 Экспорт</button>
-            <button class="btn-secondary" onclick="document.getElementById('import-file').click()">📂 Импорт</button>
+            <button class="btn-secondary" onclick="openSettingsTab()">⚙️ Настройки</button>
             <button class="btn-secondary" onclick="sendTelegramBackup()" style="border-color: var(--cyan-neon); color: var(--cyan-neon);">✈️ Telegram</button>
-            <input type="file" id="import-file" style="display: none;" accept=".json" onchange="importData(event)">
-            <div id="current-date-display" style="color: var(--cyan-neon); font-weight: 600; font-size: 0.85rem;"></div>
+            <div id="current-date-display" style="color: var(--cyan-neon); font-weight: 600; font-size: 0.85rem; text-transform: uppercase;"></div>
         </div>
     </header>
 
@@ -540,7 +532,7 @@
     <section id="workouts" class="tab-content active">
         <h2 style="color: var(--cyan-neon); margin-bottom: 12px; font-family: var(--font-title);">Лог Тренировки</h2>
         
-        <!-- Звуковой/Вибро Таймер (ВЫНЕСЕН НА САМЫЙ ВЕРХ) -->
+        <!-- Звуковой/Вибро Таймер -->
         <div class="timer-widget" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
             <div>
                 <label style="display: block; margin-bottom: 4px;">⏱️ Таймер отдыха (со звуком)</label>
@@ -565,7 +557,7 @@
             <button class="btn-secondary" onclick="saveAsTemplate()">Сохранить ввод как шаблон</button>
         </div>
 
-        <!-- Виджет Готовности (Readiness Score) -->
+        <!-- Виджет Готовности -->
         <div class="readiness-widget">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                 <span style="font-weight: 700; color: var(--cyan-neon);">⚡ ИНДЕКС ГОТОВНОСТИ К ТРЕНИРОВКЕ</span>
@@ -1112,14 +1104,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('body-date').value = today;
     document.getElementById('supp-log-date').value = today;
     document.getElementById('pr-date').value = today;
-    document.getElementById('current-date-display').innerText = new Date().toLocaleDateString('ru-RU', { weekday: 'short', month: 'short', day: 'numeric' }).toUpperCase();
+    
+    // Форматирование даты
+    const now = new Date();
+    const days = ['ВС', 'СБ', 'ПТ', 'ЧТ', 'СР', 'ВТ', 'ПН'];
+    const months = ['ЯНВ.', 'ФЕВР.', 'МАРТА', 'АПР.', 'МАЯ', 'ИЮНЯ', 'ИЮЛЯ', 'АВГ.', 'СЕНТ.', 'ОКТ.', 'НОЯБ.', 'ДЕК.'];
+    const formattedDate = `${days[now.getDay() % 7]}, ${now.getDate()} ${months[now.getMonth()]}`;
+    document.getElementById('current-date-display').innerText = formattedDate;
 
     // Datalist
     const dl = document.getElementById('food-db');
     foodDatabase.forEach(f => { const opt = document.createElement('option'); opt.value = f.name; dl.appendChild(opt); });
 
     applyTheme(settings.theme || 'cyberpunk');
-    if(document.getElementById('theme-selector')) document.getElementById('theme-selector').value = settings.theme || 'cyberpunk';
     if(document.getElementById('settings-theme-selector')) document.getElementById('settings-theme-selector').value = settings.theme || 'cyberpunk';
     
     updateUserLevelUI();
@@ -1152,15 +1149,18 @@ async function loadAllData() {
     if(!settings.xp) settings.xp = 0;
 }
 
+function openSettingsTab() {
+    const settingsBtn = document.querySelector('.nav-tabs button[onclick*="settings"]');
+    if(settingsBtn) settingsBtn.click();
+}
+
 // --- ТЕМЫ ---
 function changeTheme(themeKey) {
     applyTheme(themeKey);
     settings.theme = themeKey;
     putItem('settings', { key: 'theme', val: themeKey });
-    const sel1 = document.getElementById('theme-selector');
-    const sel2 = document.getElementById('settings-theme-selector');
-    if(sel1) sel1.value = themeKey;
-    if(sel2) sel2.value = themeKey;
+    const sel = document.getElementById('settings-theme-selector');
+    if(sel) sel.value = themeKey;
 }
 
 function applyTheme(themeKey) {
@@ -1743,7 +1743,7 @@ function openTab(e, tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
-    e.currentTarget.classList.add('active');
+    if(e && e.currentTarget) e.currentTarget.classList.add('active');
     if(tabId === 'analytics') updateAnalytics();
     if(tabId === 'body') updateWeightChart();
 }
