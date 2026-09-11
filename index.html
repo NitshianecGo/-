@@ -11,7 +11,7 @@
     <meta name="theme-color" content="#070913">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
     
-    <title>CYBER-FIT // Ultimate Fitness Hub PRO</title>
+    <title>CYBER-FIT // Ultimate Fitness Hub PRO v3.0</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     
@@ -50,6 +50,7 @@
             padding-bottom: max(25px, env(safe-area-inset-bottom));
             padding-left: max(12px, env(safe-area-inset-left));
             padding-right: max(12px, env(safe-area-inset-right));
+            transition: background-color 0.4s ease;
         }
 
         .container {
@@ -91,6 +92,20 @@
             gap: 8px;
             align-items: center;
             flex-wrap: wrap;
+        }
+
+        /* XP Level Badge */
+        .level-badge {
+            background: linear-gradient(135deg, rgba(0,243,255,0.2), rgba(255,0,85,0.2));
+            border: 1px solid var(--cyan-neon);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--yellow-neon);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .nav-tabs {
@@ -262,7 +277,7 @@
         }
 
         /* Widgets & Boxes */
-        .timer-widget, .comparison-box, .water-widget {
+        .timer-widget, .comparison-box, .water-widget, .readiness-widget {
             background: rgba(0, 0, 0, 0.5);
             border: 1px dashed var(--cyan-neon);
             padding: 15px;
@@ -456,14 +471,50 @@
         }
         .modal.active { display: flex; }
         .modal-content { max-width: 90%; max-height: 85vh; border-radius: 10px; border: 1px solid var(--cyan-neon); }
+
+        /* Badges Grid */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .achievement-card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            opacity: 0.4;
+            transition: all 0.3s;
+        }
+        .achievement-card.unlocked {
+            opacity: 1;
+            border-color: var(--cyan-neon);
+            box-shadow: 0 0 10px rgba(0,243,255,0.2);
+        }
+        .achievement-icon { font-size: 2rem; margin-bottom: 4px; }
+        .achievement-title { font-weight: 700; font-size: 0.85rem; color: var(--cyan-neon); }
+        .achievement-desc { font-size: 0.75rem; color: var(--text-dim); }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <div class="logo">CYBER<span>FIT</span> <small style="font-size: 0.6rem; color: var(--lime-neon);">PRO</small></div>
+        <div class="logo">CYBER<span>FIT</span> <small style="font-size: 0.6rem; color: var(--lime-neon);">PRO v3.0</small></div>
+        
+        <div class="level-badge" id="level-display">
+            ⚡ LVL <span id="user-level">1</span> [<span id="user-xp">0</span> XP]
+        </div>
+
         <div class="header-controls">
+            <select id="theme-selector" onchange="changeTheme(this.value)" style="min-height: 38px; font-size: 0.8rem;">
+                <option value="cyberpunk">🩵 Cyberpunk</option>
+                <option value="matrix">💚 Matrix</option>
+                <option value="synthwave">💜 Synthwave</option>
+                <option value="redalert">🔴 Red Alert</option>
+            </select>
             <button class="btn-secondary" onclick="exportData()">💾 Экспорт</button>
             <button class="btn-secondary" onclick="document.getElementById('import-file').click()">📂 Импорт</button>
             <button class="btn-secondary" onclick="sendTelegramBackup()" style="border-color: var(--cyan-neon); color: var(--cyan-neon);">✈️ Telegram</button>
@@ -478,7 +529,8 @@
         <button class="tab-btn" onclick="openTab(event, 'body')">📐 Замеры & Фото</button>
         <button class="tab-btn" onclick="openTab(event, 'supplements')">💊 БАДы</button>
         <button class="tab-btn" onclick="openTab(event, 'nutrition')">🥗 Питание & Вода</button>
-        <button class="tab-btn" onclick="openTab(event, 'analytics')">📊 Анализ & 1ПМ</button>
+        <button class="tab-btn" onclick="openTab(event, 'analytics')">📊 Аналитика</button>
+        <button class="tab-btn" onclick="openTab(event, 'gamification')">🏆 Рекорды & XP</button>
     </nav>
 
     <!-- ВКЛАДКА 1: ТРЕНИРОВКИ -->
@@ -494,13 +546,29 @@
             <button class="btn-secondary" onclick="saveAsTemplate()">Сохранить ввод как шаблон</button>
         </div>
 
-        <!-- Таймер -->
+        <!-- Виджет Готовности (Readiness Score) -->
+        <div class="readiness-widget">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-weight: 700; color: var(--cyan-neon);">⚡ ИНДЕКС ГОТОВНОСТИ К ТРЕНИРОВКЕ</span>
+                <span id="readiness-score-val" style="font-weight: 700; font-size: 1.1rem; color: var(--lime-neon);">100%</span>
+            </div>
+            <div class="grid-form" style="margin-bottom: 6px;">
+                <div class="form-group"><label>Сон (1-10)</label><input type="number" id="readiness-sleep" min="1" max="10" value="8" oninput="calcReadiness()"></div>
+                <div class="form-group"><label>Крепатура (1-10)</label><input type="number" id="readiness-soreness" min="1" max="10" value="2" oninput="calcReadiness()"></div>
+                <div class="form-group"><label>Стресс (1-10)</label><input type="number" id="readiness-stress" min="1" max="10" value="3" oninput="calcReadiness()"></div>
+            </div>
+            <div id="readiness-advice" style="font-size: 0.85rem; color: var(--text-dim);">🟢 Отличное состояние! Готовы к максимумам.</div>
+        </div>
+
+        <!-- Звуковой/Вибро Таймер -->
         <div class="timer-widget" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
             <div>
-                <label style="display: block; margin-bottom: 4px;">⏱️ Таймер отдыха</label>
+                <label style="display: block; margin-bottom: 4px;">⏱️ Таймер отдыха (со звуком)</label>
                 <div style="font-family: var(--font-title); font-size: 1.8rem; color: var(--cyan-neon);" id="timer-text">00:00</div>
             </div>
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <button class="btn-secondary" onclick="addTimerTime(-15)">-15с</button>
+                <button class="btn-secondary" onclick="addTimerTime(15)">+15с</button>
                 <button class="btn-secondary" onclick="startTimer(60)">60с</button>
                 <button class="btn-secondary" onclick="startTimer(90)">90с</button>
                 <button class="btn-secondary" onclick="startTimer(120)">120с</button>
@@ -542,7 +610,7 @@
                     <textarea id="workout-comments" placeholder="Отличный памп, легко шёл вес..."></textarea>
                 </div>
             </div>
-            <button type="submit" class="btn-cyber">Сохранить тренировку</button>
+            <button type="submit" class="btn-cyber">Сохранить тренировку (+100 XP)</button>
         </form>
 
         <h3 style="margin-top: 25px; color: var(--text-main);">История тренировок</h3>
@@ -604,7 +672,6 @@
     <section id="body" class="tab-content">
         <h2 style="color: var(--cyan-neon); margin-bottom: 15px; font-family: var(--font-title);">📐 Замеры Тела & Фото Прогресса</h2>
 
-        <!-- Виджет Было / Стало -->
         <div class="comparison-box">
             <h3 style="color: var(--lime-neon); font-size: 1rem;">📊 Динамика «Было ➔ Стало»</h3>
             <div class="comparison-grid" id="comparison-display">
@@ -614,41 +681,18 @@
 
         <form id="body-form" onsubmit="addBodyEntry(event)">
             <div class="grid-form">
-                <div class="form-group">
-                    <label>Дата</label>
-                    <input type="date" id="body-date" required>
-                </div>
-                <div class="form-group">
-                    <label>Вес (кг)</label>
-                    <input type="number" step="0.1" id="body-weight" placeholder="78.5" required>
-                </div>
-                <div class="form-group">
-                    <label>Талия (см)</label>
-                    <input type="number" step="0.5" id="body-waist" placeholder="82">
-                </div>
-                <div class="form-group">
-                    <label>Бедро (см)</label>
-                    <input type="number" step="0.5" id="body-thigh" placeholder="58">
-                </div>
-                <div class="form-group">
-                    <label>Бицепс (см)</label>
-                    <input type="number" step="0.5" id="body-biceps" placeholder="38">
-                </div>
-                <div class="form-group">
-                    <label>Грудь (см)</label>
-                    <input type="number" step="0.5" id="body-chest" placeholder="105">
-                </div>
-                <div class="form-group full-width">
-                    <label>Фото прогресса</label>
-                    <input type="file" id="body-photo" accept="image/*">
-                </div>
+                <div class="form-group"><label>Дата</label><input type="date" id="body-date" required></div>
+                <div class="form-group"><label>Вес (кг)</label><input type="number" step="0.1" id="body-weight" placeholder="78.5" required></div>
+                <div class="form-group"><label>Талия (см)</label><input type="number" step="0.5" id="body-waist" placeholder="82"></div>
+                <div class="form-group"><label>Бедро (см)</label><input type="number" step="0.5" id="body-thigh" placeholder="58"></div>
+                <div class="form-group"><label>Бицепс (см)</label><input type="number" step="0.5" id="body-biceps" placeholder="38"></div>
+                <div class="form-group"><label>Грудь (см)</label><input type="number" step="0.5" id="body-chest" placeholder="105"></div>
+                <div class="form-group full-width"><label>Фото прогресса</label><input type="file" id="body-photo" accept="image/*"></div>
             </div>
-            <button type="submit" class="btn-cyber">Сохранить замеры</button>
+            <button type="submit" class="btn-cyber">Сохранить замеры (+50 XP)</button>
         </form>
 
-        <div class="chart-container">
-            <canvas id="weightChart"></canvas>
-        </div>
+        <div class="chart-container"><canvas id="weightChart"></canvas></div>
 
         <h3 style="margin-top: 25px; color: var(--text-main);">История замеров</h3>
         <div class="cyber-table-container">
@@ -668,17 +712,9 @@
         <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
             <h3 style="color: var(--cyan-neon); font-size: 1rem; margin-bottom: 10px;">1. Каталог Добавок</h3>
             <form id="supp-catalog-form" onsubmit="addSuppToCatalog(event)" class="grid-form" style="margin-bottom: 10px;">
-                <div class="form-group">
-                    <label>Название</label>
-                    <input type="text" id="supp-cat-name" placeholder="Омега-3 / Креатин" required>
-                </div>
-                <div class="form-group">
-                    <label>Дозировка</label>
-                    <input type="text" id="supp-cat-dosage" placeholder="2 капсулы / 5г" required>
-                </div>
-                <div class="form-group" style="justify-content: flex-end;">
-                    <button type="submit" class="btn-cyber" style="font-size: 0.85rem;">+ В каталог</button>
-                </div>
+                <div class="form-group"><label>Название</label><input type="text" id="supp-cat-name" placeholder="Омега-3 / Креатин" required></div>
+                <div class="form-group"><label>Дозировка</label><input type="text" id="supp-cat-dosage" placeholder="2 капсулы / 5г" required></div>
+                <div class="form-group" style="justify-content: flex-end;"><button type="submit" class="btn-cyber" style="font-size: 0.85rem;">+ В каталог</button></div>
             </form>
             <div id="supp-catalog-pills" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
         </div>
@@ -686,14 +722,8 @@
         <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px;">
             <h3 style="color: var(--cyan-neon); font-size: 1rem; margin-bottom: 10px;">2. Назначение на день</h3>
             <div class="grid-form">
-                <div class="form-group">
-                    <label>Дата</label>
-                    <input type="date" id="supp-log-date" onchange="renderSuppLogs()" required>
-                </div>
-                <div class="form-group">
-                    <label>Добавка</label>
-                    <select id="supp-log-select" required></select>
-                </div>
+                <div class="form-group"><label>Дата</label><input type="date" id="supp-log-date" onchange="renderSuppLogs()" required></div>
+                <div class="form-group"><label>Добавка</label><select id="supp-log-select" required></select></div>
                 <div class="form-group">
                     <label>Время суток</label>
                     <select id="supp-log-slot" required>
@@ -703,9 +733,7 @@
                         <option value="На ночь">🌙 На ночь</option>
                     </select>
                 </div>
-                <div class="form-group" style="justify-content: flex-end;">
-                    <button type="button" class="btn-cyber" onclick="addSuppToLog()">Назначить</button>
-                </div>
+                <div class="form-group" style="justify-content: flex-end;"><button type="button" class="btn-cyber" onclick="addSuppToLog()">Назначить</button></div>
             </div>
 
             <div class="slot-grid">
@@ -727,10 +755,9 @@
     <section id="nutrition" class="tab-content">
         <h2 style="color: var(--lime-neon); margin-bottom: 15px; font-family: var(--font-title);">🥗 Контроль Питания & Гидратация</h2>
 
-        <!-- TDEE & BMR Калькулятор -->
         <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <h3 style="color: var(--cyan-neon); font-size: 1rem;">🧮 Калькулятор TDEE / BMR (Миффлина-Сан Жеора)</h3>
+                <h3 style="color: var(--cyan-neon); font-size: 1rem;">🧮 Калькулятор TDEE / BMR</h3>
                 <button class="btn-secondary" onclick="toggleTdeePanel()">Настроить цели</button>
             </div>
             
@@ -758,14 +785,14 @@
                         </select>
                     </div>
                 </div>
-                <button class="btn-cyber" onclick="calculateAndSaveTdee()">Рассчитать и применить цели</button>
+                <button class="btn-cyber" onclick="calculateAndSaveTdee()">Применить расчет</button>
             </div>
         </div>
 
         <!-- Трекер воды -->
         <div class="water-widget">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <span style="font-weight: 700; color: var(--cyan-neon);">💧 ТРЕКЕР ВОДЫ ЗА ДЕНЬ</span>
+                <span style="font-weight: 700; color: var(--cyan-neon);">💧 ТРЕКЕР ВОДЫ ZA ДЕНЬ</span>
                 <span id="water-display" style="font-size: 1.1rem; font-weight: 700; color: var(--cyan-neon);">0 / 2500 мл</span>
             </div>
             <div class="progress-bar-container"><div class="progress-bar-fill" id="water-progress"></div></div>
@@ -777,23 +804,15 @@
             </div>
         </div>
 
-        <!-- Форма добавления еды -->
         <form id="food-form" onsubmit="addFoodEntry(event)">
             <div class="grid-form">
-                <div class="form-group">
-                    <label>Дата</label>
-                    <input type="date" id="food-date" onchange="renderNutrition()" required>
-                </div>
+                <div class="form-group"><label>Дата</label><input type="date" id="food-date" onchange="renderNutrition()" required></div>
                 <div class="form-group" style="grid-column: span 2;">
                     <label>Продукт</label>
                     <input type="text" id="food-name" list="food-db" placeholder="курица, овсянка..." oninput="handleFoodInput()" required>
                     <datalist id="food-db"></datalist>
-                    <div class="hint" id="food-match-hint" style="font-size:0.75rem; color:var(--text-dim);">Система подберет КБЖУ</div>
                 </div>
-                <div class="form-group">
-                    <label>Граммы</label>
-                    <input type="number" id="food-grams" placeholder="150" required>
-                </div>
+                <div class="form-group"><label>Граммы</label><input type="number" id="food-grams" placeholder="150" required></div>
             </div>
 
             <div class="grid-form" style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;">
@@ -803,10 +822,9 @@
                 <div class="form-group"><label>Углеводы / 100г</label><input type="number" id="f-carbs" step="0.1" placeholder="0"></div>
             </div>
 
-            <button type="submit" class="btn-cyber" style="border-color: var(--lime-neon); color: var(--lime-neon); margin-top: 10px;">+ Добавить в дневник</button>
+            <button type="submit" class="btn-cyber" style="border-color: var(--lime-neon); color: var(--lime-neon); margin-top: 10px;">+ В дневник (+30 XP)</button>
         </form>
 
-        <!-- Прогресс бары КБЖУ -->
         <div class="summary-box">
             <div class="summary-item">
                 <div class="value" id="day-cal">0</div>
@@ -865,17 +883,55 @@
 
         <div class="chart-container"><canvas id="progressChart"></canvas></div>
     </section>
+
+    <!-- ВКЛАДКА 7: РЕКОРДЫ & XP (GAMIFICATION) -->
+    <section id="gamification" class="tab-content">
+        <h2 style="color: var(--yellow-neon); margin-bottom: 15px; font-family: var(--font-title);">🏆 Личные Рекорды & Достижения</h2>
+
+        <!-- Рекорды -->
+        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: var(--cyan-neon); margin-bottom: 10px;">🏅 Доска Славы (Personal Records)</h3>
+            <form id="pr-form" onsubmit="addPR(event)" class="grid-form" style="margin-bottom: 12px;">
+                <div class="form-group"><label>Упражнение</label><input type="text" id="pr-name" placeholder="Жим лежа" required></div>
+                <div class="form-group"><label>Макс. Вес (кг)</label><input type="number" step="0.5" id="pr-weight" placeholder="110" required></div>
+                <div class="form-group"><label>Повторения</label><input type="number" id="pr-reps" placeholder="1" required></div>
+                <div class="form-group" style="justify-content: flex-end;"><button type="submit" class="btn-cyber" style="font-size:0.85rem;">Зафиксировать</button></div>
+            </form>
+
+            <div class="cyber-table-container">
+                <table class="cyber-table">
+                    <thead><tr><th>Упражнение</th><th>Рекорд</th><th>Повторы</th><th>Удалить</th></tr></thead>
+                    <tbody id="pr-list"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Достижения -->
+        <h3 style="color: var(--yellow-neon); margin-bottom: 10px;">🌟 Кибер-Ачивки</h3>
+        <div class="achievements-grid" id="achievements-container"></div>
+    </section>
 </div>
 
-<!-- Модальное окно просмотра фото -->
+<!-- Модальное окно фото -->
 <div class="modal" id="img-modal" onclick="closeImgModal()">
     <img id="modal-img-src" class="modal-content" src="">
 </div>
 
 <script>
+// --- Service Worker Offline Support ---
+if ('serviceWorker' in navigator) {
+    const swCode = `
+        const CACHE = 'cyberfit-v3';
+        self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./']))));
+        self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(r => r || fetch(e.request))));
+    `;
+    const blob = new Blob([swCode], {type: 'application/javascript'});
+    navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
+}
+
 // --- ИНИЦИАЛИЗАЦИЯ ИБ INDEXEDDB ---
 const dbName = 'CyberFitDB';
-const dbVersion = 1;
+const dbVersion = 2;
 let db = null;
 
 function initDB() {
@@ -883,7 +939,7 @@ function initDB() {
         const req = indexedDB.open(dbName, dbVersion);
         req.onupgradeneeded = (e) => {
             const d = e.target.result;
-            ['workouts', 'templates', 'exercises', 'bodyMetrics', 'suppCatalog', 'suppLogs', 'nutrition', 'waterLogs', 'settings'].forEach(s => {
+            ['workouts', 'templates', 'exercises', 'bodyMetrics', 'suppCatalog', 'suppLogs', 'nutrition', 'waterLogs', 'settings', 'prs'].forEach(s => {
                 if(!d.objectStoreNames.contains(s)) d.createObjectStore(s, { keyPath: s === 'settings' ? 'key' : (s === 'waterLogs' ? 'date' : 'id') });
             });
         };
@@ -918,23 +974,35 @@ function deleteItem(store, key) {
 }
 
 // --- ДАННЫЕ В ПАМЯТИ ---
-let workouts = [], templates = [], exercises = [], bodyMetrics = [], suppCatalog = [], suppLogs = [], nutrition = [], waterLogs = [], settings = {};
+let workouts = [], templates = [], exercises = [], bodyMetrics = [], suppCatalog = [], suppLogs = [], nutrition = [], waterLogs = [], prs = [], settings = {};
+
+const themes = {
+    cyberpunk: { '--bg-color': '#070913', '--cyan-neon': '#00f3ff', '--magenta-neon': '#ff0055', '--lime-neon': '#00ff66', '--yellow-neon': '#ffcc00' },
+    matrix: { '--bg-color': '#020d04', '--cyan-neon': '#00ff66', '--magenta-neon': '#00aa44', '--lime-neon': '#33ff88', '--yellow-neon': '#ccff00' },
+    synthwave: { '--bg-color': '#0f051d', '--cyan-neon': '#ff00aa', '--magenta-neon': '#b026ff', '--lime-neon': '#00f3ff', '--yellow-neon': '#ffdd00' },
+    redalert: { '--bg-color': '#120303', '--cyan-neon': '#ff0033', '--magenta-neon': '#ff6600', '--lime-neon': '#ffcc00', '--yellow-neon': '#ffffff' }
+};
+
+const achievementsList = [
+    { id: 'first_workout', icon: '🏋️', title: 'Первая кровь', desc: 'Завершить 1 тренировку' },
+    { id: 'heavy_tonnage', icon: '🐘', title: 'Титановый Объем', desc: 'Поднять суммарно 10,000 кг' },
+    { id: 'water_master', icon: '💧', title: 'Аквамен', desc: 'Выпить 2500 мл воды за день' },
+    { id: 'paparazzi', icon: '📸', title: 'Трансформация', desc: 'Сохранить 3 замера с фото' },
+    { id: 'pr_setter', icon: '👑', title: 'Рекордсмен', desc: 'Установить личный рекорд (PR)' }
+];
 
 const foodDatabase = [
-    { keywords: ["курица", "грудинка", "курочка"], name: "Куриное филе", cal: 165, prot: 31, fat: 3.6, carbs: 0 },
+    { keywords: ["курица", "грудинка"], name: "Куриное филе", cal: 165, prot: 31, fat: 3.6, carbs: 0 },
     { keywords: ["рис"], name: "Рис вареный", cal: 130, prot: 2.7, fat: 0.3, carbs: 28 },
-    { keywords: ["гречка", "греча"], name: "Гречка вареная", cal: 110, prot: 4.2, fat: 1.1, carbs: 21 },
-    { keywords: ["яйцо", "яйца"], name: "Яйцо куриное", cal: 155, prot: 13, fat: 11, carbs: 1 },
-    { keywords: ["творог"], name: "Творог 5%", cal: 121, prot: 17, fat: 5, carbs: 1.8 },
-    { keywords: ["овсянка", "геркулес"], name: "Овсянка", cal: 389, prot: 16.9, fat: 6.9, carbs: 66 },
-    { keywords: ["банан"], name: "Банан", cal: 89, prot: 1.1, fat: 0.3, carbs: 23 }
+    { keywords: ["гречка"], name: "Гречка вареная", cal: 110, prot: 4.2, fat: 1.1, carbs: 21 },
+    { keywords: ["яйцо"], name: "Яйцо куриное", cal: 155, prot: 13, fat: 11, carbs: 1 },
+    { keywords: ["творог"], name: "Творог 5%", cal: 121, prot: 17, fat: 5, carbs: 1.8 }
 ];
 
 let chartInstance = null, weightChartInstance = null, timerInterval = null, timeLeft = 0;
 
 document.addEventListener('DOMContentLoaded', async () => {
     await initDB();
-    await migrateFromLocalStorage();
     await loadAllData();
 
     const today = new Date().toISOString().split('T')[0];
@@ -948,6 +1016,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const dl = document.getElementById('food-db');
     foodDatabase.forEach(f => { const opt = document.createElement('option'); opt.value = f.name; dl.appendChild(opt); });
 
+    applyTheme(settings.theme || 'cyberpunk');
+    document.getElementById('theme-selector').value = settings.theme || 'cyberpunk';
+    
+    updateUserLevelUI();
     renderWorkouts();
     renderTemplatesSelect();
     renderExercises();
@@ -955,6 +1027,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderSuppCatalog();
     renderSuppLogs();
     renderNutrition();
+    renderPRs();
+    checkAchievements();
     initCharts();
 });
 
@@ -967,85 +1041,107 @@ async function loadAllData() {
     suppLogs = await getAll('suppLogs');
     nutrition = await getAll('nutrition');
     waterLogs = await getAll('waterLogs');
+    prs = await getAll('prs');
     const setArr = await getAll('settings');
     setArr.forEach(s => settings[s.key] = s.val);
 
-    if(!settings.targets) {
-        settings.targets = { cal: 2200, prot: 160, fat: 70, carbs: 250 };
-    }
+    if(!settings.targets) settings.targets = { cal: 2200, prot: 160, fat: 70, carbs: 250 };
+    if(!settings.xp) settings.xp = 0;
 }
 
-async function migrateFromLocalStorage() {
-    if(localStorage.getItem('cf_workouts')) {
-        const oldW = JSON.parse(localStorage.getItem('cf_workouts')) || [];
-        for(let item of oldW) await putItem('workouts', item);
-        localStorage.removeItem('cf_workouts');
-    }
-    if(localStorage.getItem('cf_body')) {
-        const oldB = JSON.parse(localStorage.getItem('cf_body')) || [];
-        for(let item of oldB) await putItem('bodyMetrics', item);
-        localStorage.removeItem('cf_body');
-    }
+// --- ТЕМЫ ---
+function changeTheme(themeKey) {
+    applyTheme(themeKey);
+    settings.theme = themeKey;
+    putItem('settings', { key: 'theme', val: themeKey });
 }
 
-// --- НАВИГАЦИЯ ---
-function openTab(e, tabId) {
-    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    e.currentTarget.classList.add('active');
-    if(tabId === 'analytics') updateAnalytics();
-    if(tabId === 'body') updateWeightChart();
+function applyTheme(themeKey) {
+    const t = themes[themeKey] || themes.cyberpunk;
+    for (let key in t) document.documentElement.style.setProperty(key, t[key]);
 }
 
-// --- БЭКАП И ТЕЛЕГРАМ ---
-async function exportData() {
-    const backup = { workouts, templates, exercises, bodyMetrics, suppCatalog, suppLogs, nutrition, waterLogs, settings };
-    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `cyber-fit-backup-${new Date().toISOString().split('T')[0]}.json`;
-    a.click();
+// --- XP И ГЕЙМИФИКАЦИЯ ---
+async function addXP(amount) {
+    settings.xp = (settings.xp || 0) + amount;
+    await putItem('settings', { key: 'xp', val: settings.xp });
+    updateUserLevelUI();
+    checkAchievements();
 }
 
-async function importData(e) {
-    const file = e.target.files[0];
-    if(!file) return;
-    const reader = new FileReader();
-    reader.onload = async function(evt) {
-        try {
-            const data = JSON.parse(evt.target.result);
-            if(data.workouts) for(let i of data.workouts) await putItem('workouts', i);
-            if(data.bodyMetrics) for(let i of data.bodyMetrics) await putItem('bodyMetrics', i);
-            if(data.nutrition) for(let i of data.nutrition) await putItem('nutrition', i);
-            alert('✅ Данные импортированы!');
-            location.reload();
-        } catch(err) { alert('❌ Ошибка чтения файла'); }
-    };
-    reader.readAsText(file);
+function updateUserLevelUI() {
+    const xp = settings.xp || 0;
+    const lvl = Math.floor(xp / 500) + 1;
+    document.getElementById('user-level').innerText = lvl;
+    document.getElementById('user-xp').innerText = xp;
 }
 
-async function sendTelegramBackup() {
-    const token = prompt("Введите Bot Token Telegram:");
-    const chatId = prompt("Введите Ваш Chat ID Telegram:");
-    if(!token || !chatId) return;
-
-    const backup = { workouts, templates, exercises, bodyMetrics, suppCatalog, suppLogs, nutrition, settings };
-    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+function checkAchievements() {
+    const container = document.getElementById('achievements-container');
+    container.innerHTML = '';
     
-    const formData = new FormData();
-    formData.append('chat_id', chatId);
-    formData.append('document', blob, `cyberfit_backup_${new Date().toISOString().split('T')[0]}.json`);
+    const unlocked = new Set();
+    if(workouts.length >= 1) unlocked.add('first_workout');
+    if(workouts.reduce((a,c) => a + (c.tonnage||0), 0) >= 10000) unlocked.add('heavy_tonnage');
+    if(waterLogs.some(w => w.ml >= 2500)) unlocked.add('water_master');
+    if(bodyMetrics.filter(b => b.photo).length >= 3) unlocked.add('paparazzi');
+    if(prs.length >= 1) unlocked.add('pr_setter');
 
-    try {
-        const res = await fetch(`https://api.telegram.org/bot${token}/sendDocument`, { method: 'POST', body: formData });
-        if(res.ok) alert('✈️ Резервная копия отправлена в Telegram!');
-        else alert('❌ Ошибка отправки в Telegram');
-    } catch(e) { alert('❌ Ошибка соединения'); }
+    achievementsList.forEach(a => {
+        const isUnlocked = unlocked.has(a.id);
+        const card = document.createElement('div');
+        card.className = `achievement-card ${isUnlocked ? 'unlocked' : ''}`;
+        card.innerHTML = `
+            <div class="achievement-icon">${a.icon}</div>
+            <div class="achievement-title">${a.title}</div>
+            <div class="achievement-desc">${a.desc}</div>
+        `;
+        container.appendChild(card);
+    });
 }
 
-// --- ТАЙМЕР ---
+// --- ИНДЕКС ГОТОВНОСТИ (READINESS) ---
+function calcReadiness() {
+    const sleep = parseInt(document.getElementById('readiness-sleep').value) || 8;
+    const soreness = parseInt(document.getElementById('readiness-soreness').value) || 2;
+    const stress = parseInt(document.getElementById('readiness-stress').value) || 3;
+
+    let score = Math.round((sleep * 4) + ((11 - soreness) * 3) + ((11 - stress) * 3));
+    score = Math.min(100, Math.max(10, score));
+
+    const valEl = document.getElementById('readiness-score-val');
+    const advEl = document.getElementById('readiness-advice');
+    valEl.innerText = `${score}%`;
+
+    if(score >= 80) {
+        valEl.style.color = 'var(--lime-neon)';
+        advEl.innerText = '🟢 Отличное состояние! Пик формы для тяжелых рабочих весов.';
+    } else if(score >= 50) {
+        valEl.style.color = 'var(--yellow-neon)';
+        advEl.innerText = '🟡 Среднее восстановление. Рекомендуется умеренная нагрузка.';
+    } else {
+        valEl.style.color = 'var(--magenta-neon)';
+        advEl.innerText = '🔴 Низкое восстановление. Сделайте легкую тренировку или Deload.';
+    }
+}
+
+// --- ТАЙМЕР СО ЗВУКОМ WEB AUDIO ---
+function playCyberBeep() {
+    try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.6);
+        gain.gain.setValueAtTime(0.3, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.6);
+        osc.connect(gain); gain.connect(ctx.destination);
+        osc.start(); osc.stop(ctx.currentTime + 0.6);
+    } catch(e){}
+    if('vibrate' in navigator) navigator.vibrate([200, 100, 200]);
+}
+
 function startTimer(s) {
     stopTimer();
     timeLeft = s;
@@ -1053,9 +1149,13 @@ function startTimer(s) {
     timerInterval = setInterval(() => {
         timeLeft--;
         updateTimerDisplay();
-        if(timeLeft <= 0) stopTimer();
+        if(timeLeft <= 0) {
+            stopTimer();
+            playCyberBeep();
+        }
     }, 1000);
 }
+function addTimerTime(s) { timeLeft = Math.max(0, timeLeft + s); updateTimerDisplay(); }
 function stopTimer() { clearInterval(timerInterval); timeLeft = 0; updateTimerDisplay(); }
 function updateTimerDisplay() {
     const min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
@@ -1063,7 +1163,7 @@ function updateTimerDisplay() {
     document.getElementById('timer-text').innerText = `${min}:${sec}`;
 }
 
-// --- ТРЕНИРОВКИ И ШАБЛОНЫ ---
+// --- ТРЕНИРОВКИ ---
 async function addWorkout(e) {
     e.preventDefault();
     const hrs = parseInt(document.getElementById('workout-hours').value) || 0;
@@ -1071,8 +1171,7 @@ async function addWorkout(e) {
     const item = {
         id: Date.now(),
         date: document.getElementById('workout-date').value,
-        hrs, mins,
-        duration: (hrs * 60) + mins,
+        hrs, mins, duration: (hrs * 60) + mins,
         intensity: parseInt(document.getElementById('workout-intensity').value),
         rpe: parseInt(document.getElementById('workout-rpe').value) || null,
         tonnage: parseInt(document.getElementById('workout-tonnage').value) || 0,
@@ -1081,6 +1180,7 @@ async function addWorkout(e) {
     };
     workouts.unshift(item);
     await putItem('workouts', item);
+    await addXP(100);
     document.getElementById('workout-form').reset();
     renderWorkouts();
 }
@@ -1089,6 +1189,14 @@ async function deleteWorkout(id) {
     workouts = workouts.filter(w => w.id !== id);
     await deleteItem('workouts', id);
     renderWorkouts();
+}
+
+function shareWorkout(id) {
+    const w = workouts.find(x => x.id === id);
+    if(!w) return;
+    const text = `⚡ CYBER-FIT // WORKOUT DONE\n📅 ${w.date} | ⏱️ ${w.duration} мин\n🏋️ Тоннаж: ${w.tonnage||0} кг | 🔥 Интенсивность: ${w.intensity}/10\n\n📝 Упражнения:\n${w.details}`;
+    navigator.clipboard.writeText(text);
+    alert('📋 Карточка тренировки скопирована в буфер обмена!');
 }
 
 function renderWorkouts() {
@@ -1103,7 +1211,7 @@ function renderWorkouts() {
                 <span>📅 ${w.date} | ⏱️ ${timeStr} ${w.tonnage ? `| 🏋️ ${w.tonnage}кг` : ''}</span>
                 <span>
                     <span class="card-badge">Нагрузка: ${w.intensity}/10</span>
-                    ${w.rpe ? `<span class="card-badge" style="color:var(--yellow-neon)">RPE: ${w.rpe}</span>` : ''}
+                    <button class="btn-secondary" style="padding: 2px 6px; font-size: 0.75rem;" onclick="shareWorkout(${w.id})">📋 Поделиться</button>
                     <button class="delete-btn" onclick="deleteWorkout(${w.id})">✖</button>
                 </span>
             </div>
@@ -1114,15 +1222,52 @@ function renderWorkouts() {
     });
 }
 
+// --- ЛИЧНЫЕ РЕКОРДЫ (PRs) ---
+async function addPR(e) {
+    e.preventDefault();
+    const item = {
+        id: Date.now(),
+        name: document.getElementById('pr-name').value.trim(),
+        weight: parseFloat(document.getElementById('pr-weight').value),
+        reps: parseInt(document.getElementById('pr-reps').value)
+    };
+    prs.unshift(item);
+    await putItem('prs', item);
+    await addXP(100);
+    document.getElementById('pr-form').reset();
+    renderPRs();
+}
+
+async function deletePR(id) {
+    prs = prs.filter(p => p.id !== id);
+    await deleteItem('prs', id);
+    renderPRs();
+}
+
+function renderPRs() {
+    const tbody = document.getElementById('pr-list');
+    tbody.innerHTML = '';
+    prs.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="font-weight:700; color:#fff;">${escapeHtml(p.name)}</td>
+            <td style="color:var(--yellow-neon); font-weight:700;">${p.weight} кг</td>
+            <td>${p.reps}</td>
+            <td><button class="delete-btn" onclick="deletePR(${p.id})">✖</button></td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// --- ШАБЛОНЫ ---
 async function saveAsTemplate() {
-    const name = prompt("Введите название шаблона (например: День Спины):");
+    const name = prompt("Название шаблона:");
     if(!name) return;
     const details = document.getElementById('workout-details').value;
     const t = { id: Date.now(), name, details };
     templates.push(t);
     await putItem('templates', t);
     renderTemplatesSelect();
-    alert('✅ Шаблон сохранен!');
 }
 
 function renderTemplatesSelect() {
@@ -1130,8 +1275,7 @@ function renderTemplatesSelect() {
     sel.innerHTML = '<option value="">-- Выбрать шаблон --</option>';
     templates.forEach(t => {
         const opt = document.createElement('option');
-        opt.value = t.id;
-        opt.textContent = t.name;
+        opt.value = t.id; opt.textContent = t.name;
         sel.appendChild(opt);
     });
 }
@@ -1179,14 +1323,13 @@ function renderExercises() {
     });
 }
 
-// --- ЗАМЕРЫ & ФОТО + СРАВНЕНИЕ ---
+// --- ЗАМЕРЫ И ФОТО ---
 async function addBodyEntry(e) {
     e.preventDefault();
     const photoFile = document.getElementById('body-photo').files[0];
     let photoBase64 = null;
-
     if(photoFile) {
-        photoBase64 = await new Promise((res) => {
+        photoBase64 = await new Promise(res => {
             const r = new FileReader();
             r.onload = (evt) => res(evt.target.result);
             r.readAsDataURL(photoFile);
@@ -1206,6 +1349,7 @@ async function addBodyEntry(e) {
 
     bodyMetrics.unshift(entry);
     await putItem('bodyMetrics', entry);
+    await addXP(50);
     document.getElementById('body-form').reset();
     renderBody();
     updateWeightChart();
@@ -1244,17 +1388,14 @@ function renderComparison() {
         container.innerHTML = `<div style="color: var(--text-dim); font-size: 0.85rem; grid-column: 1/-1;">Добавьте минимум 2 замера для расчета динамики</div>`;
         return;
     }
-
     const sorted = [...bodyMetrics].sort((a,b) => new Date(a.date) - new Date(b.date));
-    const first = sorted[0];
-    const last = sorted[sorted.length - 1];
+    const first = sorted[0]; const last = sorted[sorted.length - 1];
 
-    const calcDiff = (val1, val2) => {
-        const n1 = parseFloat(val1), n2 = parseFloat(val2);
+    const calcDiff = (v1, v2) => {
+        const n1 = parseFloat(v1), n2 = parseFloat(v2);
         if(isNaN(n1) || isNaN(n2)) return '-';
         const diff = (n2 - n1).toFixed(1);
-        const cls = diff <= 0 ? 'diff-positive' : 'diff-negative';
-        return `<span class="${cls}">${diff > 0 ? '+' : ''}${diff}</span>`;
+        return `<span class="${diff <= 0 ? 'diff-positive' : 'diff-negative'}">${diff > 0 ? '+' : ''}${diff}</span>`;
     };
 
     container.innerHTML = `
@@ -1264,9 +1405,6 @@ function renderComparison() {
         <div class="comp-card"><div>Бицепс</div><div>${first.biceps} ➔ ${last.biceps}</div><div>${calcDiff(first.biceps, last.biceps)} см</div></div>
     `;
 }
-
-function openImgModal(src) { document.getElementById('modal-img-src').src = src; document.getElementById('img-modal').classList.add('active'); }
-function closeImgModal() { document.getElementById('img-modal').classList.remove('active'); }
 
 // --- БАДЫ ---
 async function addSuppToCatalog(e) {
@@ -1353,10 +1491,7 @@ function renderSuppLogs() {
 }
 
 // --- ПИТАНИЕ & TDEE & ВОДА ---
-function toggleTdeePanel() {
-    const p = document.getElementById('tdee-panel');
-    p.style.display = p.style.display === 'none' ? 'block' : 'none';
-}
+function toggleTdeePanel() { const p = document.getElementById('tdee-panel'); p.style.display = p.style.display === 'none' ? 'block' : 'none'; }
 
 async function calculateAndSaveTdee() {
     const gender = document.getElementById('tdee-gender').value;
@@ -1371,13 +1506,7 @@ async function calculateAndSaveTdee() {
     if(goal === 'cut') tdee *= 0.85; if(goal === 'bulk') tdee *= 1.15;
 
     tdee = Math.round(tdee);
-    settings.targets = {
-        cal: tdee,
-        prot: Math.round(w * 2),
-        fat: Math.round(w * 0.9),
-        carbs: Math.round((tdee - (w * 2 * 4) - (w * 0.9 * 9)) / 4)
-    };
-
+    settings.targets = { cal: tdee, prot: Math.round(w * 2), fat: Math.round(w * 0.9), carbs: Math.round((tdee - (w * 2 * 4) - (w * 0.9 * 9)) / 4) };
     await putItem('settings', { key: 'targets', val: settings.targets });
     alert(`🎯 Рассчитано! Ваша цель: ${tdee} ккал/день`);
     toggleTdeePanel();
@@ -1391,6 +1520,7 @@ async function addWater(ml) {
     const idx = waterLogs.findIndex(w => w.date === date);
     if(idx >= 0) waterLogs[idx] = wLog; else waterLogs.push(wLog);
     await putItem('waterLogs', wLog);
+    await addXP(20);
     renderNutrition();
 }
 
@@ -1430,6 +1560,7 @@ async function addFoodEntry(e) {
     };
     nutrition.unshift(entry);
     await putItem('nutrition', entry);
+    await addXP(30);
     document.getElementById('food-form').reset();
     renderNutrition();
 }
@@ -1475,18 +1606,72 @@ function renderNutrition() {
     document.getElementById('fat-bar').style.width = Math.min(100, (dayFat / tgt.fat) * 100) + '%';
     document.getElementById('carbs-bar').style.width = Math.min(100, (dayCarbs / tgt.carbs) * 100) + '%';
 
-    // Water
     const wLog = waterLogs.find(w => w.date === selectedDate) || { ml: 0 };
     document.getElementById('water-display').innerText = `${wLog.ml} / 2500 мл`;
     document.getElementById('water-progress').style.width = Math.min(100, (wLog.ml / 2500) * 100) + '%';
 }
 
-// --- АНАЛИТИКА ---
+// --- АНАЛИТИКА & НАВИГАЦИЯ ---
 function calculate1RM() {
     const w = parseFloat(document.getElementById('calc-weight').value);
     const r = parseFloat(document.getElementById('calc-reps').value);
     document.getElementById('calc-result').innerText = (w && r > 0) ? `${Math.round(w * (1 + r / 30))} кг` : '0 кг';
 }
+
+function openTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.add('active');
+    if(tabId === 'analytics') updateAnalytics();
+    if(tabId === 'body') updateWeightChart();
+}
+
+async function exportData() {
+    const backup = { workouts, templates, exercises, bodyMetrics, suppCatalog, suppLogs, nutrition, waterLogs, prs, settings };
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = `cyberfit-v3-backup-${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+}
+
+async function importData(e) {
+    const file = e.target.files[0];
+    if(!file) return;
+    const reader = new FileReader();
+    reader.onload = async function(evt) {
+        try {
+            const data = JSON.parse(evt.target.result);
+            if(data.workouts) for(let i of data.workouts) await putItem('workouts', i);
+            if(data.bodyMetrics) for(let i of data.bodyMetrics) await putItem('bodyMetrics', i);
+            if(data.prs) for(let i of data.prs) await putItem('prs', i);
+            alert('✅ Данные импортированы!'); location.reload();
+        } catch(err) { alert('❌ Ошибка чтения файла'); }
+    };
+    reader.readAsText(file);
+}
+
+async function sendTelegramBackup() {
+    const token = prompt("Введите Bot Token Telegram:");
+    const chatId = prompt("Введите Ваш Chat ID Telegram:");
+    if(!token || !chatId) return;
+
+    const backup = { workouts, templates, exercises, bodyMetrics, suppCatalog, suppLogs, nutrition, prs, settings };
+    const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+    
+    const formData = new FormData();
+    formData.append('chat_id', chatId);
+    formData.append('document', blob, `cyberfit_backup_${new Date().toISOString().split('T')[0]}.json`);
+
+    try {
+        const res = await fetch(`https://api.telegram.org/bot${token}/sendDocument`, { method: 'POST', body: formData });
+        if(res.ok) alert('✈️ Резервная копия отправлена в Telegram!');
+        else alert('❌ Ошибка отправки в Telegram');
+    } catch(e) { alert('❌ Ошибка соединения'); }
+}
+
+function openImgModal(src) { document.getElementById('modal-img-src').src = src; document.getElementById('img-modal').classList.add('active'); }
+function closeImgModal() { document.getElementById('img-modal').classList.remove('active'); }
 
 function initCharts() {
     const ctx = document.getElementById('progressChart').getContext('2d');
