@@ -1,8 +1,8 @@
 {
   "project": "Azeroth Pulse",
-  "generated_at": "2026-10-24T10:35:29.082688+00:00",
+  "generated_at": "2026-10-24T10:46:47.470369+00:00",
   "window_days": 5,
-  "items_count": 215,
+  "items_count": 212,
   "sources_checked": 9,
   "feeds_succeeded": 5,
   "ai_summaries_enabled": false,
@@ -266,7 +266,7 @@
       ],
       "id": "cf60d1c70313",
       "cluster_id": "cf60d1c70313",
-      "heat_score": 60,
+      "heat_score": 59,
       "heat_label": "rising"
     },
     {
@@ -370,15 +370,15 @@
         },
         {
           "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9ZekFicDRzbDlqakdpVWlQSmRyU2dXUGNMM0VySjFiazJlZFZUWE9lTHRXSkQ2clMxTlM3ejhzN2NJZGd5OWo2b2VFWTU3b2tNOHY4R0MxMTBsbGxKNGVwVUdYM3ZhNlROcmNqckpyXzI1dnNaR2lUeXRMQzFldw?oc=5"
-        },
-        {
-          "source": "https://news.blizzard.com",
           "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBOVFdTbThUUVFEc05XTU5iRlJ4b1ZHN2hvdkJfRTdhZmdDWVY2NVlSakNKVXpHRTZXQnhkOGpWU29tNHl4Qmp5UUNWVC1OZ2VEa3laMV9vMFBjeXJsRzV2a1lfbDRDS25SdVlj?oc=5"
         },
         {
           "source": "https://news.blizzard.com",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE94SjNtQ2U1aGtTakpIdGtPWHlURXRJNUhrbVJzd2VGdjg5SVMzY3hvSG5jVFFnbnNsWFJjTzh3TkZYb1lHX1VfWVlMNjZmXzVBSVJFR2VLck11Q3Y5bXdqZ3hCSjFJMUp3NElxd2ZfR2tBXzAxMEdHSWVod083QQ?oc=5"
+        },
+        {
+          "source": "https://news.blizzard.com",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1rVFlPYUlnOWFDMUpvSElkcnV0cW1pUWNZcHM5dTRMVlIza0ljTzFELUlVSkZFaFB1YTI5M3h1OXk3S1JJcWRlNkdndDNDVGo1d0l5ZHJEeTZvRjZWeGxmRFA4azBaQTlIUWpXU2FNYmtRbnpjZXFpU2ZjNmtDQQ?oc=5"
         }
       ],
       "id": "dd3feb231e6e",
@@ -452,6 +452,38 @@
       "heat_label": "rising"
     },
     {
+      "title": "Blizzard Removes Classic Warcraft 1 and 2 from GOG - NeoTeo",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdF9lNlRwNW8xdFNMaHMtdUR5ZzRJT3psOHQxWDM5emxYTVpOTlRXa1RfMng3NnlObC1iLTVXS2tRNVdmbFVqWHk0d21TeldYYWMwZEduMnpLV2UxakJxMGwtSV9zT1NiZ1hFSno1RXl5cDcwVmxxVUxvZENEVVI3RGJB?oc=5",
+      "summary": "Blizzard Removes Classic Warcraft 1 and 2 from GOG NeoTeo",
+      "source": "https://www.neoteo.com",
+      "published": "2026-10-23T20:50:17+00:00",
+      "image": "",
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "classic"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.neoteo.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.neoteo.com",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdF9lNlRwNW8xdFNMaHMtdUR5ZzRJT3psOHQxWDM5emxYTVpOTlRXa1RfMng3NnlObC1iLTVXS2tRNVdmbFVqWHk0d21TeldYYWMwZEduMnpLV2UxakJxMGwtSV9zT1NiZ1hFSno1RXl5cDcwVmxxVUxvZENEVVI3RGJB?oc=5"
+        }
+      ],
+      "id": "86ec3956c48d",
+      "cluster_id": "86ec3956c48d",
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
       "title": "Ten Years Later, Azeroth Is Still Here - Film Threat",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE54Y2hIemhHbk9WMFlnZ2FjSERqSWY2ZDV6QVIyZm45TjYzdUp2T0llb3M3aXNVaEtNU1lBVGVzTGpXV1JMblp1VHA4Q0pTQ1FuZGdpZzNwMkdZbTVHd0x0eXBPcUFLc1UwYVpENlRydkVsMWcwVzhyUVdR?oc=5",
       "summary": "Ten Years Later, Azeroth Is Still Here Film Threat",
@@ -480,6 +512,38 @@
       ],
       "id": "9157ec5de6eb",
       "cluster_id": "9157ec5de6eb",
+      "heat_score": 55,
+      "heat_label": "rising"
+    },
+    {
+      "title": "‘Dungeon Masters’ Officially Kills Off a ‘World of Warcraft’ Hero [Exclusive] - IMDb",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9weFBUSGRqWDhWenFOZlhaeVoxWEI1eFdPa1ZpSFg0Mkw4NnpUQlZXNzJlZHhBVElRVXczeENnTEpXSlRvdFVvenhRLVBqY09MOV9SY1I0cVcta3NoZjlBVDFpdl8?oc=5",
+      "summary": "‘Dungeon Masters’ Officially Kills Off a ‘World of Warcraft’ Hero [Exclusive] IMDb",
+      "source": "https://www.imdb.com",
+      "published": "2026-10-23T20:34:05+00:00",
+      "image": "",
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.imdb.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.imdb.com",
+          "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9weFBUSGRqWDhWenFOZlhaeVoxWEI1eFdPa1ZpSFg0Mkw4NnpUQlZXNzJlZHhBVElRVXczeENnTEpXSlRvdFVvenhRLVBqY09MOV9SY1I0cVcta3NoZjlBVDFpdl8?oc=5"
+        }
+      ],
+      "id": "c8614535d8af",
+      "cluster_id": "c8614535d8af",
       "heat_score": 55,
       "heat_label": "rising"
     },
@@ -1521,7 +1585,7 @@
       ],
       "id": "84854f784152",
       "cluster_id": "84854f784152",
-      "heat_score": 53,
+      "heat_score": 52,
       "heat_label": "rising"
     },
     {
@@ -1849,7 +1913,7 @@
       ],
       "id": "d97543fa5843",
       "cluster_id": "d97543fa5843",
-      "heat_score": 47,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2137,7 +2201,7 @@
       ],
       "id": "c09375297724",
       "cluster_id": "c09375297724",
-      "heat_score": 46,
+      "heat_score": 45,
       "heat_label": "steady"
     },
     {
@@ -2169,18 +2233,18 @@
       ],
       "id": "902a4cbf1a4d",
       "cluster_id": "902a4cbf1a4d",
-      "heat_score": 46,
+      "heat_score": 45,
       "heat_label": "steady"
     },
     {
-      "title": "Age of Empires IV – Update 17.0 Preview - Age of Empires - World's Edge Studio - www.ageofempires.com",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9JYWI5c1AwQ3hfTmlqOE9Pc3ZuTWNiOWp5WTNWR21RYmRWVzBjNTRxNHRUd3c2dHJGUlRzMFo4eTNITjZYNmpaYXNDc0xpcE5VMW9NWjQwTWM3ZWVvcHFfSUVHY3A2dnZIMHY4eHpuZXBaQQ?oc=5",
-      "summary": "Age of Empires IV – Update 17.0 Preview - Age of Empires - World's Edge Studio www.ageofempires.com",
-      "source": "https://www.ageofempires.com",
-      "published": "2026-10-22T17:00:17+00:00",
+      "title": "Blizzard asked to break their servers.. So we did. - YouTube",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBXMDhWNkoxdXFqY1k0ZzNFR3o3SFpadUxpWGlXWTBOc1diOXIyVU1rQUtuckxiTFhZT2Q2N0k2TnQxbktQMERDcWt2QnNBeS1IRnpQRFE0OGJ5Q1hj?oc=5",
+      "summary": "Blizzard asked to break their servers.. So we did. YouTube",
+      "source": "https://youtu.be",
+      "published": "2026-10-22T17:00:18+00:00",
       "image": "",
       "video_url": "",
-      "category": "update",
+      "category": "community",
       "game_modes": [
         "retail"
       ],
@@ -2190,17 +2254,17 @@
       "reddit_score": 0,
       "reddit_comments": 0,
       "sources": [
-        "https://www.ageofempires.com"
+        "https://youtu.be"
       ],
       "source_count": 1,
       "source_links": [
         {
-          "source": "https://www.ageofempires.com",
-          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9JYWI5c1AwQ3hfTmlqOE9Pc3ZuTWNiOWp5WTNWR21RYmRWVzBjNTRxNHRUd3c2dHJGUlRzMFo4eTNITjZYNmpaYXNDc0xpcE5VMW9NWjQwTWM3ZWVvcHFfSUVHY3A2dnZIMHY4eHpuZXBaQQ?oc=5"
+          "source": "https://youtu.be",
+          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBXMDhWNkoxdXFqY1k0ZzNFR3o3SFpadUxpWGlXWTBOc1diOXIyVU1rQUtuckxiTFhZT2Q2N0k2TnQxbktQMERDcWt2QnNBeS1IRnpQRFE0OGJ5Q1hj?oc=5"
         }
       ],
-      "id": "f1cefd541356",
-      "cluster_id": "f1cefd541356",
+      "id": "2c1e4c6a9058",
+      "cluster_id": "2c1e4c6a9058",
       "heat_score": 45,
       "heat_label": "steady"
     },
@@ -3077,38 +3141,6 @@
       "heat_label": "steady"
     },
     {
-      "title": "List of All Races and Racial Abilities - WoW Forever - Mobalytics",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5FVzhTYlkwVEExVy1DNFhIZkpqbVVtWnYzR1hkc3BsbVYtRC1oM0xVdzZSeXFqdnEzcVNXbDItdk1jRExDa1B3dkczOHZPZlc0ZU92TE8zdGZrYm1xb2hrWGlpODlxYzRfZzhiclIySDhFVlBzT2cyRA?oc=5",
-      "summary": "List of All Races and Racial Abilities - WoW Forever Mobalytics",
-      "source": "https://mobalytics.gg",
-      "published": "2026-10-22T07:00:00+00:00",
-      "image": "",
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://mobalytics.gg"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://mobalytics.gg",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5FVzhTYlkwVEExVy1DNFhIZkpqbVVtWnYzR1hkc3BsbVYtRC1oM0xVdzZSeXFqdnEzcVNXbDItdk1jRExDa1B3dkczOHZPZlc0ZU92TE8zdGZrYm1xb2hrWGlpODlxYzRfZzhiclIySDhFVlBzT2cyRA?oc=5"
-        }
-      ],
-      "id": "b8a0a06d045b",
-      "cluster_id": "b8a0a06d045b",
-      "heat_score": 44,
-      "heat_label": "steady"
-    },
-    {
       "title": "WoW Forever Twitch Drops Guide: How to Get the Free Golden Murloc Plush - MMOEXP",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWE8wX3FKbWZuZ2dhaTVDZHZtYlJuaGtiZXdBdTJweTB6WEdLUFhYYkJITEM4c3h5aHJERDR4NlA3ZTduTFczRHFzMnZGRC1tYXJqb2dzdVY3dEpNSjRDQmxHMDVOanBDLTdPNVZFZjV1MXV0R21GRTktV3A2MmdDSVU1NUJqbG1yMjBLR0dPYi1obnV5Y19VYWprRlY4RXJwNU05eWFR?oc=5",
       "summary": "WoW Forever Twitch Drops Guide: How to Get the Free Golden Murloc Plush MMOEXP",
@@ -3233,6 +3265,38 @@
       ],
       "id": "056db6246568",
       "cluster_id": "056db6246568",
+      "heat_score": 46,
+      "heat_label": "steady"
+    },
+    {
+      "title": "WoW BlizzCon 2026 Preview: TBC Classic Anniversary Future & Potential WotLK Anniversary Plans - MMOEXP",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRkRJOF9QMVFzeXdUS1ZtUk01MWNtckQ5WWxwTHU3RFZEOXBWeElWUkR6VDlvTlFwZC1fb3pQTmJYWjEtMjkwN0hRMldUMnAwcl9hWDFnMnRQTm0zQXVLeUp6X3JmMTkzcXpQWHVIdk5fV2sxdm9TUy1mMGJMZEFJdWc5TkdwNTBfU3hKNDhJTmUxYXNfODNST2VqUTdpWjFSOGJwdlZ3ZTIyTTNOQlRrZEYwMEZFNE1lN1ZaaUpCVVc?oc=5",
+      "summary": "WoW BlizzCon 2026 Preview: TBC Classic Anniversary Future & Potential WotLK Anniversary Plans MMOEXP",
+      "source": "https://www.mmoexp.com",
+      "published": "2026-10-22T07:00:00+00:00",
+      "image": "",
+      "video_url": "",
+      "category": "event",
+      "game_modes": [
+        "classic"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.mmoexp.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.mmoexp.com",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRkRJOF9QMVFzeXdUS1ZtUk01MWNtckQ5WWxwTHU3RFZEOXBWeElWUkR6VDlvTlFwZC1fb3pQTmJYWjEtMjkwN0hRMldUMnAwcl9hWDFnMnRQTm0zQXVLeUp6X3JmMTkzcXpQWHVIdk5fV2sxdm9TUy1mMGJMZEFJdWc5TkdwNTBfU3hKNDhJTmUxYXNfODNST2VqUTdpWjFSOGJwdlZ3ZTIyTTNOQlRrZEYwMEZFNE1lN1ZaaUpCVVc?oc=5"
+        }
+      ],
+      "id": "5b05ac8e472e",
+      "cluster_id": "5b05ac8e472e",
       "heat_score": 46,
       "heat_label": "steady"
     },
@@ -3362,38 +3426,6 @@
       "id": "6c870735363b",
       "cluster_id": "6c870735363b",
       "heat_score": 44,
-      "heat_label": "steady"
-    },
-    {
-      "title": "WoW BlizzCon 2026 Preview: TBC Classic Anniversary Future & Potential WotLK Anniversary Plans - MMOEXP",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRkRJOF9QMVFzeXdUS1ZtUk01MWNtckQ5WWxwTHU3RFZEOXBWeElWUkR6VDlvTlFwZC1fb3pQTmJYWjEtMjkwN0hRMldUMnAwcl9hWDFnMnRQTm0zQXVLeUp6X3JmMTkzcXpQWHVIdk5fV2sxdm9TUy1mMGJMZEFJdWc5TkdwNTBfU3hKNDhJTmUxYXNfODNST2VqUTdpWjFSOGJwdlZ3ZTIyTTNOQlRrZEYwMEZFNE1lN1ZaaUpCVVc?oc=5",
-      "summary": "WoW BlizzCon 2026 Preview: TBC Classic Anniversary Future & Potential WotLK Anniversary Plans MMOEXP",
-      "source": "https://www.mmoexp.com",
-      "published": "2026-10-22T07:00:00+00:00",
-      "image": "",
-      "video_url": "",
-      "category": "event",
-      "game_modes": [
-        "classic"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://www.mmoexp.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://www.mmoexp.com",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQRkRJOF9QMVFzeXdUS1ZtUk01MWNtckQ5WWxwTHU3RFZEOXBWeElWUkR6VDlvTlFwZC1fb3pQTmJYWjEtMjkwN0hRMldUMnAwcl9hWDFnMnRQTm0zQXVLeUp6X3JmMTkzcXpQWHVIdk5fV2sxdm9TUy1mMGJMZEFJdWc5TkdwNTBfU3hKNDhJTmUxYXNfODNST2VqUTdpWjFSOGJwdlZ3ZTIyTTNOQlRrZEYwMEZFNE1lN1ZaaUpCVVc?oc=5"
-        }
-      ],
-      "id": "5b05ac8e472e",
-      "cluster_id": "5b05ac8e472e",
-      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -4081,7 +4113,7 @@
       ],
       "id": "f10c89aa3d13",
       "cluster_id": "f10c89aa3d13",
-      "heat_score": 40,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4916,7 +4948,39 @@
       ],
       "id": "d323ccc1175f",
       "cluster_id": "d323ccc1175f",
-      "heat_score": 35,
+      "heat_score": 34,
+      "heat_label": "steady"
+    },
+    {
+      "title": "Overwatch - Blizzard Entertainment",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSDNvX1ZrekI0QkdRd2xFNEJGT0d5N21qTWpMNldxaXNDZy1UaGVzWU84eDkyNXVteVd6bHg5eG5vbE5Dc1MxZng0RUk3VTBJaTF6S1hfWmNXVjBGb2pETGx3aFlIQkFBOTQtWTZWQXR0NVQyeU5LTGM3LVp1ZEtDVkhTcVRpaE9NSjdEak1COXNXYVp1ZFF2YXlfMjV6c1g1aFRWbl9KbXpuVUp0?oc=5",
+      "summary": "Overwatch Blizzard Entertainment",
+      "source": "https://overwatch.blizzard.com",
+      "published": "2026-10-21T09:22:30+00:00",
+      "image": "",
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://overwatch.blizzard.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://overwatch.blizzard.com",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOSDNvX1ZrekI0QkdRd2xFNEJGT0d5N21qTWpMNldxaXNDZy1UaGVzWU84eDkyNXVteVd6bHg5eG5vbE5Dc1MxZng0RUk3VTBJaTF6S1hfWmNXVjBGb2pETGx3aFlIQkFBOTQtWTZWQXR0NVQyeU5LTGM3LVp1ZEtDVkhTcVRpaE9NSjdEak1COXNXYVp1ZFF2YXlfMjV6c1g1aFRWbl9KbXpuVUp0?oc=5"
+        }
+      ],
+      "id": "29c4aa4e4524",
+      "cluster_id": "29c4aa4e4524",
+      "heat_score": 34,
       "heat_label": "steady"
     },
     {
@@ -5012,7 +5076,7 @@
       ],
       "id": "0328ed9c1a1e",
       "cluster_id": "0328ed9c1a1e",
-      "heat_score": 36,
+      "heat_score": 35,
       "heat_label": "steady"
     },
     {
@@ -5044,7 +5108,7 @@
       ],
       "id": "5388b7cd116e",
       "cluster_id": "5388b7cd116e",
-      "heat_score": 34,
+      "heat_score": 33,
       "heat_label": "steady"
     },
     {
@@ -5076,7 +5140,7 @@
       ],
       "id": "4ba56ce97ab6",
       "cluster_id": "4ba56ce97ab6",
-      "heat_score": 34,
+      "heat_score": 33,
       "heat_label": "steady"
     },
     {
@@ -5108,7 +5172,7 @@
       ],
       "id": "431071ac96ad",
       "cluster_id": "431071ac96ad",
-      "heat_score": 34,
+      "heat_score": 33,
       "heat_label": "steady"
     },
     {
@@ -5140,7 +5204,7 @@
       ],
       "id": "bea263aeb9b6",
       "cluster_id": "bea263aeb9b6",
-      "heat_score": 34,
+      "heat_score": 33,
       "heat_label": "steady"
     },
     {
@@ -5172,7 +5236,7 @@
       ],
       "id": "9f37939e2b83",
       "cluster_id": "9f37939e2b83",
-      "heat_score": 38,
+      "heat_score": 37,
       "heat_label": "steady"
     },
     {
@@ -5659,7 +5723,7 @@
       ],
       "id": "bf9b5154a893",
       "cluster_id": "bf9b5154a893",
-      "heat_score": 30,
+      "heat_score": 29,
       "heat_label": "steady"
     },
     {
@@ -5889,70 +5953,6 @@
       ],
       "id": "eeb8029953cf",
       "cluster_id": "eeb8029953cf",
-      "heat_score": 28,
-      "heat_label": "steady"
-    },
-    {
-      "title": "Blizzard Removes Classic Warcraft 1 and 2 from GOG - NeoTeo",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdF9lNlRwNW8xdFNMaHMtdUR5ZzRJT3psOHQxWDM5emxYTVpOTlRXa1RfMng3NnlObC1iLTVXS2tRNVdmbFVqWHk0d21TeldYYWMwZEduMnpLV2UxakJxMGwtSV9zT1NiZ1hFSno1RXl5cDcwVmxxVUxvZENEVVI3RGJB?oc=5",
-      "summary": "Blizzard Removes Classic Warcraft 1 and 2 from GOG NeoTeo",
-      "source": "https://www.neoteo.com",
-      "published": "2026-10-20T14:59:26+00:00",
-      "image": "",
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "classic"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://www.neoteo.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://www.neoteo.com",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdF9lNlRwNW8xdFNMaHMtdUR5ZzRJT3psOHQxWDM5emxYTVpOTlRXa1RfMng3NnlObC1iLTVXS2tRNVdmbFVqWHk0d21TeldYYWMwZEduMnpLV2UxakJxMGwtSV9zT1NiZ1hFSno1RXl5cDcwVmxxVUxvZENEVVI3RGJB?oc=5"
-        }
-      ],
-      "id": "86ec3956c48d",
-      "cluster_id": "86ec3956c48d",
-      "heat_score": 30,
-      "heat_label": "steady"
-    },
-    {
-      "title": "World of Warcraft: Forever – The Latest Video Describes Your Leveling Journey Past 30 - GameSpace.com",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTmd5RFlNb2pQQU9uZk9sdG1lUnUxZzlWZ21EUF9Od3lYQVVhT1VrZU5MMkxTajhXaHJNdTBQN3BZRFRVTXRyUmg2Um5iS0xDdldnNGlWaFBzclB2bUFZMHhVS2FubC1hNE5seDd0RzV0bXhXOWx5b2s0RkNheEw0RXJsZGw2ay1OYm0zX1ZJM1p4Yzl3SkdyQ21oQWp2dmV1Q3VoWGZUYjJuZmhQYlhwMUNKNE54ZWF3VDY5MTliY28?oc=5",
-      "summary": "World of Warcraft: Forever – The Latest Video Describes Your Leveling Journey Past 30 GameSpace.com",
-      "source": "https://gamespace.com",
-      "published": "2026-10-20T14:30:06+00:00",
-      "image": "",
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://gamespace.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://gamespace.com",
-          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTmd5RFlNb2pQQU9uZk9sdG1lUnUxZzlWZ21EUF9Od3lYQVVhT1VrZU5MMkxTajhXaHJNdTBQN3BZRFRVTXRyUmg2Um5iS0xDdldnNGlWaFBzclB2bUFZMHhVS2FubC1hNE5seDd0RzV0bXhXOWx5b2s0RkNheEw0RXJsZGw2ay1OYm0zX1ZJM1p4Yzl3SkdyQ21oQWp2dmV1Q3VoWGZUYjJuZmhQYlhwMUNKNE54ZWF3VDY5MTliY28?oc=5"
-        }
-      ],
-      "id": "e1a5bde10b93",
-      "cluster_id": "e1a5bde10b93",
       "heat_score": 28,
       "heat_label": "steady"
     },
@@ -6598,38 +6598,6 @@
       "heat_label": "steady"
     },
     {
-      "title": "WoW Forever After 40+ Hours: My Honest Review - YouTube",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE11N0VQdEt3X0hDRTNMNklVTFNVNXJ2RVNhYURBNE1wZ2pMR21EUGNpMldyNHRvMDUyMzFJY0FOd2I2Ny1jb2EtQ0tlOUVROGVYUDBpZkhKTi1JN1ZE?oc=5",
-      "summary": "WoW Forever After 40+ Hours: My Honest Review YouTube",
-      "source": "https://youtu.be",
-      "published": "2026-10-19T18:00:17+00:00",
-      "image": "",
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://youtu.be"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://youtu.be",
-          "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE11N0VQdEt3X0hDRTNMNklVTFNVNXJ2RVNhYURBNE1wZ2pMR21EUGNpMldyNHRvMDUyMzFJY0FOd2I2Ny1jb2EtQ0tlOUVROGVYUDBpZkhKTi1JN1ZE?oc=5"
-        }
-      ],
-      "id": "fd3a96d30850",
-      "cluster_id": "fd3a96d30850",
-      "heat_score": 21,
-      "heat_label": "steady"
-    },
-    {
       "title": "Your Journey Past Level 30 in World of Warcraft: Forever",
       "url": "https://www.mmo-champion.com/content/14623-Your-Journey-Past-Level-30-in-World-of-Warcraft-Forever",
       "summary": "Your Journey Past Level 30 in World of Warcraft: Forever Blizzard has released a new World of Warcraft: Forever video, highlighting some of the adventures that await players beyond level 30, including new areas like the Riverglades and Mount Hyjal, and new factions like the Brotherhood of the Horse and the Bolder'ok Ogre Clan.",
@@ -6658,7 +6626,7 @@
       ],
       "id": "d5da64399f09",
       "cluster_id": "d5da64399f09",
-      "heat_score": 23,
+      "heat_score": 22,
       "heat_label": "steady"
     },
     {
@@ -6818,7 +6786,7 @@
       ],
       "id": "23af0bb3601e",
       "cluster_id": "23af0bb3601e",
-      "heat_score": 20,
+      "heat_score": 19,
       "heat_label": "steady"
     },
     {
@@ -6916,71 +6884,6 @@
       "id": "122d0a7d9eb5",
       "cluster_id": "122d0a7d9eb5",
       "heat_score": 19,
-      "heat_label": "steady"
-    },
-    {
-      "title": "Hallow's End 2026 Holiday Updates",
-      "url": "https://www.mmo-champion.com/content/14622-Hallow-s-End-2026-Holiday-Updates",
-      "summary": "Hallow's End 2026 Holiday Updates Hallow's End 2026 is live from October 19 through November 2, bringing new daily quests, achievements and housing decor items. New Daily Quests New Hallow's End daily quests are available in the Razorwind Shores and Founder's Point neighborhoods. /way #2351 52 54 Hallow's End Daily Quests (Razorwind Shores) /way #2352 54 34 Hallow's End Daily Quests (Founder's Point) New Achievements Several new achievements have been added for Hallow's End, with three of them requiring players to complete all three candy quests in a neighborhood with a specific theme: Drustvar, Duskwood or Felwood. Different neighborhoods may feature a different theme, so players can visit other neighborhoods to find the remaining themes without waiting for another day. Since the Sugar Run daily quests are character specific, players can hop on alts to complete the remaining candy quests and earn the corresponding achievements. For example, players can earn the achievement Drustvar Choc-O-Drop Designer by completing the following quests in a Drustvar-themed neighborhood on three different characters: Bewitched Berry Bites Hexed Honeycombs Witchbane Truffles Name Points Category Tricks and Treats of Midnight Visit the Candy Buckets in the Midnight zones. 10 Hallow's End Drustvar Choc-O-Drop Designer Complete all 3 candy quests from a Drustvar themed neighborhood. 10 Hallow's En",
-      "source": "MMO-Champion",
-      "published": "2026-10-19T10:43:00+00:00",
-      "image": "https://media.mmo-champion.com/images/news/2026/october/thumb/HallowsEnd01.jpg",
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "lore",
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "MMO-Champion"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "MMO-Champion",
-          "url": "https://www.mmo-champion.com/content/14622-Hallow-s-End-2026-Holiday-Updates"
-        }
-      ],
-      "id": "359fdbebdf26",
-      "cluster_id": "359fdbebdf26",
-      "heat_score": 22,
-      "heat_label": "steady"
-    },
-    {
-      "title": "I loved gaming with the Razer Tartarus V2 Pro, and a post-launch patch solved my gripes - Windows Central",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOXlEV3RjbzE3ZGdqOGtnOUlqN3YzeTNzaHRPRHVudDRiZllnVEFFQnB4M0ZqcEtiLTlOSjNEUnpaRUN6T25seEtQRkV0T2pkVklkc0tyOVhNS0dhVk5xbFdrck51VzZXWGNFd3czTTlaV1pDMFNZTFp0VlFUQS1URHRn?oc=5",
-      "summary": "I loved gaming with the Razer Tartarus V2 Pro, and a post-launch patch solved my gripes Windows Central",
-      "source": "https://www.windowscentral.com",
-      "published": "2026-10-19T10:39:20+00:00",
-      "image": "",
-      "video_url": "",
-      "category": "update",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://www.windowscentral.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://www.windowscentral.com",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNOXlEV3RjbzE3ZGdqOGtnOUlqN3YzeTNzaHRPRHVudDRiZllnVEFFQnB4M0ZqcEtiLTlOSjNEUnpaRUN6T25seEtQRkV0T2pkVklkc0tyOVhNS0dhVk5xbFdrck51VzZXWGNFd3czTTlaV1pDMFNZTFp0VlFUQS1URHRn?oc=5"
-        }
-      ],
-      "id": "6c1ff5c15ff5",
-      "cluster_id": "6c1ff5c15ff5",
-      "heat_score": 20,
       "heat_label": "steady"
     }
   ]
