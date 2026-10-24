@@ -6,6 +6,9 @@ on:
       - ".github/workflows/update-news.yml"
       - "scripts/fetch_news.py"
       - "scripts/mirror_media.py"
+      - "app.js"
+      - "index.html"
+      - "styles.css"
       - "requirements.txt"
   workflow_dispatch:
   schedule:
@@ -26,6 +29,10 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - name: Validate Python and frontend syntax
+        run: |
+          python -m py_compile scripts/fetch_news.py scripts/mirror_media.py scripts/telegram_bot.py scripts/telegram_digest.py
+          node --check app.js
       - name: Fetch news published in the last five days
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
