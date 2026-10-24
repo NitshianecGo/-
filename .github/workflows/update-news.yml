@@ -5,6 +5,7 @@ on:
     paths:
       - ".github/workflows/update-news.yml"
       - "scripts/fetch_news.py"
+      - "scripts/mirror_media.py"
       - "requirements.txt"
   workflow_dispatch:
   schedule:
@@ -32,6 +33,19 @@ jobs:
           ENABLE_AI_SUMMARIES: "true"
           AI_MAX_ITEMS: "18"
         run: python scripts/fetch_news.py
+      - name: Install optional image-mirroring dependencies
+        if: ${{ vars.ENABLE_MEDIA_MIRROR == 'true' }}
+        run: python -m pip install --disable-pip-version-check Pillow boto3
+      - name: Mirror licensed thumbnails to Cloudflare R2 (optional)
+        if: ${{ vars.ENABLE_MEDIA_MIRROR == 'true' }}
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_PUBLIC_BASE_URL: ${{ vars.R2_PUBLIC_BASE_URL }}
+          R2_MAX_IMAGES_PER_RUN: "240"
+        run: python scripts/mirror_media.py
       - name: Validate news JSON
         run: python -m json.tool data/news.json > /dev/null
       - name: Commit updated feed, if changed
