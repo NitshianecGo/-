@@ -1,8 +1,8 @@
 {
   "project": "Azeroth Pulse",
-  "generated_at": "2026-10-24T11:35:07.347881+00:00",
+  "generated_at": "2026-10-24T11:36:25.618914+00:00",
   "window_days": 5,
-  "items_count": 199,
+  "items_count": 200,
   "sources_checked": 9,
   "feeds_succeeded": 5,
   "ai_summaries_enabled": false,
@@ -141,7 +141,7 @@
       ],
       "id": "b2cd212c2f8e",
       "cluster_id": "b2cd212c2f8e",
-      "heat_score": 59,
+      "heat_score": 58,
       "heat_label": "rising"
     },
     {
@@ -364,6 +364,10 @@
         {
           "source": "https://news.blizzard.com",
           "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBOVFdTbThUUVFEc05XTU5iRlJ4b1ZHN2hvdkJfRTdhZmdDWVY2NVlSakNKVXpHRTZXQnhkOGpWU29tNHl4Qmp5UUNWVC1OZ2VEa3laMV9vMFBjeXJsRzV2a1lfbDRDS25SdVlj?oc=5"
+        },
+        {
+          "source": "https://news.blizzard.com",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE94SjNtQ2U1aGtTakpIdGtPWHlURXRJNUhrbVJzd2VGdjg5SVMzY3hvSG5jVFFnbnNsWFJjTzh3TkZYb1lHX1VfWVlMNjZmXzVBSVJFR2VLck11Q3Y5bXdqZ3hCSjFJMUp3NElxd2ZfR2tBXzAxMEdHSWVod083QQ?oc=5"
         }
       ],
       "id": "dd3feb231e6e",
@@ -2867,10 +2871,6 @@
         {
           "source": "https://news.blizzard.com",
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMlU3V1hqZVROb0VvaE9yQ2Y5cW1OV2t0R1J3bTFyQ0JwRHJLR0lhZVdILU5HZkVoSWtYejJrb3pweDNPVGsxaHdhVS1yNkhURjZGZGR0WTVVUTh1b3ROTU5UZlF6cnZDb2p2eHZvaDFwaFMwNGk0eDF3TE4yVHVHMHFKZ1lYd1JzMGYwTzlnU1lTejViY1l1NXJyMlM4akVmeXZjVmJJRWZwSzZncXpmbQ?oc=5"
-        },
-        {
-          "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOdTVyYlN2QkdxZV84eWZnbnJfOENWTzJhanJYbWxOVVpsMXF0REZkRXJ2UUc2NVlWeFcydHlMQWJIR0pKc1hjNjVXek9DZlFQMks2SEtJam9qU1ZpdGE2NEU2bTdOZUdHMHl4YkMzdWZrc3FZRlNJcUF5TWpNemllTTZJZEdSa1c3X29FeHZUQVZncVN4QUtOQmdRVF82UVFfMWRmR1EwWDNISUtOZ3E0Ng?oc=5"
         }
       ],
       "id": "882a38027c82",
@@ -6402,6 +6402,40 @@
       ],
       "id": "6e6625bb0972",
       "cluster_id": "6e6625bb0972",
+      "heat_score": 23,
+      "heat_label": "steady"
+    },
+    {
+      "title": "Tower of Fantasy Launches Version 6.4 Update, Introducing Wrenna - Inven Global",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVUFWOENjT3dERTBXclVDallrRTRfUGp5OWRoUGloS1BBSzNKTjE0QjZ0d0EwQlZOdm12ejh6Q3pFcVRXa29vNHN2em84TjhlaElEWmxpVDVDU2d2X1hBU3pka3hMbW1pM1RGZmk4QmtHSFk0U3RkUzg2ZGVWMGFJYkVCNlF3QVBXZHI3dkF1eHM5WXZVdDZBblNnT3ZfcEN5enF3X1dha00?oc=5",
+      "summary": "Tower of Fantasy Launches Version 6.4 Update, Introducing Wrenna Inven Global",
+      "source": "https://www.invenglobal.com",
+      "author": "https://www.invenglobal.com",
+      "published": "2026-10-20T01:39:20+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "update",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.invenglobal.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.invenglobal.com",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVUFWOENjT3dERTBXclVDallrRTRfUGp5OWRoUGloS1BBSzNKTjE0QjZ0d0EwQlZOdm12ejh6Q3pFcVRXa29vNHN2em84TjhlaElEWmxpVDVDU2d2X1hBU3pka3hMbW1pM1RGZmk4QmtHSFk0U3RkUzg2ZGVWMGFJYkVCNlF3QVBXZHI3dkF1eHM5WXZVdDZBblNnT3ZfcEN5enF3X1dha00?oc=5"
+        }
+      ],
+      "id": "8ad8dc26a9c5",
+      "cluster_id": "8ad8dc26a9c5",
       "heat_score": 23,
       "heat_label": "steady"
     },
