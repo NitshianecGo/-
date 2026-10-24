@@ -1,0 +1,24 @@
+name: Telegram daily digest
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+permissions:
+  contents: read
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Send scheduled digest (optional)
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          AZEROTH_SITE_URL: ${{ vars.AZEROTH_SITE_URL }}
+        run: python scripts/telegram_digest.py
