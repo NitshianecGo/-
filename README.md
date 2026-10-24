@@ -24,13 +24,15 @@ A responsive Russian/English World of Warcraft news site with a five-day feed, t
 
 ## Publish to GitHub Pages
 
-1. Extract the ZIP and create a **public** GitHub repository, for example `azeroth-pulse`.
-2. Upload the **contents** of the folder into the repository root. Keep `.github/workflows/` in place. If using the GitHub browser uploader, ensure the hidden `.github` folder is uploaded too; using Git is often simpler.
-3. Open **Settings → Pages → Build and deployment** and set **Source: GitHub Actions**.
-4. Open **Actions → Update WoW news → Run workflow**. It collects recent stories, commits `data/news.json`, builds the static site bundle, and deploys it to Pages.
-5. When the workflow finishes successfully, open **Settings → Pages** to find the published URL. Each scheduled update also deploys the newest JSON feed.
+This copy is configured to use GitHub Pages' existing **Deploy from a branch** mode: branch `main`, folder `/(root)`. Keep that source setting. The site files live in the repository root and Pages rebuilds the site when the branch changes.
 
-The collector is scheduled every four hours (`17 */4 * * *`, UTC). GitHub can delay or pause scheduled workflows; run the workflow manually if the feed is stale. Enable Actions at **Settings → Actions → General** if necessary.
+1. Keep the site files (`index.html`, `styles.css`, `app.js`, `data/news.json`, `assets/`) in the repository root.
+2. Keep `.github/workflows/` in place so GitHub can run the news collector.
+3. Open **Actions → Refresh WoW news feed → Run workflow** to fetch recent stories immediately.
+4. The collector runs every four hours (`17 */4 * * *`, UTC), commits the updated `data/news.json`, and the existing branch-based Pages deployment rebuilds the public site automatically.
+5. Your Pages address appears under **Settings → Pages**. For this repository it normally follows `https://NitshianecGo.github.io/-/`.
+
+If scheduled workflows are delayed, run the collector manually from the Actions tab. If Actions are disabled, enable them in **Settings → Actions → General**.
 
 ## Optional AI summaries
 
