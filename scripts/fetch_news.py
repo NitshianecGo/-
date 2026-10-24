@@ -146,6 +146,7 @@ def parse_feed(source,url):
             m=re.search(r'''<img[^>]+src=["']([^"']+)''',raw or '',re.I)
             if m and m.group(1).startswith('http'):image=html.unescape(m.group(1))
         vid=node_text(el,['yt:videoId']);video='https://www.youtube.com/watch?v='+vid if vid else ''
+        if video and not image:image='https://i.ytimg.com/vi/'+vid+'/hqdefault.jpg'
         if not video and 'youtube.com/feeds/videos.xml' in url and 'youtube.com/watch' in link:video=link
         if video:link=video
         # Google News RSS includes the actual publisher in a <source> element; use it
