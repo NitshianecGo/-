@@ -34,6 +34,27 @@ This copy is configured to use GitHub Pages' existing **Deploy from a branch** m
 
 If scheduled workflows are delayed, run the collector manually from the Actions tab. If Actions are disabled, enable them in **Settings → Actions → General**.
 
+If scheduled workflows are delayed, run the collector manually from the Actions tab. If Actions are disabled, enable them in **Settings → Actions → General**.
+
+## On-site reader and off-repository image storage (optional)
+
+News headlines now open an on-site reader with the available RSS brief, image, source attribution, and an embedded YouTube player. It does not copy the publisher's full article; original-source links remain available for attribution and fact checking.
+
+To keep image binaries out of the GitHub repository, an optional Cloudflare R2 mirror is included. It optimizes thumbnails that may legally be re-hosted into WebP; `data/news.json` stores only the resulting URLs.
+
+1. Create an R2 bucket (for example, `azeroth-pulse-media`) in the [Cloudflare Dashboard](https://dash.cloudflare.com/).
+2. In the bucket settings, enable **Public Development URL** and copy its URL (format: `https://pub-….r2.dev`). This is the easiest initial setup; Cloudflare rate-limits `r2.dev`. For sustained traffic, connect a custom domain to the bucket.
+3. Create an R2 API token with **Object Read & Write** permissions scoped only to this bucket. Do not use your global account API key.
+4. In GitHub open **Settings → Secrets and variables → Actions** and add repository secrets: `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BUCKET_NAME`.
+5. Add Actions variables: `R2_PUBLIC_BASE_URL` set to the bucket's public URL, and `ENABLE_MEDIA_MIRROR` set to `true`.
+6. Run **Actions → Refresh WoW news feed → Run workflow**. The workflow optimizes thumbnails and stores them in R2, not in GitHub. If mirroring fails, the feed keeps the original image URLs.
+
+R2 Standard currently includes 10 GB-month of storage, 1 million Class A and 10 million Class B operations per month, with no Internet egress fee. Usage beyond the free allowances may be billed; monitor your Cloudflare dashboard. See [R2 pricing](https://developers.cloudflare.com/r2/pricing/) and [public bucket docs](https://developers.cloudflare.com/r2/buckets/public-buckets/).
+
+**Video:** YouTube clips are embedded in the on-site reader instead of being downloaded and re-uploaded. This saves storage and avoids creating copies of third-party video files, though the stream itself is still delivered by YouTube. Upload to R2 only videos you own or have permission to re-host.
+
+**Important:** mirror only images that you have permission to re-host under the source licence or terms. Attribution/source links are preserved, but an image being present in an RSS feed does not by itself grant permission to copy it.
+
 ## Optional AI summaries
 
 1. Create an API key in your OpenAI API account.
