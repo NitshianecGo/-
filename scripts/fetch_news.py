@@ -206,7 +206,7 @@ def merge_duplicates(items):
         if all(l['url']!=url for l in found['links']):found['links'].append({'source':x['source'],'url':url})
         found['score']=max(found['score'],x.get('reddit_score',0));found['comments']=max(found['comments'],x.get('reddit_comments',0))
         if not found['item'].get('image') and x.get('image'):found['item']['image']=x['image']
-        combined_images=list(dict.fromkeys((found['item'].get('images') or [])+(x.get('images') or [])+([found['item']['image']] if found['item'].get('image') else [])+([x['image']] if x.get('image') else []))
+        combined_images=list(dict.fromkeys((found['item'].get('images') or [])+(x.get('images') or [])+([found['item']['image']] if found['item'].get('image') else [])+([x['image']] if x.get('image') else [])))
         if combined_images:found['item']['images']=combined_images[:8]
         if not found['item'].get('summary') and x.get('summary'):found['item']['summary']=x['summary']
         if not found['item'].get('author') and x.get('author'):found['item']['author']=x['author']
