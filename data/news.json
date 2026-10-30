@@ -1,19 +1,240 @@
 {
   "project": "Azeroth Pulse",
-  "generated_at": "2026-10-29T21:08:23.529993+00:00",
+  "generated_at": "2026-10-30T05:51:29.697907+00:00",
   "window_days": 5,
-  "items_count": 178,
+  "items_count": 180,
   "sources_checked": 9,
   "feeds_succeeded": 5,
   "ai_summaries_enabled": false,
   "items": [
     {
-      "title": "World of Warcraft: Forever Goes Live Globally November 4! - Blizzard News",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNa0RvN0FiSmNCTjN6Q05rTVFnLWo2OHUwd2VkVVVPS1ozMXlGejdOZW5PRm9xVDNIS2pRS1FZNnJldFluLVluQzJ1RXlnekppYnFyN0l2TDdJTEIxdkZJaER3Wno2SFBMRk1mRGhfMVJrVVZiVXNwWUoyQ3lwbEpHakZ6QnhrRHc2WmhkVUdQc3hBUlpwRFU0Wmd5V2VIcXhFRkxaTTlfUQ?oc=5",
-      "summary": "World of Warcraft: Forever Goes Live Globally November 4! Blizzard News",
-      "source": "https://news.blizzard.com",
-      "author": "https://news.blizzard.com",
-      "published": "2026-10-29T21:00:00+00:00",
+      "title": "WoW Forever Patch Note: Hunter Nerfs and Mage Changes Aren't the Whole Story - MMOEXP",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVXVrMGJpRXBqeDVacml1WDc0QkpnOU81TXNZa1NxWnV4ZGduSWh0Zmg0V1E5aV9fWjZreGtFQW1IYmVIVlJwOFQta2UxLWJ3X0lFZTN6aDBzd0U4MkJ1cXFBb0w5Smo3U3hDLXBVQTFGeC02ckRNeGZiSmJyZWtrOERGTS1ZOGZHZ05zaEU1WE5NdjZneVR4b0JhU25TWnZFQjg2RXBWZWQxYTdr?oc=5",
+      "summary": "WoW Forever Patch Note: Hunter Nerfs and Mage Changes Aren't the Whole Story MMOEXP",
+      "source": "https://www.mmoexp.com",
+      "author": "https://www.mmoexp.com",
+      "published": "2026-10-30T05:17:05+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "update",
+      "game_modes": [
+        "lore",
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.mmoexp.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.mmoexp.com",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVXVrMGJpRXBqeDVacml1WDc0QkpnOU81TXNZa1NxWnV4ZGduSWh0Zmg0V1E5aV9fWjZreGtFQW1IYmVIVlJwOFQta2UxLWJ3X0lFZTN6aDBzd0U4MkJ1cXFBb0w5Smo3U3hDLXBVQTFGeC02ckRNeGZiSmJyZWtrOERGTS1ZOGZHZ05zaEU1WE5NdjZneVR4b0JhU25TWnZFQjg2RXBWZWQxYTdr?oc=5"
+        }
+      ],
+      "id": "8e40eb6fa49c",
+      "cluster_id": "8e40eb6fa49c",
+      "heat_score": 64,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Talebound End-Game Player Power Rewards - Venomstones, Bonus Rolls, Experience Potions",
+      "url": "https://www.wowhead.com/news=383659/talebound-end-game-player-power-rewards-venomstones-bonus-rolls-experience",
+      "summary": "Talebound has many rewards, including Venomstones, Bonus Rolls, Mythic raid loot, and experience potions! Continue reading »",
+      "source": "Wowhead",
+      "author": "Wowhead",
+      "published": "2026-10-29T23:51:03+00:00",
+      "image": "https://wow.zamimg.com/uploads/blog/images/55964-talebound-end-game-player-power-rewards-venomstones-bonus-rolls-experience.jpg",
+      "images": [
+        "https://wow.zamimg.com/uploads/blog/images/55964-talebound-end-game-player-power-rewards-venomstones-bonus-rolls-experience.jpg"
+      ],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "Wowhead"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "Wowhead",
+          "url": "https://www.wowhead.com/news=383659/talebound-end-game-player-power-rewards-venomstones-bonus-rolls-experience"
+        }
+      ],
+      "id": "baf03dcf452d",
+      "cluster_id": "baf03dcf452d",
+      "heat_score": 60,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Two New Housing Exterior Customizations Discovered on 12.1.7 PTR",
+      "url": "https://www.wowhead.com/news=383660/two-new-housing-exterior-customizations-discovered-on-12-1-7-ptr",
+      "summary": "In the latest Patch 12.1.7 PTR build, items to learn two new housing exterior customization options have been discovered! Continue reading »",
+      "source": "Wowhead",
+      "author": "Wowhead",
+      "published": "2026-10-29T23:07:55+00:00",
+      "image": "https://wow.zamimg.com/uploads/blog/images/55963-two-new-housing-exterior-customizations-discovered-on-12-1-7-ptr.jpg",
+      "images": [
+        "https://wow.zamimg.com/uploads/blog/images/55963-two-new-housing-exterior-customizations-discovered-on-12-1-7-ptr.jpg"
+      ],
+      "video_url": "",
+      "category": "update",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "Wowhead"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "Wowhead",
+          "url": "https://www.wowhead.com/news=383660/two-new-housing-exterior-customizations-discovered-on-12-1-7-ptr"
+        }
+      ],
+      "id": "91364fa5b1ba",
+      "cluster_id": "91364fa5b1ba",
+      "heat_score": 62,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Patch 12.1.7 PTR - Build 70668",
+      "url": "https://www.mmo-champion.com/content/14657-Patch-12-1-7-PTR-Build-70668",
+      "summary": "New Winter Veil Housing Decor in Patch 12.1.7 Patch 12.1.7 PTR - Build 70668 Build 70668 has been deployed to the Public Test Realms. Previous Builds Build 70424 Build 70493 New Items Cozy Cabin Burrow Icy Cabin Burrow New Icons Midnight: Echoes of the Worldcore PTR Development Notes Originally Posted by Blizzard ( Blue Tracker / Official Forums ) The 12.1.7 PTR has been updated and will be available for testing when the Talebound demo becomes available tomorrow. Tales Take A Dark Turn In Talebound Talebound will be available for testing this weekend October 30 at 10:00am PDT through November 2 at 10:00am PDT Prepare to be drawn into the macabre world of Talebound, where you become part of the dark chronicles of a mysterious Storyteller, chillingly brought to life in a new PvE action RPG game mode. Venture solo or with friends through eerie tales where danger is written on every page. Battle fearsome enemies and bosses, solve perplexing puzzles, discover treasure and relics, and earn Bound Silver for cosmetic rewards as you delve deeper into the Storyteller’s twisted creations. More details on the Talebound demo can be found in the article: https://worldofwarcraft.blizzard.com...-on-october-30 Achievement Changes Originally Posted by MMO-Champion Bosses Talebound The Final Confrontation Face the Final Confrontation in the Tales of the Storyteller on any difficulty. 20 Bound Sil",
+      "source": "MMO-Champion",
+      "author": "MMO-Champion",
+      "published": "2026-10-29T23:03:00+00:00",
+      "image": "https://media.mmo-champion.com/images/news/2012/july/wowmini.png",
+      "images": [
+        "https://media.mmo-champion.com/images/news/2012/july/wowmini.png",
+        "https://icons.wowdb.com/ptr/large/inv_12ph_leg_10ne_nightelf_glaive01.8f4f769bda68d34e33f216d389bee859.jpg?70668",
+        "https://icons.wowdb.com/ptr/large/inv_12ph_leg_11we_wildelves_special_mural05_7489675.055d50be8f171e48306cb1200ce1dd0d.jpg?7  0668",
+        "https://icons.wowdb.com/ptr/large/inv_12ph_leg_7nb_nightborn_fountain02_7583098.fbded06cacec2b1d1930d4554959f511.jpg?70668",
+        "https://icons.wowdb.com/ptr/large/inv_12ph_leg_7nb_nightborn_fountain03_7570750.c950741727aeaf6014770a45a9cb8e84.jpg?70668",
+        "https://icons.wowdb.com/ptr/large/inv_6872664_7416975.5b0b54a4529b4856e40240f6c5972f7f.jpg?70668",
+        "https://icons.wowdb.com/ptr/large/inv_7dl_dalaran_coffeetable01_7423693.bf3449d70d752ad566e6a3471e41f0d9.jpg?70668",
+        "https://icons.wowdb.com/ptr/large/inv_8507490_8514357.948ca4072be1159bcbea76dae30e9c9e.jpg?70668"
+      ],
+      "video_url": "",
+      "category": "update",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "MMO-Champion"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "MMO-Champion",
+          "url": "https://www.mmo-champion.com/content/14657-Patch-12-1-7-PTR-Build-70668"
+        }
+      ],
+      "id": "11472dcce29c",
+      "cluster_id": "11472dcce29c",
+      "heat_score": 64,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Claim Your WoW: Forever Character Name Before the 5 November Launch - DANAMIC",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTVNGbUhGQWdkRzJrN0VZYWpqbmlnRjAzcmwwNVhZSWk0TVdYRlVtUTdDaGRDdmxrUTFfenVCYloyMWpuMFFyaDc5RndjUmFsUUN2WkJZMEVvY3JtN1FhRTBfVENEOW9UVGxJV2ZRZG1iazQ2MTJjQ2dDVlVDcklHcEVldXhYZkc4elMwNEFBb2g5OWI4OGIyblZHejMzVmc?oc=5",
+      "summary": "Claim Your WoW: Forever Character Name Before the 5 November Launch DANAMIC",
+      "source": "https://danamic.org",
+      "author": "https://danamic.org",
+      "published": "2026-10-29T23:01:40+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "lore",
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://danamic.org"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://danamic.org",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPTVNGbUhGQWdkRzJrN0VZYWpqbmlnRjAzcmwwNVhZSWk0TVdYRlVtUTdDaGRDdmxrUTFfenVCYloyMWpuMFFyaDc5RndjUmFsUUN2WkJZMEVvY3JtN1FhRTBfVENEOW9UVGxJV2ZRZG1iazQ2MTJjQ2dDVlVDcklHcEVldXhYZkc4elMwNEFBb2g5OWI4OGIyblZHejMzVmc?oc=5"
+        }
+      ],
+      "id": "94bf0e6994a9",
+      "cluster_id": "94bf0e6994a9",
+      "heat_score": 58,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Talebound Awards Two Pieces of Mythic Venomous Abyss Loot",
+      "url": "https://www.wowhead.com/news=383658/talebound-awards-two-pieces-of-mythic-venomous-abyss-loot",
+      "summary": "Players who complete two new achievements in Talebound will obtain two pieces of Mythic Venomous Abyss loot! Continue reading »",
+      "source": "Wowhead",
+      "author": "Wowhead",
+      "published": "2026-10-29T22:39:33+00:00",
+      "image": "https://wow.zamimg.com/uploads/blog/images/55962-talebound-awards-two-pieces-of-mythic-venomous-abyss-loot.png",
+      "images": [
+        "https://wow.zamimg.com/uploads/blog/images/55962-talebound-awards-two-pieces-of-mythic-venomous-abyss-loot.png"
+      ],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "Wowhead"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "Wowhead",
+          "url": "https://www.wowhead.com/news=383658/talebound-awards-two-pieces-of-mythic-venomous-abyss-loot"
+        }
+      ],
+      "id": "82bc11624db4",
+      "cluster_id": "82bc11624db4",
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
+      "title": "WoW Forever: Blizzard Discusses Events and Groups of Up to 120 Players - Guided.news",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5kdGhiTDRmal9Mb2tWZVlZUVR0NlJlWGZkeGM5TmxMZ0MzU1pwRjRmQkg3eU1YS3JhN1J2ckVvbEZRSGlYN250bDlmQkc3Vkp4WUEtaEJVYXQtWDZOd3BxUU9fNWI0VmUzaElFM0wzNVljY2sxY2xjcUZxQQ?oc=5",
+      "summary": "WoW Forever: Blizzard Discusses Events and Groups of Up to 120 Players Guided.news",
+      "source": "https://guided.news",
+      "author": "https://guided.news",
+      "published": "2026-10-29T22:37:09+00:00",
       "image": "",
       "images": [],
       "video_url": "",
@@ -27,18 +248,204 @@
       "reddit_score": 0,
       "reddit_comments": 0,
       "sources": [
-        "https://news.blizzard.com"
+        "https://guided.news"
       ],
       "source_count": 1,
       "source_links": [
         {
-          "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNa0RvN0FiSmNCTjN6Q05rTVFnLWo2OHUwd2VkVVVPS1ozMXlGejdOZW5PRm9xVDNIS2pRS1FZNnJldFluLVluQzJ1RXlnekppYnFyN0l2TDdJTEIxdkZJaER3Wno2SFBMRk1mRGhfMVJrVVZiVXNwWUoyQ3lwbEpHakZ6QnhrRHc2WmhkVUdQc3hBUlpwRFU0Wmd5V2VIcXhFRkxaTTlfUQ?oc=5"
+          "source": "https://guided.news",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5kdGhiTDRmal9Mb2tWZVlZUVR0NlJlWGZkeGM5TmxMZ0MzU1pwRjRmQkg3eU1YS3JhN1J2ckVvbEZRSGlYN250bDlmQkc3Vkp4WUEtaEJVYXQtWDZOd3BxUU9fNWI0VmUzaElFM0wzNVljY2sxY2xjcUZxQQ?oc=5"
         }
       ],
-      "id": "c5af9ec997f5",
-      "cluster_id": "c5af9ec997f5",
-      "heat_score": 60,
+      "id": "44366037c5d7",
+      "cluster_id": "44366037c5d7",
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Blizzard Prepares Us All For World of Warcraft: Forever's Global Launch With a New In-Depth Guide - MMORPG.com",
+      "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGVQVWFTdlJTNXJYUEc1amVJRW9obHUyTWVLQUg3NllGb1RGamtvSmczNTJtTHY4RDh0d2ppUmhFWjlpQXc0UEd2WG9rSGhvZkU4Tk5WTE9zMWFyRl9DZm0tRG9RRlhpdEhjY1pVeUtFTEhGMDIxU1ZlUkVBaXhxcXlzNnZRSUlhMy01MldzV3BCM1QtTkdZMXVNUERvZnRGcnJ3MjNBWXVTUVU2QzhrQW5vaHVaUXRuWTFWcFlTMTFxMkM2cGI0cEV5QkJwWlE?oc=5",
+      "summary": "Blizzard Prepares Us All For World of Warcraft: Forever's Global Launch With a New In-Depth Guide MMORPG.com",
+      "source": "https://www.mmorpg.com",
+      "author": "https://www.mmorpg.com",
+      "published": "2026-10-29T22:15:00+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.mmorpg.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.mmorpg.com",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQaGVQVWFTdlJTNXJYUEc1amVJRW9obHUyTWVLQUg3NllGb1RGamtvSmczNTJtTHY4RDh0d2ppUmhFWjlpQXc0UEd2WG9rSGhvZkU4Tk5WTE9zMWFyRl9DZm0tRG9RRlhpdEhjY1pVeUtFTEhGMDIxU1ZlUkVBaXhxcXlzNnZRSUlhMy01MldzV3BCM1QtTkdZMXVNUERvZnRGcnJ3MjNBWXVTUVU2QzhrQW5vaHVaUXRuWTFWcFlTMTFxMkM2cGI0cEV5QkJwWlE?oc=5"
+        }
+      ],
+      "id": "23a8658d5a1e",
+      "cluster_id": "23a8658d5a1e",
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
+      "title": "WoW Forever was the largest beta in franchise history, Microsoft CEO says - TweakTown",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOX1ZEOXBSckFkM2F2NkkxR3A1cVc1MDVmV2JDSW5wVzZQUktNMU53WlNQd3EwTTVRSUFQajhZVUNmYU9meG1KY1RtSTBTRHVlaUQxTVdjMWFZWXZuWERRWVQwRG5IUVFGYUlLN0RldERxS0RDdWJnWERNYk5CQXpGdXJ0cGRmTk51TG0yRDU2dXVHcDRzeTFNQ1NQREdIbmI4Tk9iaFlYMmJoU0NUalZ4RGFzNDF5SHBlbmU4UkFn?oc=5",
+      "summary": "WoW Forever was the largest beta in franchise history, Microsoft CEO says TweakTown",
+      "source": "https://www.tweaktown.com",
+      "author": "https://www.tweaktown.com",
+      "published": "2026-10-29T21:34:09+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.tweaktown.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.tweaktown.com",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOX1ZEOXBSckFkM2F2NkkxR3A1cVc1MDVmV2JDSW5wVzZQUktNMU53WlNQd3EwTTVRSUFQajhZVUNmYU9meG1KY1RtSTBTRHVlaUQxTVdjMWFZWXZuWERRWVQwRG5IUVFGYUlLN0RldERxS0RDdWJnWERNYk5CQXpGdXJ0cGRmTk51TG0yRDU2dXVHcDRzeTFNQ1NQREdIbmI4Tk9iaFlYMmJoU0NUalZ4RGFzNDF5SHBlbmU4UkFn?oc=5"
+        }
+      ],
+      "id": "66eead2c6ed5",
+      "cluster_id": "66eead2c6ed5",
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
+      "title": "World of Warcraft: Forever Goes Live Globally November 4",
+      "url": "https://www.mmo-champion.com/content/14656-World-of-Warcraft-Forever-Goes-Live-Globally-November-4",
+      "summary": "World of Warcraft: Forever Goes Live Globally November 4 Originally Posted by Blizzard ( Blue Tracker / Official Forums ) Whether you’re stepping into World of Warcraft for the first time or finding your way back to Azeroth, there’s a place for you in World of Warcraft: Forever. Explore a new and reimagined Azeroth at your own pace, discover new places or revisit old favorites, and meet fellow adventurers along the way. This permanent home alongside modern and Classic WoW puts community first and makes the journey as meaningful as the destination. Set after the events of Warcraft III Reforged: Forsaken Kingdom and before Molten Core, WoW: Forever takes you across the original continents on an adventure to level 60. Your journey continues through new stories, experiences, and updates inspired by years of player passion and feedback. Explore New and Reimagined Zones WoW: Forever expands the Eastern Kingdoms and Kalimdor with new and reimagined zones and more than 1,000 new quests across the level 1–60 journey. Explore new destinations including Mount Hyjal, Shen’dralas, the Riverglades, and Zephras Isle. Mount Hyjal invites you to explore the aftermath of Archimonde’s defeat, journey through Darkwhisper Gorge, and help shape the future of a recovering land. In Shen'dralas, a long-hidden mystery between Mulgore and Desolace becomes a new adventure tied to the Shen’dralar, Eldre’Th",
+      "source": "MMO-Champion",
+      "author": "MMO-Champion",
+      "published": "2026-10-29T21:13:00+00:00",
+      "image": "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch00.png",
+      "images": [
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch00.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch01.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch02.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch03.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch04.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch05.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch06.png",
+        "https://media.mmo-champion.com/images/news/2026/october/thumb/woWForeverLaunch07.jpg"
+      ],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "classic"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "MMO-Champion",
+        "https://news.blizzard.com"
+      ],
+      "source_count": 2,
+      "source_links": [
+        {
+          "source": "MMO-Champion",
+          "url": "https://www.mmo-champion.com/content/14656-World-of-Warcraft-Forever-Goes-Live-Globally-November-4"
+        },
+        {
+          "source": "https://news.blizzard.com",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNZ1ZscHRmR1V6cmh4Uk9hZ245ZXBYSEY3bGpkbDBhbmV3X2FZWFBHWFBXa2hpRlJKSEdqVDZ5VmpHNGVYVkZ2aUpjRi1vRVNPX3AxRFZtYzFSQlVnR29hYnRLX0JnQWNQZWdPOUVkSFloZVRoU1gxXzFyTE4zeXNBYXoybktlLTAtUHdTb3V0ZEF6SW53czVTdDhCU2JXdVU?oc=5"
+        }
+      ],
+      "id": "919b004ba7c6",
+      "cluster_id": "919b004ba7c6",
+      "heat_score": 66,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Everything You Need to Know for WoW: Forever's Global Launch",
+      "url": "https://www.wowhead.com/news=383656/everything-you-need-to-know-for-wow-forevers-global-launch",
+      "summary": "Blizzard has summarized everything you need to know for WoW: Forever's Global launch on November 4th. Continue reading »",
+      "source": "Wowhead",
+      "author": "Wowhead",
+      "published": "2026-10-29T21:09:39+00:00",
+      "image": "https://wow.zamimg.com/uploads/blog/images/55959-everything-you-need-to-know-for-wow-forevers-global-launch.jpg",
+      "images": [
+        "https://wow.zamimg.com/uploads/blog/images/55959-everything-you-need-to-know-for-wow-forevers-global-launch.jpg"
+      ],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "Wowhead"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "Wowhead",
+          "url": "https://www.wowhead.com/news=383656/everything-you-need-to-know-for-wow-forevers-global-launch"
+        }
+      ],
+      "id": "b2564b0f82af",
+      "cluster_id": "b2564b0f82af",
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
+      "title": "World of Warcraft Forever Name Reservation is Running Into Some Issues - OpenCritic",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOencxQnJlSFR6QjQ0VWQ3TjQ3TldPUG40cmRYdTBUanV2bHNCeGNjaGdDN3Y0VVlVNDRPM3pKVmJUVkc2NmU1SUtxVS11c3lRWENBZWtyaGlFZ2lieGZLV2Q1VXRHYTRIaWV1amFZbDJFVFZxWkhNOVhqdzd2MWNDaVFVN3JQcUk1eFVTYnk4UHJOMC0tTm1FVmtEcXlpSy1qZko3QkdHYw?oc=5",
+      "summary": "World of Warcraft Forever Name Reservation is Running Into Some Issues OpenCritic",
+      "source": "https://opencritic.com",
+      "author": "https://opencritic.com",
+      "published": "2026-10-29T20:52:14+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://opencritic.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://opencritic.com",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOencxQnJlSFR6QjQ0VWQ3TjQ3TldPUG40cmRYdTBUanV2bHNCeGNjaGdDN3Y0VVlVNDRPM3pKVmJUVkc2NmU1SUtxVS11c3lRWENBZWtyaGlFZ2lieGZLV2Q1VXRHYTRIaWV1amFZbDJFVFZxWkhNOVhqdzd2MWNDaVFVN3JQcUk1eFVTYnk4UHJOMC0tTm1FVmtEcXlpSy1qZko3QkdHYw?oc=5"
+        }
+      ],
+      "id": "c97e47fada6a",
+      "cluster_id": "c97e47fada6a",
+      "heat_score": 57,
       "heat_label": "rising"
     },
     {
@@ -72,7 +479,7 @@
       ],
       "id": "6e6f2b7745a5",
       "cluster_id": "6e6f2b7745a5",
-      "heat_score": 60,
+      "heat_score": 57,
       "heat_label": "rising"
     },
     {
@@ -108,7 +515,7 @@
       ],
       "id": "b00ea12272a1",
       "cluster_id": "b00ea12272a1",
-      "heat_score": 60,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -150,12 +557,12 @@
       ],
       "id": "ff8612d0436d",
       "cluster_id": "ff8612d0436d",
-      "heat_score": 64,
+      "heat_score": 61,
       "heat_label": "rising"
     },
     {
       "title": "Return to Azeroth in World of Warcraft: Forever - Blizzard News",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPR2pzV1VXdG5ORXpPcXFDcllpdExSejhIV0xsWmVGQmVnaF9vTGpyQVFiUDFydE9KeGhIQm43bzBTNmpMci05OTBBTnNBVkRRREVuY1h6RVowRDVnTGVSbENMMEZYX1lhdUxzVHRNNlE2NjVGcDZHaEtWa25oaHhJc3ZHNVUxNzNLZ3JLMVBYdWlva0dsNWkzZllDdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRGQ4RFpXNGk2NWtYN3ZYcHg1SFF6Q1YyWTUxM3Etck1OQ0c2dE1PVWhKLUNVNzRvVUFaYlZNVkplQkJXX0hfekdQOWlxeFY4dGl3M3NuN1h5MzYzY3JSbmNmT1FITk5nYWoxc0hBdkRGUzZtaUt2amxEWWpsdURqMi11LVdpTllRTF92VW9rSnFLQ2VSeFAzN0Rmdw?oc=5",
       "summary": "Return to Azeroth in World of Warcraft: Forever Blizzard News",
       "source": "https://news.blizzard.com",
       "author": "https://news.blizzard.com",
@@ -179,50 +586,12 @@
       "source_links": [
         {
           "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPR2pzV1VXdG5ORXpPcXFDcllpdExSejhIV0xsWmVGQmVnaF9vTGpyQVFiUDFydE9KeGhIQm43bzBTNmpMci05OTBBTnNBVkRRREVuY1h6RVowRDVnTGVSbENMMEZYX1lhdUxzVHRNNlE2NjVGcDZHaEtWa25oaHhJc3ZHNVUxNzNLZ3JLMVBYdWlva0dsNWkzZllDdw?oc=5"
-        },
-        {
-          "source": "https://news.blizzard.com",
           "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRGQ4RFpXNGk2NWtYN3ZYcHg1SFF6Q1YyWTUxM3Etck1OQ0c2dE1PVWhKLUNVNzRvVUFaYlZNVkplQkJXX0hfekdQOWlxeFY4dGl3M3NuN1h5MzYzY3JSbmNmT1FITk5nYWoxc0hBdkRGUzZtaUt2amxEWWpsdURqMi11LVdpTllRTF92VW9rSnFLQ2VSeFAzN0Rmdw?oc=5"
         }
       ],
       "id": "e5221037e4f9",
       "cluster_id": "e5221037e4f9",
-      "heat_score": 59,
-      "heat_label": "rising"
-    },
-    {
-      "title": "World of Warcraft Forever Name Reservation is Running Into Some Issues - OpenCritic",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOencxQnJlSFR6QjQ0VWQ3TjQ3TldPUG40cmRYdTBUanV2bHNCeGNjaGdDN3Y0VVlVNDRPM3pKVmJUVkc2NmU1SUtxVS11c3lRWENBZWtyaGlFZ2lieGZLV2Q1VXRHYTRIaWV1amFZbDJFVFZxWkhNOVhqdzd2MWNDaVFVN3JQcUk1eFVTYnk4UHJOMC0tTm1FVmtEcXlpSy1qZko3QkdHYw?oc=5",
-      "summary": "World of Warcraft Forever Name Reservation is Running Into Some Issues OpenCritic",
-      "source": "https://opencritic.com",
-      "author": "https://opencritic.com",
-      "published": "2026-10-29T18:58:12+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://opencritic.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://opencritic.com",
-          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOencxQnJlSFR6QjQ0VWQ3TjQ3TldPUG40cmRYdTBUanV2bHNCeGNjaGdDN3Y0VVlVNDRPM3pKVmJUVkc2NmU1SUtxVS11c3lRWENBZWtyaGlFZ2lieGZLV2Q1VXRHYTRIaWV1amFZbDJFVFZxWkhNOVhqdzd2MWNDaVFVN3JQcUk1eFVTYnk4UHJOMC0tTm1FVmtEcXlpSy1qZko3QkdHYw?oc=5"
-        }
-      ],
-      "id": "c97e47fada6a",
-      "cluster_id": "c97e47fada6a",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -258,7 +627,7 @@
       ],
       "id": "e107033976ce",
       "cluster_id": "e107033976ce",
-      "heat_score": 61,
+      "heat_score": 58,
       "heat_label": "rising"
     },
     {
@@ -294,7 +663,7 @@
       ],
       "id": "2be675cd7d29",
       "cluster_id": "2be675cd7d29",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -328,7 +697,7 @@
       ],
       "id": "c4dee1f5e3fb",
       "cluster_id": "c4dee1f5e3fb",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -362,7 +731,7 @@
       ],
       "id": "d0bd93bfce4a",
       "cluster_id": "d0bd93bfce4a",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -396,16 +765,16 @@
       ],
       "id": "af29d73779e1",
       "cluster_id": "af29d73779e1",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
-      "title": "Retribution Paladin Guide - Talents, Rotations, Races & More - WoW Forever - Mobalytics",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBRTVJ0ajk1TXA1WEVBbE1tNjFweHQtMEg2bjVESjZMb1FhMUJPNVdyYW5IZjRhU1hBMHM0RmZ4aVpFZGx0RUJ0WWxSUmtBSXNBdms5bExRYnBzYk02UGtTOTRjQzVQMk56eHZWUFlXS2d4SFY5a3c?oc=5",
-      "summary": "Retribution Paladin Guide - Talents, Rotations, Races & More - WoW Forever Mobalytics",
-      "source": "https://mobalytics.gg",
-      "author": "https://mobalytics.gg",
-      "published": "2026-10-29T16:40:02+00:00",
+      "title": "WoW Forever: Blizzard Plans Four Months Between New Raid Tiers - Guided.news",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVG5OMmpmcVVwd2VhM3pPNEYxTVQ4YlliU2trcElwOEJuNzVYZ18zUVVfUGdVc0U1YUFLbEV3YWJRTVFmNHppcnpjRWdrMUNYaVpaR2NpVEVTRFBoLWxEdHVUdER6NXh3Zk1DS1BUQS1OOUp0TWN6N2szbXREMVBPMg?oc=5",
+      "summary": "WoW Forever: Blizzard Plans Four Months Between New Raid Tiers Guided.news",
+      "source": "https://guided.news",
+      "author": "https://guided.news",
+      "published": "2026-10-29T17:41:56+00:00",
       "image": "",
       "images": [],
       "video_url": "",
@@ -419,18 +788,18 @@
       "reddit_score": 0,
       "reddit_comments": 0,
       "sources": [
-        "https://mobalytics.gg"
+        "https://guided.news"
       ],
       "source_count": 1,
       "source_links": [
         {
-          "source": "https://mobalytics.gg",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBRTVJ0ajk1TXA1WEVBbE1tNjFweHQtMEg2bjVESjZMb1FhMUJPNVdyYW5IZjRhU1hBMHM0RmZ4aVpFZGx0RUJ0WWxSUmtBSXNBdms5bExRYnBzYk02UGtTOTRjQzVQMk56eHZWUFlXS2d4SFY5a3c?oc=5"
+          "source": "https://guided.news",
+          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVG5OMmpmcVVwd2VhM3pPNEYxTVQ4YlliU2trcElwOEJuNzVYZ18zUVVfUGdVc0U1YUFLbEV3YWJRTVFmNHppcnpjRWdrMUNYaVpaR2NpVEVTRFBoLWxEdHVUdER6NXh3Zk1DS1BUQS1OOUp0TWN6N2szbXREMVBPMg?oc=5"
         }
       ],
-      "id": "b13028f62c8d",
-      "cluster_id": "b13028f62c8d",
-      "heat_score": 60,
+      "id": "e636e2786d3a",
+      "cluster_id": "e636e2786d3a",
+      "heat_score": 58,
       "heat_label": "rising"
     },
     {
@@ -466,7 +835,7 @@
       ],
       "id": "1ef137f76701",
       "cluster_id": "1ef137f76701",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -500,7 +869,41 @@
       ],
       "id": "b19a0c49874c",
       "cluster_id": "b19a0c49874c",
-      "heat_score": 60,
+      "heat_score": 57,
+      "heat_label": "rising"
+    },
+    {
+      "title": "World of Warcraft: Forever Big Preview – Hands-on and developer access with the iconic MMO's surprising new pillar - GamesRadar+",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOaFYyb2hJSnAyX1UzX2c4OHVFcnYtdnJ0Y2ZKLTNSVTA5VmZ1N0lfRExaVVA4T1FlbVozT19McG9jUlg5UzdDREhKWTRJRkdHWFFtX3BFZmtWeU80ejY2R1hIMnBMZlB5bjdMZzFiN0dDd19lOEFQTm50c21kWC1TX3JHamJuekdyeGFReFZ2S0REUENUeE94RUpodGtTUQ?oc=5",
+      "summary": "World of Warcraft: Forever Big Preview – Hands-on and developer access with the iconic MMO's surprising new pillar GamesRadar+",
+      "source": "https://www.gamesradar.com",
+      "author": "https://www.gamesradar.com",
+      "published": "2026-10-29T16:13:15+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.gamesradar.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.gamesradar.com",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOaFYyb2hJSnAyX1UzX2c4OHVFcnYtdnJ0Y2ZKLTNSVTA5VmZ1N0lfRExaVVA4T1FlbVozT19McG9jUlg5UzdDREhKWTRJRkdHWFFtX3BFZmtWeU80ejY2R1hIMnBMZlB5bjdMZzFiN0dDd19lOEFQTm50c21kWC1TX3JHamJuekdyeGFReFZ2S0REUENUeE94RUpodGtTUQ?oc=5"
+        }
+      ],
+      "id": "dcd54fc0d795",
+      "cluster_id": "dcd54fc0d795",
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -534,7 +937,7 @@
       ],
       "id": "d8134b6b63ea",
       "cluster_id": "d8134b6b63ea",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -568,7 +971,7 @@
       ],
       "id": "f5432d52123c",
       "cluster_id": "f5432d52123c",
-      "heat_score": 60,
+      "heat_score": 57,
       "heat_label": "rising"
     },
     {
@@ -604,7 +1007,7 @@
       ],
       "id": "74775fd36439",
       "cluster_id": "74775fd36439",
-      "heat_score": 60,
+      "heat_score": 57,
       "heat_label": "rising"
     },
     {
@@ -638,7 +1041,7 @@
       ],
       "id": "361f63a1478a",
       "cluster_id": "361f63a1478a",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -677,7 +1080,7 @@
       ],
       "id": "0be771b87187",
       "cluster_id": "0be771b87187",
-      "heat_score": 63,
+      "heat_score": 60,
       "heat_label": "rising"
     },
     {
@@ -711,7 +1114,7 @@
       ],
       "id": "e1a17a24d1cd",
       "cluster_id": "e1a17a24d1cd",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -745,7 +1148,7 @@
       ],
       "id": "0c93665edb83",
       "cluster_id": "0c93665edb83",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -780,7 +1183,7 @@
       ],
       "id": "926dc2defadb",
       "cluster_id": "926dc2defadb",
-      "heat_score": 60,
+      "heat_score": 57,
       "heat_label": "rising"
     },
     {
@@ -816,7 +1219,7 @@
       ],
       "id": "643245a95c09",
       "cluster_id": "643245a95c09",
-      "heat_score": 60,
+      "heat_score": 57,
       "heat_label": "rising"
     },
     {
@@ -850,7 +1253,7 @@
       ],
       "id": "c18f76f1d610",
       "cluster_id": "c18f76f1d610",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -884,7 +1287,7 @@
       ],
       "id": "fdb2a63f39b1",
       "cluster_id": "fdb2a63f39b1",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -918,13 +1321,13 @@
       ],
       "id": "2dd6d2712317",
       "cluster_id": "2dd6d2712317",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
-      "title": "World of Warcraft Controller Support is the 'First Leg' as Project Helix Version Teased - VGChartz",
+      "title": "World of Warcraft Controller Support is the 'First Leg' as Project Helix Version Teased - News - VGChartz",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMnN0dUdEV0FvRmRMMjhheTZmZ2U3UkstbW9DTElzcWc1cWJQS2ViNlYwNlg3d19wM1JnNE9pSUtheFk5aXZCVGx2UzlreGpVVEgzUV9NZWdtcHprZWlYQ3JTN0R5UVlqemZmYUgzLU1UemlueGFKRmEzcklTY1BrQjdhQjBveDBFNmRER19qSExiN3hzd0o3UG5NUHF6M3J1UEJFUDlVQ3NfUjdOLURhMDhoeEl2V2V3MUY0WGRFTUJMTkwx?oc=5",
-      "summary": "World of Warcraft Controller Support is the 'First Leg' as Project Helix Version Teased VGChartz",
+      "summary": "World of Warcraft Controller Support is the 'First Leg' as Project Helix Version Teased - News VGChartz",
       "source": "https://www.vgchartz.com",
       "author": "https://www.vgchartz.com",
       "published": "2026-10-29T14:13:40+00:00",
@@ -950,9 +1353,9 @@
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNMnN0dUdEV0FvRmRMMjhheTZmZ2U3UkstbW9DTElzcWc1cWJQS2ViNlYwNlg3d19wM1JnNE9pSUtheFk5aXZCVGx2UzlreGpVVEgzUV9NZWdtcHprZWlYQ3JTN0R5UVlqemZmYUgzLU1UemlueGFKRmEzcklTY1BrQjdhQjBveDBFNmRER19qSExiN3hzd0o3UG5NUHF6M3J1UEJFUDlVQ3NfUjdOLURhMDhoeEl2V2V3MUY0WGRFTUJMTkwx?oc=5"
         }
       ],
-      "id": "c621a6739dc7",
-      "cluster_id": "c621a6739dc7",
-      "heat_score": 58,
+      "id": "788f852e485e",
+      "cluster_id": "788f852e485e",
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -986,7 +1389,7 @@
       ],
       "id": "9b8274675eaf",
       "cluster_id": "9b8274675eaf",
-      "heat_score": 58,
+      "heat_score": 55,
       "heat_label": "rising"
     },
     {
@@ -1022,7 +1425,7 @@
       ],
       "id": "943b32da6505",
       "cluster_id": "943b32da6505",
-      "heat_score": 58,
+      "heat_score": 54,
       "heat_label": "rising"
     },
     {
@@ -1056,7 +1459,7 @@
       ],
       "id": "c47e89f60f96",
       "cluster_id": "c47e89f60f96",
-      "heat_score": 58,
+      "heat_score": 54,
       "heat_label": "rising"
     },
     {
@@ -1090,41 +1493,7 @@
       ],
       "id": "6cf8082f310e",
       "cluster_id": "6cf8082f310e",
-      "heat_score": 57,
-      "heat_label": "rising"
-    },
-    {
-      "title": "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW - NVIDIA Blog",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBSeE5ETkIwck52ZmJ1UzJGdnFHU0xZcDJfSm0tbUhiakV3RkRIeGxqZUo0TW5RVnhJQmxsWjRpc0ZmYmh6Z0Nxeg?oc=5",
-      "summary": "Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW NVIDIA Blog",
-      "source": "https://blogs.nvidia.com",
-      "author": "https://blogs.nvidia.com",
-      "published": "2026-10-29T13:06:03+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://blogs.nvidia.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://blogs.nvidia.com",
-          "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBSeE5ETkIwck52ZmJ1UzJGdnFHU0xZcDJfSm0tbUhiakV3RkRIeGxqZUo0TW5RVnhJQmxsWjRpc0ZmYmh6Z0Nxeg?oc=5"
-        }
-      ],
-      "id": "eedeedc4493a",
-      "cluster_id": "eedeedc4493a",
-      "heat_score": 57,
+      "heat_score": 54,
       "heat_label": "rising"
     },
     {
@@ -1158,7 +1527,7 @@
       ],
       "id": "c850282506ad",
       "cluster_id": "c850282506ad",
-      "heat_score": 57,
+      "heat_score": 54,
       "heat_label": "rising"
     },
     {
@@ -1192,7 +1561,41 @@
       ],
       "id": "4a0cb222d75f",
       "cluster_id": "4a0cb222d75f",
-      "heat_score": 57,
+      "heat_score": 54,
+      "heat_label": "rising"
+    },
+    {
+      "title": "Blizzard admits World of Warcraft Forever's naming filter was accidentally too strict - PCGamesN",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qbkpHY1N2aUNmTU9rUG9CWF9oMXRoUW5iUnJ0SVdkcmZpMWg5TmNlX1FGMnk4N2dHVjhJSEJIVmNHWm4wQXJhTmFadWpsb0MwYjBRcGhlMWNfQWNEMHhrME5xbGx4SGdJbkJsVjhxVy12WU5wOE5LeC00WQ?oc=5",
+      "summary": "Blizzard admits World of Warcraft Forever's naming filter was accidentally too strict PCGamesN",
+      "source": "https://www.pcgamesn.com",
+      "author": "https://www.pcgamesn.com",
+      "published": "2026-10-29T12:30:48+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.pcgamesn.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.pcgamesn.com",
+          "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1qbkpHY1N2aUNmTU9rUG9CWF9oMXRoUW5iUnJ0SVdkcmZpMWg5TmNlX1FGMnk4N2dHVjhJSEJIVmNHWm4wQXJhTmFadWpsb0MwYjBRcGhlMWNfQWNEMHhrME5xbGx4SGdJbkJsVjhxVy12WU5wOE5LeC00WQ?oc=5"
+        }
+      ],
+      "id": "42fcdb18a8a8",
+      "cluster_id": "42fcdb18a8a8",
+      "heat_score": 54,
       "heat_label": "rising"
     },
     {
@@ -1226,7 +1629,7 @@
       ],
       "id": "3bd5f4900dbf",
       "cluster_id": "3bd5f4900dbf",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -1260,41 +1663,7 @@
       ],
       "id": "8014bc2a0757",
       "cluster_id": "8014bc2a0757",
-      "heat_score": 56,
-      "heat_label": "rising"
-    },
-    {
-      "title": "Xbox Revenue Slide Eases to 2% in Fiscal Q1 as Sharma Touts Minecraft, WoW Records and Blames Console Shortage - BigGo Finance",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAxTlJBczZwT2g2bWRtbDlTY2lwSHJIMTRiVThndmdpeGFpS2dTaVlBcWIwQUJPS0RjUnR0aUZka2Z4TDU2RXNYbEZrWS1PS0ZtMVZsTkJ4MjNRQ1JUUnlVa1VrMVU3UEp5VWRnbW1FTDdWazBvZ2c?oc=5",
-      "summary": "Xbox Revenue Slide Eases to 2% in Fiscal Q1 as Sharma Touts Minecraft, WoW Records and Blames Console Shortage BigGo Finance",
-      "source": "https://finance.biggo.com",
-      "author": "https://finance.biggo.com",
-      "published": "2026-10-29T09:36:00+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://finance.biggo.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://finance.biggo.com",
-          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAxTlJBczZwT2g2bWRtbDlTY2lwSHJIMTRiVThndmdpeGFpS2dTaVlBcWIwQUJPS0RjUnR0aUZka2Z4TDU2RXNYbEZrWS1PS0ZtMVZsTkJ4MjNRQ1JUUnlVa1VrMVU3UEp5VWRnbW1FTDdWazBvZ2c?oc=5"
-        }
-      ],
-      "id": "a516f8d0fc56",
-      "cluster_id": "a516f8d0fc56",
-      "heat_score": 56,
+      "heat_score": 53,
       "heat_label": "rising"
     },
     {
@@ -1317,52 +1686,23 @@
       "reddit_score": 0,
       "reddit_comments": 0,
       "sources": [
-        "https://opencritic.com"
+        "https://opencritic.com",
+        "https://gamerant.com"
       ],
-      "source_count": 1,
+      "source_count": 2,
       "source_links": [
         {
           "source": "https://opencritic.com",
           "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMGFVQVdGWmF4T2JmYUcwMFlZczhZQ2R0QlpuMkU3QjBwV0w4dHF0R0hkVXgzNGlyYm5CelA3cGVjcS11WXZLWjhqd1pYLUsyTDJnbU1RT0xqeHFPeTJPd2E3cWNaOTBZZl9VanY2ek1lN09TZjRsNmdXQ3JHOU5iWHZ3TlpQQ293V1FidENrMjN0Ump3Q1JaX2ZTb3FrOHBVTjd1ZWdyZTEyRWI1?oc=5"
+        },
+        {
+          "source": "https://gamerant.com",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB0NGdjTktRTWhrcjhjWVNUMmlvbU9XQVNjTGVhQVV3RWtGZVdmQjlVU1JhREdIbzRfSkduYWZXQnN4aVViVmEtdTFsSmZoWDdvSHBVektiZG1OVVRJdXZaS1M4cnJtUElXYV9OTExHWl9CZw?oc=5"
         }
       ],
       "id": "30afd4446e1d",
       "cluster_id": "30afd4446e1d",
-      "heat_score": 60,
-      "heat_label": "rising"
-    },
-    {
-      "title": "Xbox Revenue Decline Narrows to 2% as Asha Sharma Points to Record Minecraft and WoW Results, but “Console Sales Remain Constrained by Supply” - Wccftech",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNREhncXliNXhXYnBKTlBLdWxHV2hwX3UzZm9ZaDFjMEFvUVVocFBvS2xLdVd3UXJqdTRIMWpuekM5elhlaVV5RmJLS3dxbUN1MEtMeXppOGlHeTJHZlJXOUkxQ3h1LTRtV19kMWhHcDUybVBSTlFaaEdKanNTQVhtMTJUZFVvdk1mX1R6bXREMnZnYkZMR216dFMzeW1Ic0dKV0JRcGhBRWNFM1BoajJINGtjTmZlMTTSAbwBQVVfeXFMTk81Um9OYTN4eVA5X2Vxd2U4RDNycVlhRkN4d0ozbjlzUU1zS1RmOVd5U1ZkMXUzYUVCSlZka3lJUmo2Um9NcEI5VWxTUXhMRWFvV0pjZTFiR2s5SXlnNEpvNHZfVXZOU1dkdVQ0eEtDa29xeEJpMUM4RUNORVZhYzg1SWVZbDBwV2phdDRyUVZkdzNFQkNHY2lVeHR3SEdRdDJuREdvOGdyU1dfNGJScGVaaW80dURRcHE4MkQ?oc=5",
-      "summary": "Xbox Revenue Decline Narrows to 2% as Asha Sharma Points to Record Minecraft and WoW Results, but “Console Sales Remain Constrained by Supply” Wccftech",
-      "source": "https://wccftech.com",
-      "author": "https://wccftech.com",
-      "published": "2026-10-29T09:05:00+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://wccftech.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://wccftech.com",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNREhncXliNXhXYnBKTlBLdWxHV2hwX3UzZm9ZaDFjMEFvUVVocFBvS2xLdVd3UXJqdTRIMWpuekM5elhlaVV5RmJLS3dxbUN1MEtMeXppOGlHeTJHZlJXOUkxQ3h1LTRtV19kMWhHcDUybVBSTlFaaEdKanNTQVhtMTJUZFVvdk1mX1R6bXREMnZnYkZMR216dFMzeW1Ic0dKV0JRcGhBRWNFM1BoajJINGtjTmZlMTTSAbwBQVVfeXFMTk81Um9OYTN4eVA5X2Vxd2U4RDNycVlhRkN4d0ozbjlzUU1zS1RmOVd5U1ZkMXUzYUVCSlZka3lJUmo2Um9NcEI5VWxTUXhMRWFvV0pjZTFiR2s5SXlnNEpvNHZfVXZOU1dkdVQ0eEtDa29xeEJpMUM4RUNORVZhYzg1SWVZbDBwV2phdDRyUVZkdzNFQkNHY2lVeHR3SEdRdDJuREdvOGdyU1dfNGJScGVaaW80dURRcHE4MkQ?oc=5"
-        }
-      ],
-      "id": "7136aaaa098f",
-      "cluster_id": "7136aaaa098f",
-      "heat_score": 56,
+      "heat_score": 61,
       "heat_label": "rising"
     },
     {
@@ -1396,7 +1736,7 @@
       ],
       "id": "a9bedfac069c",
       "cluster_id": "a9bedfac069c",
-      "heat_score": 55,
+      "heat_score": 52,
       "heat_label": "rising"
     },
     {
@@ -1430,7 +1770,7 @@
       ],
       "id": "9b58db7a05a8",
       "cluster_id": "9b58db7a05a8",
-      "heat_score": 55,
+      "heat_score": 52,
       "heat_label": "rising"
     },
     {
@@ -1464,77 +1804,7 @@
       ],
       "id": "38d3c50af0e2",
       "cluster_id": "38d3c50af0e2",
-      "heat_score": 54,
-      "heat_label": "rising"
-    },
-    {
-      "title": "WoW Forever roadmap (2026 and 2027) - Esports.gg",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVWtRU1RLUVpGWi1LN01UeDROUEU3eGpxZ2Z3a1MwTVhKNkpaZERhVWgwQWFMWkdWS1ZHb2J4bWxNWk4tQWxFRjFWNjdUM0lWUmt3bWdJUmI0X3p0YVBvbVh5NnF2RU9zRmRCbW5JVWhYNG5jX0h3MEs0SXF0Z0VqOXZ3?oc=5",
-      "summary": "WoW Forever roadmap (2026 and 2027) Esports.gg",
-      "source": "https://esports.gg",
-      "author": "https://esports.gg",
-      "published": "2026-10-29T04:05:36+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "event",
-      "game_modes": [
-        "esports",
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://esports.gg"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://esports.gg",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPVWtRU1RLUVpGWi1LN01UeDROUEU3eGpxZ2Z3a1MwTVhKNkpaZERhVWgwQWFMWkdWS1ZHb2J4bWxNWk4tQWxFRjFWNjdUM0lWUmt3bWdJUmI0X3p0YVBvbVh5NnF2RU9zRmRCbW5JVWhYNG5jX0h3MEs0SXF0Z0VqOXZ3?oc=5"
-        }
-      ],
-      "id": "eec3f0b5ba9a",
-      "cluster_id": "eec3f0b5ba9a",
-      "heat_score": 54,
-      "heat_label": "rising"
-    },
-    {
-      "title": "WoW Forever drops new music video with Amy Lee, Poppy, and Courtney LaPlante - Esports.gg",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQOXdnT2F1T1Y2a3h2OU5HNnlNd2JWM0otWHltdDBKcTY5dnduVEdISm9mSGwyOU0ycEQxTGlPZ09RcEdTLXFnREN4dEYzQ2hfSWdhZlZQSUxMalg3RlJPNWY5UlR5Nm1JakNUWl9lMFEtU2FYYzdnUDdIWDZEMlNZZVVybWZSb1Y4NDR5NU90VXJUR0ZGS1N5WmZTTTZjQnVZTHhZTE9uYVZqbVhIS2xIdmtzUXB1Z0xv?oc=5",
-      "summary": "WoW Forever drops new music video with Amy Lee, Poppy, and Courtney LaPlante Esports.gg",
-      "source": "https://esports.gg",
-      "author": "https://esports.gg",
-      "published": "2026-10-29T03:21:43+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "esports",
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://esports.gg"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://esports.gg",
-          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQOXdnT2F1T1Y2a3h2OU5HNnlNd2JWM0otWHltdDBKcTY5dnduVEdISm9mSGwyOU0ycEQxTGlPZ09RcEdTLXFnREN4dEYzQ2hfSWdhZlZQSUxMalg3RlJPNWY5UlR5Nm1JakNUWl9lMFEtU2FYYzdnUDdIWDZEMlNZZVVybWZSb1Y4NDR5NU90VXJUR0ZGS1N5WmZTTTZjQnVZTHhZTE9uYVZqbVhIS2xIdmtzUXB1Z0xv?oc=5"
-        }
-      ],
-      "id": "009f8822fd40",
-      "cluster_id": "009f8822fd40",
-      "heat_score": 54,
+      "heat_score": 51,
       "heat_label": "rising"
     },
     {
@@ -1568,7 +1838,7 @@
       ],
       "id": "7d70b933a912",
       "cluster_id": "7d70b933a912",
-      "heat_score": 53,
+      "heat_score": 50,
       "heat_label": "rising"
     },
     {
@@ -1602,7 +1872,7 @@
       ],
       "id": "663f1990b973",
       "cluster_id": "663f1990b973",
-      "heat_score": 54,
+      "heat_score": 51,
       "heat_label": "rising"
     },
     {
@@ -1636,8 +1906,8 @@
       ],
       "id": "d7b9e7d00f55",
       "cluster_id": "d7b9e7d00f55",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft: Forever - Official Warpath AMV Launch Trailer - Yahoo Tech",
@@ -1680,7 +1950,7 @@
       ],
       "id": "bf3cab99bb1d",
       "cluster_id": "bf3cab99bb1d",
-      "heat_score": 61,
+      "heat_score": 58,
       "heat_label": "rising"
     },
     {
@@ -1714,7 +1984,7 @@
       ],
       "id": "fed0f0ac5918",
       "cluster_id": "fed0f0ac5918",
-      "heat_score": 56,
+      "heat_score": 53,
       "heat_label": "rising"
     },
     {
@@ -1748,8 +2018,8 @@
       ],
       "id": "4ad84495d07b",
       "cluster_id": "4ad84495d07b",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "New Class and Item Tuning on WoW: Forever - Hunter Changes",
@@ -1784,7 +2054,7 @@
       ],
       "id": "fe5969d43c47",
       "cluster_id": "fe5969d43c47",
-      "heat_score": 54,
+      "heat_score": 51,
       "heat_label": "rising"
     },
     {
@@ -1818,8 +2088,8 @@
       ],
       "id": "ed43de8b9121",
       "cluster_id": "ed43de8b9121",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "Now Live! Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv — World of Warcraft - Blizzard News",
@@ -1848,20 +2118,12 @@
         {
           "source": "https://news.blizzard.com",
           "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQmxJWngxMGVoMjFKSzhTdVJWSDdQd1QxaTVNdy1iQkQwSzNxRHpPT0pyTEhPdjNNbWVVQXJVVy1Rem9VYTRwLUJFZ3NTWU5vWjV4aHp6X1lWLTRQNHprcDhVTDJxOXp5a1k5MTBQblhYT0FRNF9WLVFVUW1rbC1SWTNtRmNOaTlkYUljRWxIb1VVZUEyMjl6cVFQWS1GU0NvaURZcnNMWl9yZ3JORXp5VGx5ZFcyV2RpNVp5NmJ2NU5qV3JFeVVF?oc=5"
-        },
-        {
-          "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY2txc2dQUDJiZFlNYk5TTEEzVURfRVlxWXNuTGVnQkJneGxjSVcyYmJTbU84ZVFLZlBPb3B2ci1PWkY3M0hnQ0VFc3J6bVVaM3pGMEtQUExhMW15MDRtWmVweDhUZ2xoU3JqTmNDYS1xQndpbGhCZ0h6VFNuSlVtMGgtazlDcDUxUy0tYjhEVDNiZDhMNkNNTXNTLXI1dU40Q2RQZGlqYWVxeWdtYkNScnlvVk05NFc5bDRV?oc=5"
-        },
-        {
-          "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRkZYLXpPQk9jQUw3Qjk3R0xTTEdGVVVBQW9PTlVFTVVaaHBKYU5lLTNSQmYwbXBPbWlEaGNVS25vNEgxX2MtSlFXMV9aSXdQdnFDc0ZzYnM5b2xPZFE0bW9lUGpnZ0xlLTZQYnVYRjNvWmZCM3ZsR2hMMUZsdGc2T0hFbjRTR1Z3dUtZVWtfX3JsU1ZlRTJMRDVpcHViMUVRQS1zZDlQcFBQYzc5eGxxN09WV3VrVWROZnRXUGFzQQ?oc=5"
         }
       ],
       "id": "bd7508319c24",
       "cluster_id": "bd7508319c24",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "D&D: World Of Warcraft Books Hit With Delays - Bell of Lost Souls",
@@ -1894,8 +2156,8 @@
       ],
       "id": "bf429ee4f1c1",
       "cluster_id": "bf429ee4f1c1",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft: Forever makes Azeroth feel undiscovered again; it's not simply a game but an experience - iTWire",
@@ -1928,8 +2190,8 @@
       ],
       "id": "90d97745d7b3",
       "cluster_id": "90d97745d7b3",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "WoW: Forever's update schedule will be 'a little more laid back' than the main MMO - PC Gamer",
@@ -1962,8 +2224,8 @@
       ],
       "id": "2f9fd2ec93cb",
       "cluster_id": "2f9fd2ec93cb",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "Retail Team Discussing Lighting and Water Improvements from WoW: Forever",
@@ -1998,8 +2260,8 @@
       ],
       "id": "b2687dbaed5b",
       "cluster_id": "b2687dbaed5b",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "Get Up To Speed On World Of Warcraft: Forever's Big Launch: Everything You Need To Know - Kotaku",
@@ -2032,8 +2294,8 @@
       ],
       "id": "9b822bf3bc3c",
       "cluster_id": "9b822bf3bc3c",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft: Forever console ports seem inevitable as Blizzard wants you to play the MMO \"wherever you want, and at some point on whatever you want\" - GamesRadar+",
@@ -2066,8 +2328,8 @@
       ],
       "id": "2d2636d7c494",
       "cluster_id": "2d2636d7c494",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "Bill Bailey stars in World Of Warcraft series - British Comedy Guide",
@@ -2100,8 +2362,42 @@
       ],
       "id": "de095271ae09",
       "cluster_id": "de095271ae09",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
+    },
+    {
+      "title": "World of Warcraft Fans Aren't Happy About Housing Microtransactions - GameRant",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxOUM0SDAyMnpnRmRDVGNhUHowTWFJTW5ySDUtWFdoTllSVE9GVk8yTkJrMHRKY1hqT1psZEUyMGNoZnpscGFBZjNPNTJIYTg5dmpJSkF5NHF5VEJvTU04ZGRfSHJ1dmluZmo5aWNjTklTWkk?oc=5",
+      "summary": "World of Warcraft Fans Aren't Happy About Housing Microtransactions GameRant",
+      "source": "https://gamerant.com",
+      "author": "https://gamerant.com",
+      "published": "2026-10-28T17:56:03+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://gamerant.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://gamerant.com",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBxOUM0SDAyMnpnRmRDVGNhUHowTWFJTW5ySDUtWFdoTllSVE9GVk8yTkJrMHRKY1hqT1psZEUyMGNoZnpscGFBZjNPNTJIYTg5dmpJSkF5NHF5VEJvTU04ZGRfSHJ1dmluZmo5aWNjTklTWkk?oc=5"
+        }
+      ],
+      "id": "63ab77998bba",
+      "cluster_id": "63ab77998bba",
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft Forever’s designers talk about patch cadence, future plans, and philosophy - Massively Overpowered",
@@ -2134,8 +2430,8 @@
       ],
       "id": "b3fd68c718c8",
       "cluster_id": "b3fd68c718c8",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "WoW: Forever Content Updates Will Come Slower Than You Might Expect - Yahoo Tech",
@@ -2168,8 +2464,8 @@
       ],
       "id": "764bb4eada03",
       "cluster_id": "764bb4eada03",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "New Player’s Starter Guide for World of Warcraft: Forever",
@@ -2204,42 +2500,8 @@
       ],
       "id": "1ce9f2356bb2",
       "cluster_id": "1ce9f2356bb2",
-      "heat_score": 50,
-      "heat_label": "rising"
-    },
-    {
-      "title": "World of Warcraft: Forever Big Preview – Hands-on and developer access with the iconic MMO's surprising new pillar - GamesRadar+",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOaFYyb2hJSnAyX1UzX2c4OHVFcnYtdnJ0Y2ZKLTNSVTA5VmZ1N0lfRExaVVA4T1FlbVozT19McG9jUlg5UzdDREhKWTRJRkdHWFFtX3BFZmtWeU80ejY2R1hIMnBMZlB5bjdMZzFiN0dDd19lOEFQTm50c21kWC1TX3JHamJuekdyeGFReFZ2S0REUENUeE94RUpodGtTUQ?oc=5",
-      "summary": "World of Warcraft: Forever Big Preview – Hands-on and developer access with the iconic MMO's surprising new pillar GamesRadar+",
-      "source": "https://www.gamesradar.com",
-      "author": "https://www.gamesradar.com",
-      "published": "2026-10-28T17:00:22+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://www.gamesradar.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://www.gamesradar.com",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOaFYyb2hJSnAyX1UzX2c4OHVFcnYtdnJ0Y2ZKLTNSVTA5VmZ1N0lfRExaVVA4T1FlbVozT19McG9jUlg5UzdDREhKWTRJRkdHWFFtX3BFZmtWeU80ejY2R1hIMnBMZlB5bjdMZzFiN0dDd19lOEFQTm50c21kWC1TX3JHamJuekdyeGFReFZ2S0REUENUeE94RUpodGtTUQ?oc=5"
-        }
-      ],
-      "id": "dcd54fc0d795",
-      "cluster_id": "dcd54fc0d795",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "New Player’s Starter Guide: Welcome to World of Warcraft: Forever - Blizzard News",
@@ -2272,8 +2534,8 @@
       ],
       "id": "193943adf3ac",
       "cluster_id": "193943adf3ac",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "8 Reasons why WoW Forever is ensuring the iconic MMO remains immovable - GamesRadar+",
@@ -2306,42 +2568,8 @@
       ],
       "id": "bd01c8ef34b1",
       "cluster_id": "bd01c8ef34b1",
-      "heat_score": 50,
-      "heat_label": "rising"
-    },
-    {
-      "title": "November 2026: GTA 6, WoW Forever and Ocarina mark the calendar - Foro3D",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMlFSVzV0c1Bac2pPYUlUeUhmV0NRamR5ZWFDNFZWT2Y1US1SU3NXNUE0WkMzZ3hSVzBDbnpiaDRSTlYzTmVGWkQySVdtMGdITHdtWndhV3JjSVRIUWJtMXJEaUxnMjFGVXo0SVZiNHlob2FXTGdVLXJVVzN6Tnk5Z1dGMWhlLXpRdE10VS13S01ubktGMkdfTnhyYmVtVDZ6NlMxNGpR?oc=5",
-      "summary": "November 2026: GTA 6, WoW Forever and Ocarina mark the calendar Foro3D",
-      "source": "https://foro3d.com",
-      "author": "https://foro3d.com",
-      "published": "2026-10-28T16:55:33+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "event",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://foro3d.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://foro3d.com",
-          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMlFSVzV0c1Bac2pPYUlUeUhmV0NRamR5ZWFDNFZWT2Y1US1SU3NXNUE0WkMzZ3hSVzBDbnpiaDRSTlYzTmVGWkQySVdtMGdITHdtWndhV3JjSVRIUWJtMXJEaUxnMjFGVXo0SVZiNHlob2FXTGdVLXJVVzN6Tnk5Z1dGMWhlLXpRdE10VS13S01ubktGMkdfTnhyYmVtVDZ6NlMxNGpR?oc=5"
-        }
-      ],
-      "id": "41590f63213b",
-      "cluster_id": "41590f63213b",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "Planet Azeroth: Episode 1 ft. Bill Bailey",
@@ -2376,8 +2604,8 @@
       ],
       "id": "a3700858e0e7",
       "cluster_id": "a3700858e0e7",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft: Forever | Planet Azeroth EP. 1 (ft. Bill Bailey) - IGN",
@@ -2420,7 +2648,7 @@
       ],
       "id": "2bb5bb0e11ff",
       "cluster_id": "2bb5bb0e11ff",
-      "heat_score": 59,
+      "heat_score": 56,
       "heat_label": "rising"
     },
     {
@@ -2454,8 +2682,8 @@
       ],
       "id": "55c831d737a1",
       "cluster_id": "55c831d737a1",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft: Forever lead teases console support as gamepad support lets players play “on whatever you want” - FRVR",
@@ -2488,8 +2716,8 @@
       ],
       "id": "bc65b4283ff3",
       "cluster_id": "bc65b4283ff3",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "Bill Bailey As You've Never Seen Him Before - Beyond The Joke",
@@ -2522,8 +2750,8 @@
       ],
       "id": "a54f45a0c0da",
       "cluster_id": "a54f45a0c0da",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "Bill Bailey stars in comedic nature documentary World of Warcraft: Planet Azeroth - Female First",
@@ -2556,8 +2784,8 @@
       ],
       "id": "2c1c80eed5a2",
       "cluster_id": "2c1c80eed5a2",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "Casually Classic: WoW Forever only gives you one chance to explore it fresh — so make it count - Massively Overpowered",
@@ -2590,8 +2818,8 @@
       ],
       "id": "ba4b57a45814",
       "cluster_id": "ba4b57a45814",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "World of Warcraft was meant to have viable levelling gear from professions way back in 2004, but the designers on raids and dungeons 'cheated a little bit' - PC Gamer",
@@ -2624,8 +2852,42 @@
       ],
       "id": "aa84509d19c4",
       "cluster_id": "aa84509d19c4",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
+    },
+    {
+      "title": "World of Warcraft: Forever Is Quietly Bringing Back the Greatest Mistake of Classic WoW - GameRant",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPU2NuX3hCaWlpbnFxTWYySkZrRi11Yk1FaEFaU19fTU9ld3pGcU9xLXd3bEVudGJvY0JNRzdncnYzUmk0TjJORmZ6YVA5ai03cEsxVldvTmdOTzV0UXRhUlFPb2JMXzNMNHNibGktTi1KMEV6blZrVzQ0NUZiM0tKS3RMZVNkZw?oc=5",
+      "summary": "World of Warcraft: Forever Is Quietly Bringing Back the Greatest Mistake of Classic WoW GameRant",
+      "source": "https://gamerant.com",
+      "author": "https://gamerant.com",
+      "published": "2026-10-28T15:21:02+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "classic"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://gamerant.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://gamerant.com",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPU2NuX3hCaWlpbnFxTWYySkZrRi11Yk1FaEFaU19fTU9ld3pGcU9xLXd3bEVudGJvY0JNRzdncnYzUmk0TjJORmZ6YVA5ai03cEsxVldvTmdOTzV0UXRhUlFPb2JMXzNMNHNibGktTi1KMEV6blZrVzQ0NUZiM0tKS3RMZVNkZw?oc=5"
+        }
+      ],
+      "id": "ff22d3e2e9c7",
+      "cluster_id": "ff22d3e2e9c7",
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "Play WoW: Forever \"wherever you want and, at some point, on whatever you want\" devs tell us as they prepare for launch: \"We don't know what's going to happen\" - GamesRadar+",
@@ -2647,24 +2909,53 @@
       "reddit_score": 0,
       "reddit_comments": 0,
       "sources": [
-        "https://www.gamesradar.com",
-        "https://tech.yahoo.com"
+        "https://www.gamesradar.com"
       ],
-      "source_count": 2,
+      "source_count": 1,
       "source_links": [
         {
           "source": "https://www.gamesradar.com",
           "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPZ3hDckdJUVZkRHhkUWFGU0lyOVpFWDhMY0JRQjh3MWFma01xbVhSTm1NS2Ftak5oNUhlYWR1NjFoSllQTkpkNzRfTzl3Y2p3cnlwQ3FkSDZTMy1Lb1U3WGlLY3RUNWNReVktRE9YYUp6a3YtNmZFUlZGODlONEV2R3dlakF4ZC1KQmtzV2Z0bWdEMzFucjFOSy1pM1pSQ3FDb0oxSXNvMksyN3hMclhqTXVVeHNQNDZVXzYzUENkRTNGZGtUQTg5eGtpSmdub2NKYndLSTdR?oc=5"
-        },
-        {
-          "source": "https://tech.yahoo.com",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQRHdSNjQ3ZzFQalg4V2xRLWl6NVdEM0dvMF82Qm5zX0toeWtUNUFFdmRxNU9QQ0FybTVoMXdTOEVDcjZoVHRDN18xZXdBcHM3VWpSNkpCU0FGSEtFaGRtY0RsVmpZMkRIbnF4aTJLbkFzQzcxQV9YWHNUb1U4YkRtaDAxN0JRdU9zdGpKeQ?oc=5"
         }
       ],
       "id": "1f6b1c90b9a1",
       "cluster_id": "1f6b1c90b9a1",
-      "heat_score": 54,
-      "heat_label": "rising"
+      "heat_score": 46,
+      "heat_label": "steady"
+    },
+    {
+      "title": "World of Warcraft Forever continues Blizzard's nostalgia-fest with an Attenborough-style look at Azeroth - PCGamesN",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80eUdlb1VDSEppbHBOaFlZRUJsV1pweVZkY2UwN0p6bFIweVBPMEhDVU1DV0tVU2hGOEo0VnI5LXZyTUp5VTEtNzdUOGNLUGJOYjl5M01XczJSdHZXQUg2ajVzVHhjc0tmb1RZVFlQUHNUWE0?oc=5",
+      "summary": "World of Warcraft Forever continues Blizzard's nostalgia-fest with an Attenborough-style look at Azeroth PCGamesN",
+      "source": "https://www.pcgamesn.com",
+      "author": "https://www.pcgamesn.com",
+      "published": "2026-10-28T15:01:14+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://www.pcgamesn.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://www.pcgamesn.com",
+          "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80eUdlb1VDSEppbHBOaFlZRUJsV1pweVZkY2UwN0p6bFIweVBPMEhDVU1DV0tVU2hGOEo0VnI5LXZyTUp5VTEtNzdUOGNLUGJOYjl5M01XczJSdHZXQUg2ajVzVHhjc0tmb1RZVFlQUHNUWE0?oc=5"
+        }
+      ],
+      "id": "b4c1729c173c",
+      "cluster_id": "b4c1729c173c",
+      "heat_score": 46,
+      "heat_label": "steady"
     },
     {
       "title": "New Cabin-Themed Shop Decor Discovered in Patch 12.1.7",
@@ -2699,8 +2990,8 @@
       ],
       "id": "ddaec9a3fc2e",
       "cluster_id": "ddaec9a3fc2e",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "'Nothing quite prepares you forAzeroth' — comedian and nature lover Bill Bailey is hosting a comedic nature documentary all about the landscapes and nature of World of Warcraft - TechRadar",
@@ -2733,7 +3024,7 @@
       ],
       "id": "063144df9e30",
       "cluster_id": "063144df9e30",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2767,7 +3058,7 @@
       ],
       "id": "83542324e9e1",
       "cluster_id": "83542324e9e1",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2801,7 +3092,7 @@
       ],
       "id": "9533ab44d282",
       "cluster_id": "9533ab44d282",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2835,8 +3126,8 @@
       ],
       "id": "21358d423257",
       "cluster_id": "21358d423257",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "Warlords of Draenor Timewalking Week Now Live",
@@ -2871,7 +3162,7 @@
       ],
       "id": "29a8a8490fbc",
       "cluster_id": "29a8a8490fbc",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2905,7 +3196,7 @@
       ],
       "id": "8b6a09e88b66",
       "cluster_id": "8b6a09e88b66",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2939,7 +3230,7 @@
       ],
       "id": "f5e922005290",
       "cluster_id": "f5e922005290",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -2973,7 +3264,7 @@
       ],
       "id": "84ea697384c3",
       "cluster_id": "84ea697384c3",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -3007,8 +3298,42 @@
       ],
       "id": "4e16700b7228",
       "cluster_id": "4e16700b7228",
-      "heat_score": 52,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
+    },
+    {
+      "title": "WoW: Forever Devs Say Some Secrets Are So Well Buried They Will Take Players A Long Time To Find - GameFragger.com",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPb0E0M2FYbF9ZeEl2NzJZTGluUmhqVXcyQnBZeS1rSlpXVVE4WlhoaFNMS01iTWw2ekxLNzhiNGw3dVRwYUd6ek9sMWkyZXhpWEhIRjcyb0IxODhUS21PdTVnS1pEMVJRMnAtOHZKbWtNZ1lvZ3dRVUZFMUdNellMZUNOZ2dYc0tuZk9LSS1qTm1EOVhQRy1aak9sNnUwQzE5aHBtNVltWU1ralVITHlDQkFOMHc2Q1ZOZ2p3dG5DN2dQVWlIVmRmMFJBZWhoZ1RGTE1lWA?oc=5",
+      "summary": "WoW: Forever Devs Say Some Secrets Are So Well Buried They Will Take Players A Long Time To Find GameFragger.com",
+      "source": "https://gamefragger.com",
+      "author": "https://gamefragger.com",
+      "published": "2026-10-28T11:10:00+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://gamefragger.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://gamefragger.com",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPb0E0M2FYbF9ZeEl2NzJZTGluUmhqVXcyQnBZeS1rSlpXVVE4WlhoaFNMS01iTWw2ekxLNzhiNGw3dVRwYUd6ek9sMWkyZXhpWEhIRjcyb0IxODhUS21PdTVnS1pEMVJRMnAtOHZKbWtNZ1lvZ3dRVUZFMUdNellMZUNOZ2dYc0tuZk9LSS1qTm1EOVhQRy1aak9sNnUwQzE5aHBtNVltWU1ralVITHlDQkFOMHc2Q1ZOZ2p3dG5DN2dQVWlIVmRmMFJBZWhoZ1RGTE1lWA?oc=5"
+        }
+      ],
+      "id": "f2bf02e96a27",
+      "cluster_id": "f2bf02e96a27",
+      "heat_score": 45,
+      "heat_label": "steady"
     },
     {
       "title": "PTR Patch 3.3.0 is now available! - Maxroll",
@@ -3041,8 +3366,8 @@
       ],
       "id": "710248834f69",
       "cluster_id": "710248834f69",
-      "heat_score": 50,
-      "heat_label": "rising"
+      "heat_score": 47,
+      "heat_label": "steady"
     },
     {
       "title": "World Of Warcraft: Forever Gets Music Video As Launch Trailer Ahead Of November Launch - The Otaku's Study",
@@ -3075,7 +3400,7 @@
       ],
       "id": "53e35f6b085e",
       "cluster_id": "53e35f6b085e",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -3109,7 +3434,7 @@
       ],
       "id": "a546b9eb7e20",
       "cluster_id": "a546b9eb7e20",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -3133,10 +3458,9 @@
       "reddit_comments": 0,
       "sources": [
         "https://me.ign.com",
-        "https://www.ign.com",
-        "https://tech.yahoo.com"
+        "https://www.ign.com"
       ],
-      "source_count": 3,
+      "source_count": 2,
       "source_links": [
         {
           "source": "https://me.ign.com",
@@ -3145,16 +3469,12 @@
         {
           "source": "https://www.ign.com",
           "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQTEY0Y1RLV205WFJtQVRwdTQ1NzZrV19GakNPUENhMVd6WWU3TXh1MDRYaUMxck1RNUU2dEZxSVJRaDZKdTM2dllwb0dpMDdfdWQxTnIxSTdNMjRlYUdSNG5LQmdHaW9pZkJ0ZkZ0eURGamZtbkw0YW4zbEVoUUJCZXQ5cFEwRW1oWDNjYWE5LXU0UFhkYkFvUWhrV1AxazEzQ1pGc1VTb1ZRYy1tNzJmUXNXRQ?oc=5"
-        },
-        {
-          "source": "https://tech.yahoo.com",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQQ0d5V1I0LVFuVkxhSVpfa2lBZE9vRXFuaU02dWlhUjU0Uy1oMWRMWDd1WWk0MlhqVWVnRUo1WHJNN3ZoWW9SZmk0QVhLYW1FNDhsVm1EZzBEZ0l3RHAtMjBvMnl2ek5YelozQ2pxbXlySjg4WkttRmNyN1FwLW9ZelI4ci1jUVBCQXE3RVVsZGNzelpjNGhVWA?oc=5"
         }
       ],
       "id": "dbe9f3726f16",
       "cluster_id": "dbe9f3726f16",
-      "heat_score": 57,
-      "heat_label": "rising"
+      "heat_score": 49,
+      "heat_label": "steady"
     },
     {
       "title": "Blizzard Reveals Plan for World of Warcraft Forever Update Frequency - IGN",
@@ -3187,7 +3507,7 @@
       ],
       "id": "4bfdf525a153",
       "cluster_id": "4bfdf525a153",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -3221,7 +3541,7 @@
       ],
       "id": "03067f55acad",
       "cluster_id": "03067f55acad",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -3260,8 +3580,8 @@
       ],
       "id": "98546ed9fdb7",
       "cluster_id": "98546ed9fdb7",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "'A Lot of Players Don't Want to Play a Monster' – WoW Forever Principal Designer Sheds More Light on Why the Skyborne Were Added - IGN Africa",
@@ -3299,8 +3619,8 @@
       ],
       "id": "cc79d5a838a2",
       "cluster_id": "cc79d5a838a2",
-      "heat_score": 51,
-      "heat_label": "rising"
+      "heat_score": 48,
+      "heat_label": "steady"
     },
     {
       "title": "WoW Forever’s Leveling Zones: Riverglades, Shen’dralas and Hyjal - eXputer.com",
@@ -3333,7 +3653,7 @@
       ],
       "id": "94d02e8301f7",
       "cluster_id": "94d02e8301f7",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -3367,7 +3687,7 @@
       ],
       "id": "73aad08b3cd2",
       "cluster_id": "73aad08b3cd2",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -3403,7 +3723,7 @@
       ],
       "id": "f90882258a11",
       "cluster_id": "f90882258a11",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3437,7 +3757,7 @@
       ],
       "id": "676e9bc2394a",
       "cluster_id": "676e9bc2394a",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3473,7 +3793,7 @@
       ],
       "id": "d7428b49d7c2",
       "cluster_id": "d7428b49d7c2",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3508,7 +3828,7 @@
       ],
       "id": "9fba65e74b84",
       "cluster_id": "9fba65e74b84",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3544,7 +3864,7 @@
       ],
       "id": "78bbb141da41",
       "cluster_id": "78bbb141da41",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -3578,7 +3898,7 @@
       ],
       "id": "cd4287db9440",
       "cluster_id": "cd4287db9440",
-      "heat_score": 46,
+      "heat_score": 43,
       "heat_label": "steady"
     },
     {
@@ -3614,7 +3934,7 @@
       ],
       "id": "356f7449bd2e",
       "cluster_id": "356f7449bd2e",
-      "heat_score": 44,
+      "heat_score": 41,
       "heat_label": "steady"
     },
     {
@@ -3648,7 +3968,7 @@
       ],
       "id": "e5f91ab85ba3",
       "cluster_id": "e5f91ab85ba3",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3684,7 +4004,7 @@
       ],
       "id": "eb3785ab9fb9",
       "cluster_id": "eb3785ab9fb9",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -3722,7 +4042,7 @@
       ],
       "id": "04c4362f20ba",
       "cluster_id": "04c4362f20ba",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3756,7 +4076,7 @@
       ],
       "id": "ee01b1bc490d",
       "cluster_id": "ee01b1bc490d",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -3792,41 +4112,7 @@
       ],
       "id": "453a28f84e34",
       "cluster_id": "453a28f84e34",
-      "heat_score": 45,
-      "heat_label": "steady"
-    },
-    {
-      "title": "World of Warcraft faces backlash over paid Kul Tiran housing decor - Mezha.net",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQlR1TER1NE5nOWZZZmROMXprOG9MbXhzY2NKaG5naENfcmY2UkNZSGRGbDJLUWdGVGJva21tclByOU5ScFEwRmlOaGp1WHpTNnFrTVp2NmhaemJ1UG9rWUV3SjFDbkkwVGxqQXA5bXhEVHRjUDhLOER3N2FOOW9DWEVB?oc=5",
-      "summary": "World of Warcraft faces backlash over paid Kul Tiran housing decor Mezha.net",
-      "source": "https://mezha.net",
-      "author": "https://mezha.net",
-      "published": "2026-10-27T20:14:08+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://mezha.net"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://mezha.net",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQlR1TER1NE5nOWZZZmROMXprOG9MbXhzY2NKaG5naENfcmY2UkNZSGRGbDJLUWdGVGJva21tclByOU5ScFEwRmlOaGp1WHpTNnFrTVp2NmhaemJ1UG9rWUV3SjFDbkkwVGxqQXA5bXhEVHRjUDhLOER3N2FOOW9DWEVB?oc=5"
-        }
-      ],
-      "id": "654375d5330b",
-      "cluster_id": "654375d5330b",
-      "heat_score": 45,
+      "heat_score": 42,
       "heat_label": "steady"
     },
     {
@@ -3862,7 +4148,7 @@
       ],
       "id": "544c5617cb43",
       "cluster_id": "544c5617cb43",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -3897,7 +4183,7 @@
       ],
       "id": "cecbf825de85",
       "cluster_id": "cecbf825de85",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -3932,7 +4218,7 @@
       ],
       "id": "5f86ae967552",
       "cluster_id": "5f86ae967552",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -3966,7 +4252,7 @@
       ],
       "id": "e983dd2a84e1",
       "cluster_id": "e983dd2a84e1",
-      "heat_score": 47,
+      "heat_score": 44,
       "heat_label": "steady"
     },
     {
@@ -4002,7 +4288,7 @@
       ],
       "id": "a855920ea928",
       "cluster_id": "a855920ea928",
-      "heat_score": 43,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4040,7 +4326,7 @@
       ],
       "id": "41757915dea4",
       "cluster_id": "41757915dea4",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4074,41 +4360,7 @@
       ],
       "id": "70240b3a33ed",
       "cluster_id": "70240b3a33ed",
-      "heat_score": 44,
-      "heat_label": "steady"
-    },
-    {
-      "title": "World of Warcraft Forever May Add Brief Trips to Familiar Expansion Zones - Mezha.net",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdG1BOGhRMUw2eGN2YjZuekdnUEhUVDUtNERFZEVvV2F2SzRfMndpcHJ5anNlaFNPOGhGYWk2bFprWmwtbVBIZ3FlNFIwai1qMUx3b2RWT2xfU2RfT1JtZkJmNldqYWFUQUF2WmIyZjBXTHhFRTJZN2pEZHFsOHN5V2h3?oc=5",
-      "summary": "World of Warcraft Forever May Add Brief Trips to Familiar Expansion Zones Mezha.net",
-      "source": "https://mezha.net",
-      "author": "https://mezha.net",
-      "published": "2026-10-27T18:48:34+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://mezha.net"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://mezha.net",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQdG1BOGhRMUw2eGN2YjZuekdnUEhUVDUtNERFZEVvV2F2SzRfMndpcHJ5anNlaFNPOGhGYWk2bFprWmwtbVBIZ3FlNFIwai1qMUx3b2RWT2xfU2RfT1JtZkJmNldqYWFUQUF2WmIyZjBXTHhFRTJZN2pEZHFsOHN5V2h3?oc=5"
-        }
-      ],
-      "id": "736573ce6263",
-      "cluster_id": "736573ce6263",
-      "heat_score": 42,
+      "heat_score": 41,
       "heat_label": "steady"
     },
     {
@@ -4153,7 +4405,7 @@
       ],
       "id": "843982245489",
       "cluster_id": "843982245489",
-      "heat_score": 49,
+      "heat_score": 46,
       "heat_label": "steady"
     },
     {
@@ -4189,7 +4441,7 @@
       ],
       "id": "d986669c49f4",
       "cluster_id": "d986669c49f4",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4223,7 +4475,7 @@
       ],
       "id": "1368e25e24b2",
       "cluster_id": "1368e25e24b2",
-      "heat_score": 44,
+      "heat_score": 41,
       "heat_label": "steady"
     },
     {
@@ -4257,7 +4509,7 @@
       ],
       "id": "34b6f8631240",
       "cluster_id": "34b6f8631240",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4291,7 +4543,7 @@
       ],
       "id": "3508aa870e72",
       "cluster_id": "3508aa870e72",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4327,7 +4579,7 @@
       ],
       "id": "7977b8ba6e80",
       "cluster_id": "7977b8ba6e80",
-      "heat_score": 44,
+      "heat_score": 41,
       "heat_label": "steady"
     },
     {
@@ -4361,7 +4613,7 @@
       ],
       "id": "b84dafbbcfac",
       "cluster_id": "b84dafbbcfac",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4397,41 +4649,7 @@
       ],
       "id": "9796ca67ae55",
       "cluster_id": "9796ca67ae55",
-      "heat_score": 42,
-      "heat_label": "steady"
-    },
-    {
-      "title": "After 22 years, World of Warcraft has arrived on consoles, but without Blizzard’s help - iXBT.games",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcGVKdFNJLVhPemlzZzlOZnYzR0ZVUFRHd0c2WlA2Z2R6blR3dGJuVndoXy1JQUxxNXdIY2lrRVFMTk4tUjhoSTFIYjFjRG1VZVVoZTRrWlIwekt4R09QQ2VDVkJVYkNFbk1ULUYydkJkdW42WjM4X29QZlNJSXRmbnJaa09vQXZxTnNtY2swSWVETjctQ2NqQWZEMDUxQk1uU1R4dk5Kd2t5RFlsOTd4M1VveUVFNUpLMmfSAb8BQVVfeXFMTm9nblN1MkdUa2FDeXZXOGhJNGU1NTA4MkNpNXFfQ0FwTnNxQ1VJck1tRS1aazhTM2VSMks5NGVFSWQ0cG5iWjNJTHpYTy1XaWhMZnFCZ0RmMEZjSHlxWFlxTUxfLVRlOW9WN1BGakdVbjY5SHdjVjZKR2p2RGFEa0VZY25WUy1vRVB6Yi1HUzBCYVBfYlJSV2I0ZVdlaFo0ZHpRN2VkT2JVNVdJcnpsdEZnanZFTzZnT01yenFRY3M?oc=5",
-      "summary": "After 22 years, World of Warcraft has arrived on consoles, but without Blizzard’s help iXBT.games",
-      "source": "https://ixbt.games",
-      "author": "https://ixbt.games",
-      "published": "2026-10-27T17:01:00+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://ixbt.games"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://ixbt.games",
-          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNcGVKdFNJLVhPemlzZzlOZnYzR0ZVUFRHd0c2WlA2Z2R6blR3dGJuVndoXy1JQUxxNXdIY2lrRVFMTk4tUjhoSTFIYjFjRG1VZVVoZTRrWlIwekt4R09QQ2VDVkJVYkNFbk1ULUYydkJkdW42WjM4X29QZlNJSXRmbnJaa09vQXZxTnNtY2swSWVETjctQ2NqQWZEMDUxQk1uU1R4dk5Kd2t5RFlsOTd4M1VveUVFNUpLMmfSAb8BQVVfeXFMTm9nblN1MkdUa2FDeXZXOGhJNGU1NTA4MkNpNXFfQ0FwTnNxQ1VJck1tRS1aazhTM2VSMks5NGVFSWQ0cG5iWjNJTHpYTy1XaWhMZnFCZ0RmMEZjSHlxWFlxTUxfLVRlOW9WN1BGakdVbjY5SHdjVjZKR2p2RGFEa0VZY25WUy1vRVB6Yi1HUzBCYVBfYlJSV2I0ZVdlaFo0ZHpRN2VkT2JVNVdJcnpsdEZnanZFTzZnT01yenFRY3M?oc=5"
-        }
-      ],
-      "id": "fbab1f934bcc",
-      "cluster_id": "fbab1f934bcc",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4465,7 +4683,7 @@
       ],
       "id": "2bd239afb3a5",
       "cluster_id": "2bd239afb3a5",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4499,7 +4717,7 @@
       ],
       "id": "adb3c6ae09db",
       "cluster_id": "adb3c6ae09db",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4533,7 +4751,7 @@
       ],
       "id": "9848620dfcf9",
       "cluster_id": "9848620dfcf9",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -4567,7 +4785,7 @@
       ],
       "id": "631d351d3e53",
       "cluster_id": "631d351d3e53",
-      "heat_score": 44,
+      "heat_score": 41,
       "heat_label": "steady"
     },
     {
@@ -4601,7 +4819,7 @@
       ],
       "id": "8aa1e873cf5f",
       "cluster_id": "8aa1e873cf5f",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -4637,7 +4855,7 @@
       ],
       "id": "a7a53ca68f16",
       "cluster_id": "a7a53ca68f16",
-      "heat_score": 41,
+      "heat_score": 38,
       "heat_label": "steady"
     },
     {
@@ -4671,7 +4889,7 @@
       ],
       "id": "95d8fb175207",
       "cluster_id": "95d8fb175207",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -4707,7 +4925,7 @@
       ],
       "id": "a25b44f72a7b",
       "cluster_id": "a25b44f72a7b",
-      "heat_score": 43,
+      "heat_score": 40,
       "heat_label": "steady"
     },
     {
@@ -4741,7 +4959,7 @@
       ],
       "id": "d1e0cff79bca",
       "cluster_id": "d1e0cff79bca",
-      "heat_score": 41,
+      "heat_score": 38,
       "heat_label": "steady"
     },
     {
@@ -4776,7 +4994,7 @@
       ],
       "id": "e19d3d25ea0d",
       "cluster_id": "e19d3d25ea0d",
-      "heat_score": 41,
+      "heat_score": 38,
       "heat_label": "steady"
     },
     {
@@ -4812,7 +5030,41 @@
       ],
       "id": "054c6e2774b8",
       "cluster_id": "054c6e2774b8",
-      "heat_score": 41,
+      "heat_score": 38,
+      "heat_label": "steady"
+    },
+    {
+      "title": "Blizzard Reworks WoW: Forever Racial Abilities Again a Week Before Launch - EGW News",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRnZUUWpBMEdtOWNTOWc3cTM3VjNYMzVxQkozcllyYVhjclZ2ZHpKSVZJbEZ1eGpqbUEtVmZjcmhxcE9WZVRpZTBzNkJPNnBHWWNycDVfVEpKWW1KWF9rYnk2T1FZaWVUbTI0Z2w1WmliMTRlbFR2M2pJbTJtcFpKWGQ4Q1VhWTB4dkszeDBxbE1hbHc4TFB1ZnBlNA?oc=5",
+      "summary": "Blizzard Reworks WoW: Forever Racial Abilities Again a Week Before Launch EGW News",
+      "source": "https://egw.news",
+      "author": "https://egw.news",
+      "published": "2026-10-27T13:23:27+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://egw.news"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://egw.news",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRnZUUWpBMEdtOWNTOWc3cTM3VjNYMzVxQkozcllyYVhjclZ2ZHpKSVZJbEZ1eGpqbUEtVmZjcmhxcE9WZVRpZTBzNkJPNnBHWWNycDVfVEpKWW1KWF9rYnk2T1FZaWVUbTI0Z2w1WmliMTRlbFR2M2pJbTJtcFpKWGQ4Q1VhWTB4dkszeDBxbE1hbHc4TFB1ZnBlNA?oc=5"
+        }
+      ],
+      "id": "e4e2485fda7e",
+      "cluster_id": "e4e2485fda7e",
+      "heat_score": 37,
       "heat_label": "steady"
     },
     {
@@ -4846,7 +5098,7 @@
       ],
       "id": "2d80cdd2b24b",
       "cluster_id": "2d80cdd2b24b",
-      "heat_score": 44,
+      "heat_score": 41,
       "heat_label": "steady"
     },
     {
@@ -4884,7 +5136,7 @@
       ],
       "id": "e7399c0986fe",
       "cluster_id": "e7399c0986fe",
-      "heat_score": 39,
+      "heat_score": 36,
       "heat_label": "steady"
     },
     {
@@ -4918,41 +5170,7 @@
       ],
       "id": "b32320a5360d",
       "cluster_id": "b32320a5360d",
-      "heat_score": 38,
-      "heat_label": "steady"
-    },
-    {
-      "title": "World of Warcraft: Forever shows off its dungeons in the launch trailer - Foro3D",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbjZzWXJKUzFxSG8xc2FubklWbG9hT2paVXhyR29tY2Z4Rk9EX1VnaE1WdWVpMVl2TGtnS2JIX0RMdnBYS2tWc0x4c043cUVQYjJOX0NMOVAwMW1EejVkekRNMU03QUhHakFwQWZqaHR6bWlXeTZrbjhXV1M0NWtFSXh3eV8yRmxlUWdNZnZhRnpPSVFneVJuTmdtc253U1Zya01VRFRuWGRmWFI0NVQw?oc=5",
-      "summary": "World of Warcraft: Forever shows off its dungeons in the launch trailer Foro3D",
-      "source": "https://foro3d.com",
-      "author": "https://foro3d.com",
-      "published": "2026-10-27T07:00:00+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://foro3d.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://foro3d.com",
-          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbjZzWXJKUzFxSG8xc2FubklWbG9hT2paVXhyR29tY2Z4Rk9EX1VnaE1WdWVpMVl2TGtnS2JIX0RMdnBYS2tWc0x4c043cUVQYjJOX0NMOVAwMW1EejVkekRNMU03QUhHakFwQWZqaHR6bWlXeTZrbjhXV1M0NWtFSXh3eV8yRmxlUWdNZnZhRnpPSVFneVJuTmdtc253U1Zya01VRFRuWGRmWFI0NVQw?oc=5"
-        }
-      ],
-      "id": "cc3c22a6b2c5",
-      "cluster_id": "cc3c22a6b2c5",
-      "heat_score": 38,
+      "heat_score": 35,
       "heat_label": "steady"
     },
     {
@@ -4986,7 +5204,7 @@
       ],
       "id": "a29ab6d9973b",
       "cluster_id": "a29ab6d9973b",
-      "heat_score": 40,
+      "heat_score": 37,
       "heat_label": "steady"
     },
     {
@@ -5020,7 +5238,7 @@
       ],
       "id": "78955bc32394",
       "cluster_id": "78955bc32394",
-      "heat_score": 39,
+      "heat_score": 36,
       "heat_label": "steady"
     },
     {
@@ -5056,7 +5274,7 @@
       ],
       "id": "56f9c2903c66",
       "cluster_id": "56f9c2903c66",
-      "heat_score": 41,
+      "heat_score": 38,
       "heat_label": "steady"
     },
     {
@@ -5091,7 +5309,7 @@
       ],
       "id": "ad5762bde5ea",
       "cluster_id": "ad5762bde5ea",
-      "heat_score": 37,
+      "heat_score": 34,
       "heat_label": "steady"
     },
     {
@@ -5134,7 +5352,7 @@
       ],
       "id": "94087c75aae2",
       "cluster_id": "94087c75aae2",
-      "heat_score": 40,
+      "heat_score": 37,
       "heat_label": "steady"
     },
     {
@@ -5168,7 +5386,7 @@
       ],
       "id": "e0728c5390b1",
       "cluster_id": "e0728c5390b1",
-      "heat_score": 42,
+      "heat_score": 39,
       "heat_label": "steady"
     },
     {
@@ -5206,7 +5424,7 @@
       ],
       "id": "d17002a04717",
       "cluster_id": "d17002a04717",
-      "heat_score": 38,
+      "heat_score": 35,
       "heat_label": "steady"
     },
     {
@@ -5242,7 +5460,7 @@
       ],
       "id": "da9588671403",
       "cluster_id": "da9588671403",
-      "heat_score": 40,
+      "heat_score": 37,
       "heat_label": "steady"
     },
     {
@@ -5276,7 +5494,7 @@
       ],
       "id": "305a537ae81a",
       "cluster_id": "305a537ae81a",
-      "heat_score": 39,
+      "heat_score": 36,
       "heat_label": "steady"
     },
     {
@@ -5310,7 +5528,7 @@
       ],
       "id": "acaeb0073c5a",
       "cluster_id": "acaeb0073c5a",
-      "heat_score": 35,
+      "heat_score": 32,
       "heat_label": "steady"
     },
     {
@@ -5344,7 +5562,7 @@
       ],
       "id": "05248622512e",
       "cluster_id": "05248622512e",
-      "heat_score": 41,
+      "heat_score": 38,
       "heat_label": "steady"
     },
     {
@@ -5380,7 +5598,7 @@
       ],
       "id": "eb39d732a221",
       "cluster_id": "eb39d732a221",
-      "heat_score": 35,
+      "heat_score": 32,
       "heat_label": "steady"
     },
     {
@@ -5414,7 +5632,7 @@
       ],
       "id": "c9f378db129e",
       "cluster_id": "c9f378db129e",
-      "heat_score": 34,
+      "heat_score": 31,
       "heat_label": "steady"
     },
     {
@@ -5450,7 +5668,41 @@
       ],
       "id": "be55656084e9",
       "cluster_id": "be55656084e9",
-      "heat_score": 34,
+      "heat_score": 31,
+      "heat_label": "steady"
+    },
+    {
+      "title": "Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv - Blizzard News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUFF0OXI1emdUcTNvSmpPVUN3ZUhQUkVrSWdDUHZZeHhCWXJ2eW8tODdWRWxTaE9pRjN2ekk4RlVac0MtaWFvZzg4ZHVVVTRuUHNLU1N1bHFIM2N5MEhwb1FRcjNfMk00LXBvajU1YXFfY2JqVUl6NTdYMVloZHRFdTFOejQ2WGVJSzlmWGdHR3ZtS0w3enBDai1Bc1NKSkg3Ykl5Ti1RbEJKc1JpOXFvZmpNSQ?oc=5",
+      "summary": "Get Your Ticket to the WoW: Forever Poster Signing at the Irvine Improv Blizzard News",
+      "source": "https://news.blizzard.com",
+      "author": "https://news.blizzard.com",
+      "published": "2026-10-26T19:00:00+00:00",
+      "image": "",
+      "images": [],
+      "video_url": "",
+      "category": "community",
+      "game_modes": [
+        "retail"
+      ],
+      "event_date": null,
+      "credibility": "reported",
+      "is_rumor": false,
+      "reddit_score": 0,
+      "reddit_comments": 0,
+      "sources": [
+        "https://news.blizzard.com"
+      ],
+      "source_count": 1,
+      "source_links": [
+        {
+          "source": "https://news.blizzard.com",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUFF0OXI1emdUcTNvSmpPVUN3ZUhQUkVrSWdDUHZZeHhCWXJ2eW8tODdWRWxTaE9pRjN2ekk4RlVac0MtaWFvZzg4ZHVVVTRuUHNLU1N1bHFIM2N5MEhwb1FRcjNfMk00LXBvajU1YXFfY2JqVUl6NTdYMVloZHRFdTFOejQ2WGVJSzlmWGdHR3ZtS0w3enBDai1Bc1NKSkg3Ykl5Ti1RbEJKc1JpOXFvZmpNSQ?oc=5"
+        }
+      ],
+      "id": "5409d2c34ab2",
+      "cluster_id": "5409d2c34ab2",
+      "heat_score": 31,
       "heat_label": "steady"
     },
     {
@@ -5484,7 +5736,7 @@
       ],
       "id": "83cc4909dd67",
       "cluster_id": "83cc4909dd67",
-      "heat_score": 34,
+      "heat_score": 31,
       "heat_label": "steady"
     },
     {
@@ -5525,7 +5777,7 @@
       ],
       "id": "5d152507291e",
       "cluster_id": "5d152507291e",
-      "heat_score": 38,
+      "heat_score": 35,
       "heat_label": "steady"
     },
     {
@@ -5561,13 +5813,13 @@
       ],
       "id": "2d7e096c84a8",
       "cluster_id": "2d7e096c84a8",
-      "heat_score": 36,
+      "heat_score": 33,
       "heat_label": "steady"
     },
     {
-      "title": "Join in the Talebound Demo on 30 October — World of Warcraft - Blizzard News",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTlhndzMtQlRVWWptbkE0ZzRMdXpJNTdwbnlEUmtUZk9zUjkteGhBaGx5WFFqbGpkQ2R0bU9LbUs1bTVldnk4TGg4cUs5RE9Za0N1Rk5HM2xYZTlyLWlPSld2Sldra3JCS044c2dZU1RjT3Bzbjg4YTRVSlRYdEM1aWZUaVhzUlRicUpGR1BUaDlIR1U?oc=5",
-      "summary": "Join in the Talebound Demo on 30 October — World of Warcraft Blizzard News",
+      "title": "Join in the Talebound Demo on October 30 — World of Warcraft - Blizzard News",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPY1k0WFU3eXZtUFkxUW1RVTlIWUpjTTQ3V2s1M0lxeDdtUGM4V2hRbExYaGxpUG56TmVCaVZNTGdtbFJPeHFYay1ZSTZFMXN1RDV0bk1XeEFCdHFVMW8zd3dDMWhsY0xHQ2FOQlVqRU1vamF6dFpfNmRnOVNyTF9VTjQyRlBoLWx3aWNfZEZuZ0FDbVE?oc=5",
+      "summary": "Join in the Talebound Demo on October 30 — World of Warcraft Blizzard News",
       "source": "https://news.blizzard.com",
       "author": "https://news.blizzard.com",
       "published": "2026-10-26T18:00:00+00:00",
@@ -5590,46 +5842,12 @@
       "source_links": [
         {
           "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTlhndzMtQlRVWWptbkE0ZzRMdXpJNTdwbnlEUmtUZk9zUjkteGhBaGx5WFFqbGpkQ2R0bU9LbUs1bTVldnk4TGg4cUs5RE9Za0N1Rk5HM2xYZTlyLWlPSld2Sldra3JCS044c2dZU1RjT3Bzbjg4YTRVSlRYdEM1aWZUaVhzUlRicUpGR1BUaDlIR1U?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPY1k0WFU3eXZtUFkxUW1RVTlIWUpjTTQ3V2s1M0lxeDdtUGM4V2hRbExYaGxpUG56TmVCaVZNTGdtbFJPeHFYay1ZSTZFMXN1RDV0bk1XeEFCdHFVMW8zd3dDMWhsY0xHQ2FOQlVqRU1vamF6dFpfNmRnOVNyTF9VTjQyRlBoLWx3aWNfZEZuZ0FDbVE?oc=5"
         }
       ],
-      "id": "018722eefa08",
-      "cluster_id": "018722eefa08",
-      "heat_score": 34,
-      "heat_label": "steady"
-    },
-    {
-      "title": "Blizzard Removes Classic Warcraft 1 and 2 from GOG - NeoTeo",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdF9lNlRwNW8xdFNMaHMtdUR5ZzRJT3psOHQxWDM5emxYTVpOTlRXa1RfMng3NnlObC1iLTVXS2tRNVdmbFVqWHk0d21TeldYYWMwZEduMnpLV2UxakJxMGwtSV9zT1NiZ1hFSno1RXl5cDcwVmxxVUxvZENEVVI3RGJB?oc=5",
-      "summary": "Blizzard Removes Classic Warcraft 1 and 2 from GOG NeoTeo",
-      "source": "https://www.neoteo.com",
-      "author": "https://www.neoteo.com",
-      "published": "2026-10-26T17:43:24+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "classic"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://www.neoteo.com"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "https://www.neoteo.com",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdF9lNlRwNW8xdFNMaHMtdUR5ZzRJT3psOHQxWDM5emxYTVpOTlRXa1RfMng3NnlObC1iLTVXS2tRNVdmbFVqWHk0d21TeldYYWMwZEduMnpLV2UxakJxMGwtSV9zT1NiZ1hFSno1RXl5cDcwVmxxVUxvZENEVVI3RGJB?oc=5"
-        }
-      ],
-      "id": "86ec3956c48d",
-      "cluster_id": "86ec3956c48d",
-      "heat_score": 36,
+      "id": "d68c3fa96cac",
+      "cluster_id": "d68c3fa96cac",
+      "heat_score": 31,
       "heat_label": "steady"
     },
     {
@@ -5663,7 +5881,7 @@
       ],
       "id": "01b8a9ed6482",
       "cluster_id": "01b8a9ed6482",
-      "heat_score": 36,
+      "heat_score": 32,
       "heat_label": "steady"
     },
     {
@@ -5705,13 +5923,13 @@
       ],
       "id": "af009c13422d",
       "cluster_id": "af009c13422d",
-      "heat_score": 38,
+      "heat_score": 35,
       "heat_label": "steady"
     },
     {
-      "title": "Watch the WoW: Forever Short Story, “Unbowed” — World of Warcraft — Blizzard News - Blizzard News",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOXzI5b1VHZzI3VFY2MnVvTDRFcWZvaFJpR2pEQmxCZUtBcXBDcDY2d3B4NzhSNlZOS0NySWJNZWk3WWNyOHR5dzFlaFFvRWRXYmg2NUE5dG1NY3psY3hPbU5LSXd5U091U3BWT1g0ZWduWmJkWEQ3RTMzbkVKTF9IUG5OdE9kbzBSLTdNcA?oc=5",
-      "summary": "Watch the WoW: Forever Short Story, “Unbowed” — World of Warcraft — Blizzard News Blizzard News",
+      "title": "Watch the WoW: Forever Short Story, “Unbowed” — World of Warcraft - Blizzard News",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1XbFdpN0lDRDN1STRhRHpJcDU3U1BoZzM0RjZxS3U0YVB0LUJueGZxX1ExeEZHSGFPeVdwRVUwVDZzdGlGSU5TMTEyQ0E2UXh3UW9pZWZMSHFEdVFTellOS2Zn?oc=5",
+      "summary": "Watch the WoW: Forever Short Story, “Unbowed” — World of Warcraft Blizzard News",
       "source": "https://news.blizzard.com",
       "author": "https://news.blizzard.com",
       "published": "2026-10-26T17:00:00+00:00",
@@ -5735,46 +5953,16 @@
       "source_links": [
         {
           "source": "https://news.blizzard.com",
-          "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOXzI5b1VHZzI3VFY2MnVvTDRFcWZvaFJpR2pEQmxCZUtBcXBDcDY2d3B4NzhSNlZOS0NySWJNZWk3WWNyOHR5dzFlaFFvRWRXYmg2NUE5dG1NY3psY3hPbU5LSXd5U091U3BWT1g0ZWduWmJkWEQ3RTMzbkVKTF9IUG5OdE9kbzBSLTdNcA?oc=5"
-        }
-      ],
-      "id": "1de21882a236",
-      "cluster_id": "1de21882a236",
-      "heat_score": 33,
-      "heat_label": "steady"
-    },
-    {
-      "title": "World of Warcraft is now “fully playable” on Sega Dreamcast as console players everywhere wait for an official port - FRVR",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcVhJUGxud0JwQVhfR0xlV0g5TXFDb0p1R3gwdlhBVHpaWXc2Qm1VQ1h0V3ZtampPajNQUlNZYV9tZHpPMUo2c05kbW5jbnRNZkp2alJmWV9CYWVKQzcySkRCTHhpTXZFRnFRRS1vQzh1UmhZbnptNTF2b0RhWGlWckV4Z1VwYzktUzVuanFLcjJYWXd3czhPTU9wVHJIQ2FPemxPbVhrenMwYThHcUw5WlhCb0otOUdTSkQ1bmF6RWlBa1pBZVd2SkJPaTB2OGh1b2lEOHJOQ2E?oc=5",
-      "summary": "World of Warcraft is now “fully playable” on Sega Dreamcast as console players everywhere wait for an official port FRVR",
-      "source": "https://frvr.com",
-      "author": "https://frvr.com",
-      "published": "2026-10-26T16:35:56+00:00",
-      "image": "",
-      "images": [],
-      "video_url": "",
-      "category": "community",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "https://frvr.com"
-      ],
-      "source_count": 1,
-      "source_links": [
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1XbFdpN0lDRDN1STRhRHpJcDU3U1BoZzM0RjZxS3U0YVB0LUJueGZxX1ExeEZHSGFPeVdwRVUwVDZzdGlGSU5TMTEyQ0E2UXh3UW9pZWZMSHFEdVFTellOS2Zn?oc=5"
+        },
         {
-          "source": "https://frvr.com",
-          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPcVhJUGxud0JwQVhfR0xlV0g5TXFDb0p1R3gwdlhBVHpaWXc2Qm1VQ1h0V3ZtampPajNQUlNZYV9tZHpPMUo2c05kbW5jbnRNZkp2alJmWV9CYWVKQzcySkRCTHhpTXZFRnFRRS1vQzh1UmhZbnptNTF2b0RhWGlWckV4Z1VwYzktUzVuanFLcjJYWXd3czhPTU9wVHJIQ2FPemxPbVhrenMwYThHcUw5WlhCb0otOUdTSkQ1bmF6RWlBa1pBZVd2SkJPaTB2OGh1b2lEOHJOQ2E?oc=5"
+          "source": "https://news.blizzard.com",
+          "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPS2RTY29HaGRCZlFHSnMzN3d2VW9peklHd21wOWVuenE2akxkUFp5eE1jcWFrd2d1V3FDU0tTMzd4VWpVci1GRkhUSjd1eVFocy1xRWtoMkkyZ3Y0dEdQNndJN3ZoVW5jWEZBTGFlOWZZUXQ0bDQ3VF82YWxxZjJaeFN4RWNDSUlaVElibERFRGhyNDhn?oc=5"
         }
       ],
-      "id": "5322593d84c1",
-      "cluster_id": "5322593d84c1",
-      "heat_score": 33,
+      "id": "e8e43f7c0de4",
+      "cluster_id": "e8e43f7c0de4",
+      "heat_score": 30,
       "heat_label": "steady"
     },
     {
@@ -5808,7 +5996,7 @@
       ],
       "id": "767fcec77ca8",
       "cluster_id": "767fcec77ca8",
-      "heat_score": 35,
+      "heat_score": 32,
       "heat_label": "steady"
     },
     {
@@ -5842,7 +6030,7 @@
       ],
       "id": "f871eb0d43dc",
       "cluster_id": "f871eb0d43dc",
-      "heat_score": 35,
+      "heat_score": 32,
       "heat_label": "steady"
     },
     {
@@ -5876,7 +6064,7 @@
       ],
       "id": "1b375b3c05f5",
       "cluster_id": "1b375b3c05f5",
-      "heat_score": 35,
+      "heat_score": 32,
       "heat_label": "steady"
     },
     {
@@ -5912,7 +6100,7 @@
       ],
       "id": "dd231cce47a0",
       "cluster_id": "dd231cce47a0",
-      "heat_score": 33,
+      "heat_score": 30,
       "heat_label": "steady"
     },
     {
@@ -5946,7 +6134,7 @@
       ],
       "id": "e94476ad40c6",
       "cluster_id": "e94476ad40c6",
-      "heat_score": 33,
+      "heat_score": 30,
       "heat_label": "steady"
     },
     {
@@ -5980,7 +6168,7 @@
       ],
       "id": "bfdcf9b4bc01",
       "cluster_id": "bfdcf9b4bc01",
-      "heat_score": 34,
+      "heat_score": 31,
       "heat_label": "steady"
     },
     {
@@ -6016,44 +6204,7 @@
       ],
       "id": "02ee604e2b85",
       "cluster_id": "02ee604e2b85",
-      "heat_score": 36,
-      "heat_label": "steady"
-    },
-    {
-      "title": "The WoW: Forever Beta PvP Tournament: Results, Winners, Statistics",
-      "url": "https://www.wowhead.com/news=383571/the-wow-forever-beta-pvp-tournament-results-winners-statistics",
-      "summary": "The WoW Forever Beta Tournament had a huge turnout, and with a $100,000 prize pool, players from all over the world prepared for this lucrative competition - but which classes came out on top? Continue reading »",
-      "source": "Wowhead",
-      "author": "Wowhead",
-      "published": "2026-10-26T13:00:00+00:00",
-      "image": "https://wow.zamimg.com/uploads/blog/images/55906-the-wow-forever-beta-pvp-tournament-results-winners-statistics.jpg",
-      "images": [
-        "https://wow.zamimg.com/uploads/blog/images/55906-the-wow-forever-beta-pvp-tournament-results-winners-statistics.jpg"
-      ],
-      "video_url": "",
-      "category": "event",
-      "game_modes": [
-        "esports",
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "Wowhead"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "Wowhead",
-          "url": "https://www.wowhead.com/news=383571/the-wow-forever-beta-pvp-tournament-results-winners-statistics"
-        }
-      ],
-      "id": "37f5cfcae9dd",
-      "cluster_id": "37f5cfcae9dd",
-      "heat_score": 34,
+      "heat_score": 33,
       "heat_label": "steady"
     },
     {
@@ -6087,7 +6238,7 @@
       ],
       "id": "83f2b84c588b",
       "cluster_id": "83f2b84c588b",
-      "heat_score": 31,
+      "heat_score": 28,
       "heat_label": "steady"
     },
     {
@@ -6121,7 +6272,7 @@
       ],
       "id": "c10db77662aa",
       "cluster_id": "c10db77662aa",
-      "heat_score": 32,
+      "heat_score": 29,
       "heat_label": "steady"
     },
     {
@@ -6155,59 +6306,22 @@
       ],
       "id": "5320ddcdf388",
       "cluster_id": "5320ddcdf388",
-      "heat_score": 32,
+      "heat_score": 29,
       "heat_label": "steady"
     },
     {
-      "title": "More Readable Book Decor Coming in Patch 12.1.7",
-      "url": "https://www.wowhead.com/news=383516/more-readable-book-decor-coming-in-patch-12-1-7",
-      "summary": "Patch 12.1.7 is bringing more book decor from Lorewalking, and they're all readable! Continue reading »",
-      "source": "Wowhead",
-      "author": "Wowhead",
-      "published": "2026-10-25T18:00:00+00:00",
-      "image": "https://wow.zamimg.com/uploads/blog/images/55846-more-readable-book-decor-coming-in-patch-12-1-7.jpg",
-      "images": [
-        "https://wow.zamimg.com/uploads/blog/images/55846-more-readable-book-decor-coming-in-patch-12-1-7.jpg"
-      ],
-      "video_url": "",
-      "category": "update",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "Wowhead"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "Wowhead",
-          "url": "https://www.wowhead.com/news=383516/more-readable-book-decor-coming-in-patch-12-1-7"
-        }
-      ],
-      "id": "e516063087d3",
-      "cluster_id": "e516063087d3",
-      "heat_score": 27,
-      "heat_label": "steady"
-    },
-    {
-      "title": "All Overwatch collaborations and crossover skins (full list 2026) - Esports.gg",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNejVMSkVZVDhlaURfbjU0WWxFUVFFNU5yMzBWUWVmVFdOY2RWbFlZRE01OTVDOVVDN2V5TDVydmtGSkNNQnJzMnpyUjJfd2ROM21jYmVqR0J5UkdVWEh2ZzhfSzFlR05vUkl6N3JuSlQ5ZFFsM2FoYk4zc2M1a0VQd250d0RSaGFDNjlWODJR?oc=5",
-      "summary": "All Overwatch collaborations and crossover skins (full list 2026) Esports.gg",
-      "source": "https://esports.gg",
-      "author": "https://esports.gg",
-      "published": "2026-10-25T15:58:38+00:00",
+      "title": "WoW Forever Reveals New Raid Plans and Classic Dungeon Design Philosophy - MMOEXP",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbHRhZ3NzcmNTV01BeWNyWE90QW1Samg5aHRTd2xoUllycWVzWWFwZUU1U0FPTzF5eWRVbjFaNk0wODZsVS1jOGZKcVliM3czeTJvTTB1VTBlNGFOZ2VsWlRVU3FSODk3Sk1TZ0M5b19obnpEWktHWnRaX3JhWUp1NnhnUEdlUTdJaHRzU1h5VVg2UFYteHJUMERndVRYQXpJaW1LTm5nX0U?oc=5",
+      "summary": "WoW Forever Reveals New Raid Plans and Classic Dungeon Design Philosophy MMOEXP",
+      "source": "https://www.mmoexp.com",
+      "author": "https://www.mmoexp.com",
+      "published": "2026-10-26T02:48:39+00:00",
       "image": "",
       "images": [],
       "video_url": "",
       "category": "community",
       "game_modes": [
-        "esports",
-        "retail"
+        "classic"
       ],
       "event_date": null,
       "credibility": "reported",
@@ -6215,54 +6329,18 @@
       "reddit_score": 0,
       "reddit_comments": 0,
       "sources": [
-        "https://esports.gg"
+        "https://www.mmoexp.com"
       ],
       "source_count": 1,
       "source_links": [
         {
-          "source": "https://esports.gg",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNejVMSkVZVDhlaURfbjU0WWxFUVFFNU5yMzBWUWVmVFdOY2RWbFlZRE01OTVDOVVDN2V5TDVydmtGSkNNQnJzMnpyUjJfd2ROM21jYmVqR0J5UkdVWEh2ZzhfSzFlR05vUkl6N3JuSlQ5ZFFsM2FoYk4zc2M1a0VQd250d0RSaGFDNjlWODJR?oc=5"
+          "source": "https://www.mmoexp.com",
+          "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbHRhZ3NzcmNTV01BeWNyWE90QW1Samg5aHRTd2xoUllycWVzWWFwZUU1U0FPTzF5eWRVbjFaNk0wODZsVS1jOGZKcVliM3czeTJvTTB1VTBlNGFOZ2VsWlRVU3FSODk3Sk1TZ0M5b19obnpEWktHWnRaX3JhWUp1NnhnUEdlUTdJaHRzU1h5VVg2UFYteHJUMERndVRYQXpJaW1LTm5nX0U?oc=5"
         }
       ],
-      "id": "4888113a7e7f",
-      "cluster_id": "4888113a7e7f",
-      "heat_score": 25,
-      "heat_label": "steady"
-    },
-    {
-      "title": "New Winter Veil Neighborhood Activities Updates in Patch 12.1.7",
-      "url": "https://www.wowhead.com/news=383562/new-winter-veil-neighborhood-activities-updates-in-patch-12-1-7",
-      "summary": "New achievements indicate that Housing Neighborhoods are getting updates for Winter Veil in Patch 12.1.7, which includes a new Tree Defense activity. Continue reading »",
-      "source": "Wowhead",
-      "author": "Wowhead",
-      "published": "2026-10-25T14:00:00+00:00",
-      "image": "https://wow.zamimg.com/uploads/blog/images/55895-new-winter-veil-neighborhood-activities-updates-in-patch-12-1-7.jpg",
-      "images": [
-        "https://wow.zamimg.com/uploads/blog/images/55895-new-winter-veil-neighborhood-activities-updates-in-patch-12-1-7.jpg"
-      ],
-      "video_url": "",
-      "category": "update",
-      "game_modes": [
-        "retail"
-      ],
-      "event_date": null,
-      "credibility": "reported",
-      "is_rumor": false,
-      "reddit_score": 0,
-      "reddit_comments": 0,
-      "sources": [
-        "Wowhead"
-      ],
-      "source_count": 1,
-      "source_links": [
-        {
-          "source": "Wowhead",
-          "url": "https://www.wowhead.com/news=383562/new-winter-veil-neighborhood-activities-updates-in-patch-12-1-7"
-        }
-      ],
-      "id": "b94a7159fc5b",
-      "cluster_id": "b94a7159fc5b",
-      "heat_score": 28,
+      "id": "6196980ef9a6",
+      "cluster_id": "6196980ef9a6",
+      "heat_score": 29,
       "heat_label": "steady"
     }
   ]
